@@ -4,14 +4,18 @@ import {BiSkipPrevious, BiSkipNext} from 'react-icons/bi'
 import {AiOutlinePause} from 'react-icons/ai'
 import {BsPlayFill} from 'react-icons/bs'
 import AppContext from '../../AppContext'
+import { ImLoop } from "react-icons/im";
+import {GoUnmute,GoMute} from "react-icons/go"
 
 const AudioPlayer = () => {
 
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState();
+  const [isLooping, setisLooping] = useState(false);
   const [start, setStart] = useState();
   const [end, setEnd] = useState();
   const [duration, setDuration] = useState();
+  const [mute, setMute] = useState(false)
   const audioRef = useRef(null)
   const {setSongIndexValue, setSongArray, songIndexValue,songArray} = useContext(AppContext)
 
@@ -62,14 +66,18 @@ const handlePrev = () => {
   setSongIndexValue(prev)
 }
 
-const handleNext = () => {
-  const next = (songIndexValue + 1) % songArray.length
-  setSongIndexValue(next)
-}
 
 const handlePlayNextSong = () => {
   const playNext = (songIndexValue + 1) % songArray.length
   setSongIndexValue(playNext)
+}
+
+const handleLoop = () => {
+  setisLooping(!isLooping);
+};
+
+const handleMute = () => {
+  setMute(!mute)
 }
 
   return (
@@ -100,16 +108,30 @@ const handlePlayNextSong = () => {
         value={start ? start : 0}
         step={1}
         onChange={handleSeek} />
-        <SongAudio onPlay = {handlePlay} onEnded={handlePlayNextSong} ref={audioRef} src = {songArray[songIndexValue]?.audioUrl || songArray?.audioUrl} onTimeUpdate={handleTimeUpdate} onLoadedMetadata={handleMetaData} autoPlay/>
+        <SongAudio 
+        onPlay = {handlePlay}  
+        ref={audioRef} 
+        src = {songArray[songIndexValue]?.audioUrl || songArray?.audioUrl} 
+        onTimeUpdate={handleTimeUpdate} 
+        onLoadedMetadata={handleMetaData}  
+        loop={isLooping} 
+        muted = {mute}
+        onEnded={isLooping ? undefined : handlePlayNextSong} autoPlay/>
         <ControlsWrapper>
+          <NextWrapper onClick = {handleLoop} style ={{fontSize : "20px" , boxShadow: isLooping ? "0 0 20px rgba(52, 152, 219, 0.9)" : "none"}}>
+            <ImLoop />
+          </NextWrapper>
           <NextWrapper onClick = {handlePrev}>
              <BiSkipPrevious />
           </NextWrapper>
           <PlayWrapper onClick={handlePlayPause}>
            {isPlaying ? <AiOutlinePause /> : <BsPlayFill />} 
           </PlayWrapper>
-          <NextWrapper onClick = {handleNext}>
+          <NextWrapper onClick = {handlePlayNextSong}>
              <BiSkipNext />
+          </NextWrapper>
+          <NextWrapper onClick = {handleMute}>
+            {mute ? <GoMute/> : <GoUnmute />}
           </NextWrapper>
         </ControlsWrapper>
       </MusicPlayer>

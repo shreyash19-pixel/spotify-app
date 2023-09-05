@@ -33,7 +33,7 @@ export const SideBarWrapper = styled.div`
     padding-block: 20px;
     display: flex;
     flex-direction: column;
-    gap:70px;
+    gap:50px;
 `
 
 export const SideBarTop = styled.div`
@@ -45,7 +45,8 @@ export const SideBarTop = styled.div`
 export const SideBarMiddleBottom = styled.div`
     display: flex;
     flex-direction: column;
-    gap:50px;
+    gap:40px;
+    position: relative;
 `
 
 export const SideBarMiddle = styled.div`
@@ -93,6 +94,13 @@ export const SpotifyName = styled.h1`
     color : White
 `
 
+export const ShowPlaylists = styled.div`
+    width: 100%;
+    max-width: 300px;
+    min-height: 50px;
+    position: absolute;
+    bottom: 0px;
+`
 
 
 export const Hero = styled.div`
@@ -104,7 +112,6 @@ export const Hero = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
 `
 
 export const HeroTop = styled.div`
@@ -147,6 +154,7 @@ export const HeroIcons = styled.div`
     justify-content: center;
 `
 
+
 export const HeroBottom = styled.div`
     width: 100%;
     max-width: 1000px;
@@ -154,6 +162,7 @@ export const HeroBottom = styled.div`
     display: flex;
     flex-direction: column;
     gap:15px;
+    position: relative;
 `
 
 export const HeroBottomTop = styled.div`
@@ -163,6 +172,10 @@ export const HeroBottomTop = styled.div`
 export const HeroBottomTopHeading = styled.h1`
     color : white
 `
+
+
+
+
 export const HeroMusicSec = styled.div`
     width: 100%;
     max-width: 1000px;

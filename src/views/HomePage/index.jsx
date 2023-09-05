@@ -1,5 +1,5 @@
 import React, { useState , useEffect, useRef, useContext} from 'react'
-import {LikeWrapper,SongName,HeroBottomTop,HomeSect, HomeWrapper, SideBar,Hero, SideBarWrapper, SideBarTop, SpotifyImg, SpotifyName, SideBarMiddle, SideBarBottom, OptionWrapper, Home, SideBarMiddleBottom, IconWrapper, HeroTop, HeroBottom, HeroTopLeft, HeroTopRight, HeroIcons, HeroBottomTopHeading, HeroMusicSec, SongWrapper, SongWrapperTop, SongImg, SongWrapperBottom, ArtistName, SideBarMiddleTitleWrap, SideBarMiddleTitle} from '../../styles/HomePage'
+import {LikeWrapper,SongName,HeroBottomTop,HomeSect, HomeWrapper, SideBar,Hero, SideBarWrapper, SideBarTop, SpotifyImg, SpotifyName, SideBarMiddle, SideBarBottom, OptionWrapper, Home, SideBarMiddleBottom, IconWrapper, HeroTop, HeroBottom, HeroTopLeft, HeroTopRight, HeroIcons, HeroBottomTopHeading, HeroMusicSec, SongWrapper, SongWrapperTop, SongImg, SongWrapperBottom, ArtistName, SideBarMiddleTitleWrap, SideBarMiddleTitle, ShowPlaylists} from '../../styles/HomePage'
 import SpotifyLogo from '../../assets/spotify-logo.png'
 import { HiHome,HiOutlineSearch } from 'react-icons/hi';
 import {BiSolidPlaylist,BiSolidUser} from 'react-icons/bi'
@@ -11,36 +11,21 @@ import { toast,ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AudioPlayer from '../AudioPlayer';
 import AppContext from '../../AppContext';
+import Playlist from '../Playlist';
 
 
 
 const HomePage = () => {
 
 
-  const [home, setHome] = useState(true)
+  const [home, setHome] = useState(false)
   const [search, setSearch] = useState(false)
   const [favorite, setFavorite] = useState(false)
-  const [playlist, setPlaylist] = useState(false)
+  const [playlist, setPlaylist] = useState(true)
   const [song, setSongData] = useState([]);
   const [isLiked, setIsLiked] = useState([])
   
   const {setSongIndexValue,setSongArray} = useContext(AppContext)
-
-
-
-  useEffect(() => {
-    fetch('/songs.json')
-      .then((res) => res.json())
-      .then((data) => {
-        setSongData(data.tracks);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  
-    const likedSongs = JSON.parse(localStorage.getItem('likedSongs') || '[]');
-    setIsLiked(likedSongs);
-  }, []);
 
   
   const handleHome = () => {
@@ -70,6 +55,20 @@ const HomePage = () => {
     setPlaylist(false)
     setFavorite(true)
   }
+
+  useEffect(() => {
+    fetch('/songs.json')
+      .then((res) => res.json())
+      .then((data) => {
+        setSongData(data.tracks);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  
+    const likedSongs = JSON.parse(localStorage.getItem('likedSongs') || '[]');
+    setIsLiked(likedSongs);
+  }, []);
 
   const toggleLiked = (index) => {
     setIsLiked((prevLiked) => {
@@ -123,23 +122,26 @@ const HomePage = () => {
           <SideBarMiddleTitleWrap>
               <SideBarMiddleTitle>LIBRARY</SideBarMiddleTitle>
             </SideBarMiddleTitleWrap>
-           <OptionWrapper onClick = {handlePlaylist} style = {{backgroundColor : playlist ? "white" : "transparent"}}>
-           <IconWrapper style = {{color: playlist ? "black" : "white"}}>
-              <BiSolidPlaylist />
-              </IconWrapper>
-              <Home style = {{color: playlist ? "black" : "white"}}>Playlists</Home>
-            </OptionWrapper>
             <OptionWrapper onClick = {handleFavorite} style = {{backgroundColor : favorite ? "white" : "transparent"}}>
             <IconWrapper style = {{color: favorite ? "black" : "white"}}>
               <MdFavorite />
               </IconWrapper>
               <Home style = {{color: favorite ? "black" : "white"}}>Favorites</Home>
             </OptionWrapper>
+            <OptionWrapper onClick = {handlePlaylist} style = {{backgroundColor : playlist ? "white" : "transparent"}}>
+           <IconWrapper style = {{color: playlist ? "black" : "white"}}>
+              <BiSolidPlaylist />
+              </IconWrapper>
+              <Home style = {{color: playlist ? "black" : "white"}}>Playlists</Home>
+            </OptionWrapper>
           </SideBarBottom>
+          <ShowPlaylists>
+            
+            </ShowPlaylists>
           </SideBarMiddleBottom>
         </SideBarWrapper>
       </SideBar>
-     {home && ( <Hero>
+     {/* {home && ( <Hero>
         <HeroTop>
           <HeroTopLeft>
             <HeroIcons>
@@ -179,14 +181,14 @@ const HomePage = () => {
           </HeroMusicSec>
         </HeroBottom>
       </Hero>
-     )}
-     {search && (
+     )} */}
+     {/* {search && (
       <Search />
      )}
      {favorite && (
      <Favorites likedSongs={song.filter((_, index) => isLiked[index])}/>
-     )}
-     
+     )} */}
+     {playlist && (<Playlist />)}
     </HomeWrapper>
     <ToastContainer position="bottom-center" />
     <AudioPlayer/>
