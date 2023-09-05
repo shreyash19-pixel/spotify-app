@@ -21,7 +21,6 @@ export const HomeWrapper = styled.div`
 export const SideBar = styled.div`
     width: 100%;
     max-width: 300px;
-    background-color: #121212;
     border-radius: 10px;
     min-height: 605px;
     display: flex;
@@ -30,36 +29,35 @@ export const SideBar = styled.div`
 export const SideBarWrapper = styled.div`
     width: 100%;
     max-width: 300px;
-    padding-block: 20px;
     display: flex;
     flex-direction: column;
-    gap:50px;
+    gap:10px;
+`
+export const SpotifyHeadingWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 export const SideBarTop = styled.div`
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    gap:20px;
+    background-color: #121212;
+    min-height: 190px;
+    border-radius: 10px;
 `
 
-export const SideBarMiddleBottom = styled.div`
+
+export const SideBarBottomTitleWrap = styled.div`
+    padding-left: 15px;
     display: flex;
-    flex-direction: column;
-    gap:40px;
-    position: relative;
+    align-items: center;
+    gap: 10px;
 `
 
-export const SideBarMiddle = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap:25px;
-`
-
-export const SideBarMiddleTitleWrap = styled.div`
-    padding-left: 15px;;
-`
-
-export const SideBarMiddleTitle = styled.h2`
+export const SideBarBottomTitle = styled.h2`
     color: #dadada;
 `
 
@@ -68,38 +66,58 @@ export const OptionWrapper = styled.div`
     cursor: pointer;
     align-items: center;
     padding-left: 15px;
-    gap:7px;
+    gap:15px;
 
 `
 export const IconWrapper = styled.div`
-    font-size: 25px;
+    font-size: 27px;
     display: flex;
     
 `
 
 export const Home = styled.h3`
-    font-size: 20px;
+    font-size: 17px;
 `
 
-export const SideBarBottom = styled(SideBarMiddle)`
-
+export const SideBarBottom = styled.div`
+    display: flex;
+    flex-direction: column;
+    min-height: 340px;
+    background-color: #121212;
+    border-radius: 10px;
+    gap: 20px;
+    padding-top: 20px;
 `
 
 export const SpotifyImg = styled.img`
-    width: 100%;
-    max-width: 80px;
+    width: 80px;
 `
 
 export const SpotifyName = styled.h1`
-    color : White
+    color : White;
+    font-size : 32px;
+`
+
+export const ShowPlaylistsWrapper = styled.div`
+     max-height: 148px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction : column;
+    gap:10px;
+    padding-left:15px;
 `
 
 export const ShowPlaylists = styled.div`
-    width: 100%;
-    max-width: 300px;
-    min-height: 50px;
-    position: absolute;
-    bottom: 0px;
+   display: flex;
+   gap : 15px;
+`
+
+export const PlaylistsImage = styled.img`
+    width: 30px;
+    height: 30px;
+`
+export const PlaylistsName = styled.h3`
+    color : white
 `
 
 
@@ -172,9 +190,6 @@ export const HeroBottomTop = styled.div`
 export const HeroBottomTopHeading = styled.h1`
     color : white
 `
-
-
-
 
 export const HeroMusicSec = styled.div`
     width: 100%;

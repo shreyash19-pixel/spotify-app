@@ -1,5 +1,5 @@
 import React, { useState , useEffect, useRef, useContext} from 'react'
-import {LikeWrapper,SongName,HeroBottomTop,HomeSect, HomeWrapper, SideBar,Hero, SideBarWrapper, SideBarTop, SpotifyImg, SpotifyName, SideBarMiddle, SideBarBottom, OptionWrapper, Home, SideBarMiddleBottom, IconWrapper, HeroTop, HeroBottom, HeroTopLeft, HeroTopRight, HeroIcons, HeroBottomTopHeading, HeroMusicSec, SongWrapper, SongWrapperTop, SongImg, SongWrapperBottom, ArtistName, SideBarMiddleTitleWrap, SideBarMiddleTitle, ShowPlaylists} from '../../styles/HomePage'
+import {LikeWrapper,SongName,HeroBottomTop,HomeSect, HomeWrapper, SideBar,Hero, SideBarWrapper, SideBarTop, SpotifyImg, SpotifyName,  SideBarBottom, OptionWrapper, Home,  IconWrapper, HeroTop, HeroBottom, HeroTopLeft, HeroTopRight, HeroIcons, HeroBottomTopHeading, HeroMusicSec, SongWrapper, SongWrapperTop, SongImg, SongWrapperBottom, ArtistName, SideBarBottomTitleWrap, SideBarBottomTitle, ShowPlaylists, SpotifyHeadingWrapper, ShowPlaylistsWrapper, PlaylistsImage, PlaylistsName} from '../../styles/HomePage'
 import SpotifyLogo from '../../assets/spotify-logo.png'
 import { HiHome,HiOutlineSearch } from 'react-icons/hi';
 import {BiSolidPlaylist,BiSolidUser} from 'react-icons/bi'
@@ -12,8 +12,8 @@ import "react-toastify/dist/ReactToastify.css";
 import AudioPlayer from '../AudioPlayer';
 import AppContext from '../../AppContext';
 import Playlist from '../Playlist';
-
-
+import {VscLibrary} from 'react-icons/vsc'
+ 
 
 const HomePage = () => {
 
@@ -25,7 +25,7 @@ const HomePage = () => {
   const [song, setSongData] = useState([]);
   const [isLiked, setIsLiked] = useState([])
   
-  const {setSongIndexValue,setSongArray} = useContext(AppContext)
+  const {setSongIndexValue,setSongArray, playlistInfo} = useContext(AppContext)
 
   
   const handleHome = () => {
@@ -89,22 +89,18 @@ const HomePage = () => {
       setSongArray(song)
 
   }
-  
 
+  console.log(playlistInfo)
   return (
    <HomeSect>
     <HomeWrapper>
       <SideBar>
         <SideBarWrapper>
           <SideBarTop>
-            <SpotifyImg src = {SpotifyLogo}/>
-            <SpotifyName>Spotify</SpotifyName>
-          </SideBarTop>
-          <SideBarMiddleBottom>
-          <SideBarMiddle>
-            <SideBarMiddleTitleWrap>
-              <SideBarMiddleTitle>MENU</SideBarMiddleTitle>
-            </SideBarMiddleTitleWrap>
+            <SpotifyHeadingWrapper>
+              <SpotifyImg src = {SpotifyLogo}/>
+              <SpotifyName>Spotify</SpotifyName>
+            </SpotifyHeadingWrapper>
             <OptionWrapper onClick = {handleHome} style = {{backgroundColor : home ? "white" : "transparent"}}>
               <IconWrapper style = {{color: home ? "black" : "white"}}>
               <HiHome />
@@ -117,11 +113,14 @@ const HomePage = () => {
               </IconWrapper>
               <Home style = {{color: search ? "black" : "white"}}>Search</Home>
             </OptionWrapper>
-          </SideBarMiddle>
+          </SideBarTop>
           <SideBarBottom>
-          <SideBarMiddleTitleWrap>
-              <SideBarMiddleTitle>LIBRARY</SideBarMiddleTitle>
-            </SideBarMiddleTitleWrap>
+            <SideBarBottomTitleWrap>
+              <IconWrapper style = {{color : "white",fontSize : "26px"}}>
+                <VscLibrary />
+              </IconWrapper>
+              <SideBarBottomTitle>Library</SideBarBottomTitle>
+            </SideBarBottomTitleWrap>
             <OptionWrapper onClick = {handleFavorite} style = {{backgroundColor : favorite ? "white" : "transparent"}}>
             <IconWrapper style = {{color: favorite ? "black" : "white"}}>
               <MdFavorite />
@@ -134,11 +133,18 @@ const HomePage = () => {
               </IconWrapper>
               <Home style = {{color: playlist ? "black" : "white"}}>Playlists</Home>
             </OptionWrapper>
+            <ShowPlaylistsWrapper>
+              {playlistInfo?.map((playlist,index) => (
+              <ShowPlaylists key = {index}>
+                <PlaylistsImage src = {playlist?.image}/>
+                <PlaylistsName>
+                  {playlist?.name}
+                </PlaylistsName>
+              </ShowPlaylists>
+              ))}
+            </ShowPlaylistsWrapper>
           </SideBarBottom>
-          <ShowPlaylists>
-            
-            </ShowPlaylists>
-          </SideBarMiddleBottom>
+          
         </SideBarWrapper>
       </SideBar>
      {/* {home && ( <Hero>
