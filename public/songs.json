@@ -459,5 +459,48 @@
         "imageUrl": "https://i.scdn.co/image/ab67616d0000b2736a224e18fa52f733a776c86a"
       }
       
-    ]
+    ],
+
+    
+    "playlist" : [
+    
+      {
+        "name": "Night Changes",
+        "artist": "One Direction",
+        "audioUrl": "/Songs/Night-Changes.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273d304ba2d71de306812eebaf4"      
+      },
+      {
+        "name": "Perfect",
+        "artist": "Ed Sheeran",
+        "audioUrl": "/Songs/Perfect.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273ba5db46f4b838ef6027e6f96"
+      },
+      {
+        "name": "lovely (with Khalid)",
+        "artist": "Billie Eilish, Khalid",
+        "audioUrl": "/Songs/Lovely.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b2738a3f0a3ca7929dea23cd274c"      
+      },
+      {
+        "name": "Dandelions",
+        "artist": "Ruth B",
+        "audioUrl": "/Songs/Dandelions.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273940709536c688461a6cb1379"
+      },
+      {
+        "name": "Chaand Baaliyan",
+        "artist": "Aditya A",
+        "audioUrl": "/Songs/Chaand-Baaliyan.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273ec4ecaa0fcf68c0966f21514"      
+      },
+      {
+        "name": "Talking to the Moon",
+        "artist": "Bruno Mars",
+        "audioUrl": "/Songs/Talking-To-The-Moon.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273f6b55ca93bd33211227b502b"
+      }
+    
+  ]
+
   }

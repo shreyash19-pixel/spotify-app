@@ -8,14 +8,20 @@ import {useState,useEffect} from 'react'
 function App() {
 
   const storedPlaylistInfo = JSON.parse(localStorage.getItem("playlistInfo")) || []
-  
-  const [songIndexValue, setSongIndexValue] = useState();
-  const[songArray, setSongArray] = useState([]);
+  const storedCurrentSongIndex = JSON.parse(localStorage.getItem("currentSongIndex")) || 0
+  const storedCurrentSongArray = JSON.parse(localStorage.getItem("currentSongArray")) || []
+
+  const [songIndexValue, setSongIndexValue] = useState(storedCurrentSongIndex);
+  const[songArray, setSongArray] = useState(storedCurrentSongArray);
   const [playlistName, setPlaylistName] = useState()
   const [playlistDesc, setPlaylistDesc] = useState()
   const [image, setImage] = useState()
   const [playlistInfo, setPlaylistInfo] = useState(storedPlaylistInfo)
-
+  const [playlistNumber, setPlaylistNumber] = useState()
+  const [song, setSongData] = useState([]);
+  const [playlist, setPlaylist] = useState(false)
+  const [auto, setAuto] = useState(false)
+ 
 
   const sharedData = {
     songArray,
@@ -29,7 +35,15 @@ function App() {
     image, 
     setImage,
     playlistInfo, 
-    setPlaylistInfo
+    setPlaylistInfo,
+    playlistNumber, 
+    setPlaylistNumber,
+    song, 
+    setSongData,
+    playlist, 
+    setPlaylist,
+    auto, 
+    setAuto
   };
   return (
       <Router>

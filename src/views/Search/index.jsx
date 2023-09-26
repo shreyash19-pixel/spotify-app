@@ -8,32 +8,25 @@ import AppContext from '../../AppContext'
 
 const Search = () => {
     const [search, setSearch] = useState('')
-    const [song, setSongData] = useState([]);
+  
 
-    const {setSongIndexValue,setSongArray} = useContext(AppContext)
+    const {setSongArray,song,setAuto} = useContext(AppContext)
 
-    function convertFirstLetterToCaps(name)
-    {
-       const convertedName = (name.charAt(0).toUpperCase() + name.slice(1,name.length))
-       return convertedName
-    }
-
-    useEffect(() => {
-        fetch('/songs.json')
-          .then((res) => res.json())
-          .then((data) => {
-            setSongData(data.tracks);
-          })
-          .catch((error) => {
-            console.error("Error fetching data:", error);
-          });
-      }, []);
 
       const handleSongs = (track) =>{
           setSongArray(track)
+          setAuto(true)
       }
 
+      const handleSearch = (e) => {
+        setSearch(e.target.value)
+      }
 
+      const convertToLowerCase = (name) => {
+        return name.toLowerCase()
+      }
+
+      
   return (
     <Hero>
         <HeroTop>
@@ -49,7 +42,7 @@ const Search = () => {
                     <IconWrapper style = {{color : "white"}}>
                     <HiOutlineSearch />
                     </IconWrapper>
-                    <SearchBar type = "text" placeholder='What do you want to listen?' onChange = {(e) => setSearch(e.target.value)}/>
+                    <SearchBar type = "text" placeholder='What do you want to listen?' onChange = {handleSearch}/>
                 </InputWrapper>
             </SearchBarWrapper>
           </HeroTopLeft>
@@ -62,13 +55,7 @@ const Search = () => {
         <HeroBottom>
             <SearchedSongs>
                 {song.filter((item) => {
-                    return search.toLowerCase() === '' ? item : item.name.toLowerCase().includes(search) ||
-                     search.toUpperCase() === ""
-                    ? item
-                    : item.name.toUpperCase().includes(search) ||
-                    convertFirstLetterToCaps(search) === '' 
-                    ? item 
-                    : convertFirstLetterToCaps(item.name).includes(search)
+                    return convertToLowerCase(item.name).includes(convertToLowerCase(search)) 
                     
                 }).map((track,index) => (
                 <SongWrapper key = {index} onClick = {() => handleSongs(track)}>

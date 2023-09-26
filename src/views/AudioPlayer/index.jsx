@@ -1,4 +1,4 @@
-import React, {useState,useRef, useContext} from 'react'
+import React, {useState,useRef, useContext,useEffect} from 'react'
 import {SongInfoImg,StartTimeWrapper,MusicPlayer,ProgressBar,EndTimeWrapper, MusicPlayerWrapper, SongAudio, SongInfo, SongInfoArtistName, SongInfoArtistWrap, SongInfoImgWrap, SongInfoSongName, StartTime, ControlsWrapper, NextWrapper, PlayWrapper} from '../../styles/AudioPlayer'
 import {BiSkipPrevious, BiSkipNext} from 'react-icons/bi'
 import {AiOutlinePause} from 'react-icons/ai'
@@ -16,14 +16,17 @@ const AudioPlayer = () => {
   const [end, setEnd] = useState();
   const [duration, setDuration] = useState();
   const [mute, setMute] = useState(false)
+ 
   const audioRef = useRef(null)
-  const {setSongIndexValue, setSongArray, songIndexValue,songArray} = useContext(AppContext)
+  const {setSongIndexValue, setSongArray, songIndexValue,songArray,auto} = useContext(AppContext)
 
   const handlePlay = () => {
     setIsPlaying(true)
+    
   }
   const handlePlayPause = () => {
       setIsPlaying(!isPlaying)
+   
 
       if(isPlaying === true)
       {
@@ -62,8 +65,15 @@ const handleSeek = (e) => {
 };
   
 const handlePrev = () => {
-  const prev = (songIndexValue - 1) % songArray.length
-  setSongIndexValue(prev)
+  if(songIndexValue === 0)
+  {
+    setSongIndexValue(songArray.length - 1)
+  }
+  else{
+    const prev = (songIndexValue - 1) % songArray.length
+    setSongIndexValue(prev)
+  }
+  
 }
 
 
@@ -79,6 +89,11 @@ const handleLoop = () => {
 const handleMute = () => {
   setMute(!mute)
 }
+
+useEffect(() => {
+  localStorage.setItem("currentSongIndex", JSON.stringify(songIndexValue))
+  localStorage.setItem("currentSongArray", JSON.stringify(songArray))
+},[songArray,songIndexValue])
 
   return (
     <MusicPlayerWrapper>
@@ -116,7 +131,8 @@ const handleMute = () => {
         onLoadedMetadata={handleMetaData}  
         loop={isLooping} 
         muted = {mute}
-        onEnded={isLooping ? undefined : handlePlayNextSong} autoPlay/>
+        onEnded={isLooping ? undefined : handlePlayNextSong} 
+        autoPlay = {auto}/>
         <ControlsWrapper>
           <NextWrapper onClick = {handleLoop} style ={{fontSize : "20px" , boxShadow: isLooping ? "0 0 20px rgba(52, 152, 219, 0.9)" : "none"}}>
             <ImLoop />

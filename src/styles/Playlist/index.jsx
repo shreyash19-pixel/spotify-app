@@ -1,29 +1,6 @@
 import styled from 'styled-components'
 
 
-export const CreatePlaylistWrapper = styled.div`
-    border-radius: 30px;
-    background-color: #2DB656;
-    width: 100%;
-    max-width: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 50px;
-    cursor: pointer;
-    gap:4px;
-
-    &:hover{
-        background-color: #4cce73;
-    }
-    
-`
-export const CreatePlaylist = styled.h1`
-    color : white;
-    font-size: 24px;
-    font-weight: 500;
-`
-
 export const AddPlaylist = styled.div`
     color : white;
     font-size: 22px;
@@ -41,18 +18,17 @@ export const PlaylistWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    position : absolute;
+    top:100px;
+    left:200px;
 `
 
 export const ModalWrapper = styled.div`
     width: 100%;
     max-width: 600px;
     min-height: 400px;
-    background-color: #282828;
-    position : absolute;
-    border-radius: 10px;
-    top:30px;
-    left:100px;
+    background-color: #282828; 
+    border-radius: 10px; 
     display: flex;
     align-items: center;
     justify-content: center;

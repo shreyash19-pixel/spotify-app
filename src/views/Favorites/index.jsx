@@ -13,7 +13,7 @@ const Favorites = ({ likedSongs}) => {
 
     const [isLiked,setIsLiked] = useState(likedSongs)
 
-    const {setSongIndexValue,setSongArray} = useContext(AppContext)
+    const {setSongIndexValue,setSongArray,setAuto} = useContext(AppContext)
 
     const toggleLike = (index) => {
         if (isLiked[index]) {
@@ -29,6 +29,7 @@ const Favorites = ({ likedSongs}) => {
     const handleSongs = (index) => {
         setSongIndexValue(index)
         setSongArray(isLiked)
+        setAuto(true)
     }
     
   return (

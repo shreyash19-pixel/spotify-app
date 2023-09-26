@@ -74,6 +74,12 @@ export const IconWrapper = styled.div`
     display: flex;
     
 `
+export const AddPlaylists = styled.div`
+    width: 100%;
+    max-width: 235px;
+    display: flex;
+    justify-content: space-between;
+`
 
 export const Home = styled.h3`
     font-size: 17px;
@@ -103,13 +109,32 @@ export const ShowPlaylistsWrapper = styled.div`
     overflow-y: auto;
     display: flex;
     flex-direction : column;
-    gap:10px;
+    gap:15px;
     padding-left:15px;
 `
 
 export const ShowPlaylists = styled.div`
    display: flex;
-   gap : 15px;
+   justify-content: space-between;
+   align-items: center;
+   cursor:pointer;
+   padding-right: 7px;
+`
+export const ShowPlaylistLeft = styled.div`
+    display : flex;
+    gap:15px;
+`
+
+export const DeletePlaylist = styled.div`
+    display : flex;
+    align-items: center;
+    justify-content : center;
+    color : #adadad;
+    font-size: 22px;
+
+    &:hover{
+        color : white
+    }
 `
 
 export const PlaylistsImage = styled.img`
@@ -117,7 +142,10 @@ export const PlaylistsImage = styled.img`
     height: 30px;
 `
 export const PlaylistsName = styled.h3`
-    color : white
+    color : white;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 `
 
 
