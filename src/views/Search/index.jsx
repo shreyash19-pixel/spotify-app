@@ -10,12 +10,29 @@ const Search = () => {
     const [search, setSearch] = useState('')
   
 
-    const {setSongArray,song,setAuto} = useContext(AppContext)
+    const {setSongArray,song,setSongIndexValue,setAuto,isReduced} = useContext(AppContext)
 
 
       const handleSongs = (track) =>{
-          setSongArray(track)
-          setAuto(true)
+        
+        let increm = 0
+
+        for(let i = 0; i <= song.length; i++)
+        {
+            if(song[i] !== track)
+            {
+                increm++
+                continue
+            }
+            else
+            {
+                break
+            }
+        }
+
+        setSongIndexValue(increm)
+        setSongArray(song)
+        setAuto(true)
       }
 
       const handleSearch = (e) => {
@@ -28,15 +45,9 @@ const Search = () => {
 
       
   return (
-    <Hero>
-        <HeroTop>
+    <Hero style = {{maxWidth: isReduced ? "1250px" : "1040px"}}> 
+        <HeroTop style = {{maxWidth: isReduced ? "1250px" : "1040px"}}>
         <HeroTopLeft>
-            <HeroIcons>
-              <AiOutlineLeft />
-            </HeroIcons>
-            <HeroIcons>
-              <AiOutlineRight />
-            </HeroIcons>
             <SearchBarWrapper>
                 <InputWrapper>
                     <IconWrapper style = {{color : "white"}}>
@@ -46,14 +57,9 @@ const Search = () => {
                 </InputWrapper>
             </SearchBarWrapper>
           </HeroTopLeft>
-          <HeroTopRight>
-            <HeroIcons>
-              <BiSolidUser />
-            </HeroIcons>
-          </HeroTopRight>
         </HeroTop>
-        <HeroBottom>
-            <SearchedSongs>
+        <HeroBottom style = {{maxWidth: isReduced ? "1250px" : "1040px", paddingTop: "10px"}}>
+            <SearchedSongs style = {{maxWidth: isReduced ? "1250px" : "1040px"}}>
                 {song.filter((item) => {
                     return convertToLowerCase(item.name).includes(convertToLowerCase(search)) 
                     

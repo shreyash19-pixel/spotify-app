@@ -9,7 +9,7 @@ const MyPlaylist = () => {
 
     const [myPlaylist, setMyPlaylist] = useState([])
 
-    const {setSongArray, setSongIndexValue,setAuto} = useContext(AppContext)
+    const {setSongArray, setSongIndexValue,setAuto,isReduced} = useContext(AppContext)
 
     useEffect(() => {
         fetch('/songs.json')
@@ -29,24 +29,9 @@ const MyPlaylist = () => {
       }
 
   return (
-    <Hero>
-        <HeroTop>
-      <HeroTopLeft>
-        <HeroIcons>
-            <AiOutlineLeft />
-        </HeroIcons>
-        <HeroIcons>
-         <AiOutlineRight />
-        </HeroIcons>
-      </HeroTopLeft>
-      <HeroTopRight>
-        <HeroIcons>
-            <BiSolidUser />
-        </HeroIcons>
-      </HeroTopRight>
-      </HeroTop>
-      <HeroBottom>
-        <SearchedSongs>
+    <Hero style = {{maxWidth: isReduced ? "1250px" : "1040px"}}>
+      <HeroBottom style = {{maxWidth: isReduced ? "1250px" : "1040px"}}>
+        <SearchedSongs style = {{maxWidth: isReduced ? "1250px" : "1040px"}}>
             {myPlaylist.map((songs, index) => (
                 <SongWrapper key = {index} onClick = {() => handlePlaySong(index)}>
                     <SongWrapperTop>

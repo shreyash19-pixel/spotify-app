@@ -6,8 +6,6 @@ export const HeroWrapper = styled.div`
     max-width: 1040px;
     background-color: #121212;
     border-radius: 10px;
-    max-height: 550px;
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,7 +15,6 @@ export const HeroWrapper = styled.div`
 export const PlaylistsWrapper = styled.div`
     width:100%;
     max-width: 986px;
-    
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -61,10 +58,10 @@ export const PlaylistDesc = styled.h4`
 export const SearchAndAdd = styled.div`
     width:100%;
     max-width:986px;
-   
     display : flex;
     flex-direction : column;
-    gap: 20px;
+    justify-content: center;
+    position: relative;
 `
 
 
@@ -72,13 +69,53 @@ export const SearchWrapper = styled.div`
 `
 export const AddWrapper = styled.div`
     width: 100%;
-    max-width: 986px;
+    max-width: 946px;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-height: 120px;
+    max-height: 410px;
     overflow-y: auto;
     padding-right: 15px;
+    position: absolute;
+    top: 62px;
+    left: 18px;
+    background-color: black;
+    padding-top: 10px;
+    padding-left: 15px;
+`
+export const SearchBarWrapper = styled.div`
+    width: 100%;
+    max-width: 400px;
+    background-color: #2A2A2A;
+    border-radius: 30px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+
+    &:active{
+        border: 2px solid white;
+    }
+
+    &:hover{
+        background-color: #3d3d3d;
+    }
+`
+
+export const InputWrapper = styled.div`
+    width: 100%;
+    max-width: 950px;
+    display: flex;
+    gap:10px;
+`
+
+export const SearchBar = styled.input`
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    max-width: 950px;
+    color : white;
 `
 
 export const SongCard = styled.div`
@@ -127,13 +164,43 @@ export const AddSongs = styled.div`
     justify-content: center;
     gap: 5px;
 `
+export const AddedSongs = styled.div`
+    color : white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+`
+export const ShuffleAddedWrapper = styled.div`
+     width: 100%;
+    max-width:986px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+`
+
+export const ShuffleWrapper = styled.div`
+    width: 100%;
+    max-width: 986px;
+    border-bottom: 1px solid white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 5px;
+`
+export const Shuffle = styled.h3`
+    color : white;
+    gap: 15px;
+`
 
 export const AdddedSongsWrapper = styled.div`
     width: 100%;
     max-width:986px;
+    max-height: 180px;
+    overflow-y: auto;
     display : flex;
     flex-direction : column;
     gap: 15px;
-
-   
+    padding-right: 15px;
 `

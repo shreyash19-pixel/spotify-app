@@ -1,5 +1,5 @@
 import React, { useState , useEffect, useRef, useContext} from 'react'
-import {ShowPlaylistLeft,LikeWrapper,SongName,HeroBottomTop,HomeSect, HomeWrapper, SideBar,Hero, SideBarWrapper, SideBarTop, SpotifyImg, SpotifyName,  SideBarBottom, OptionWrapper, Home,  IconWrapper, HeroTop, HeroBottom, HeroTopLeft, HeroTopRight, HeroIcons, HeroBottomTopHeading, HeroMusicSec, SongWrapper, SongWrapperTop, SongImg, SongWrapperBottom, ArtistName, SideBarBottomTitleWrap, SideBarBottomTitle, ShowPlaylists, SpotifyHeadingWrapper, ShowPlaylistsWrapper, PlaylistsImage, PlaylistsName, DeletePlaylist,AddPlaylists} from '../../styles/HomePage'
+import {ShowPlaylistLeft,LikeWrapper,SongName,HeroBottomTop,HomeSect, HomeWrapper, SideBar,Hero, SideBarWrapper, SideBarTop, SpotifyImg, SpotifyName,  SideBarBottom, OptionWrapper, Home,  IconWrapper, HeroTop, HeroBottom, HeroTopLeft, HeroTopRight, HeroIcons, HeroBottomTopHeading, HeroMusicSec, SongWrapper, SongWrapperTop, SongImg, SongWrapperBottom, ArtistName, SideBarBottomTitleWrap, SideBarBottomTitle, ShowPlaylists, SpotifyHeadingWrapper, ShowPlaylistsWrapper, PlaylistsImage, PlaylistsName, DeletePlaylist,AddPlaylists, LogoWrapper, ExpandWrapper, ReducedBarWrapper} from '../../styles/HomePage'
 import SpotifyLogo from '../../assets/spotify-logo.png'
 import { HiHome,HiOutlineSearch } from 'react-icons/hi';
 import {BiSolidPlaylist,BiSolidUser} from 'react-icons/bi'
@@ -17,6 +17,7 @@ import SelectedPlaylist from '../SelectedPlaylist';
 import {RiDeleteBin6Line} from 'react-icons/ri'
 import MyPlaylistImg from '../../assets/nerverland.jpg'
 import MyPlaylist from '../MyPlaylist';
+import {BsArrowRight,BsArrowLeft} from 'react-icons/bs'
 
 const HomePage = () => {
 
@@ -40,7 +41,11 @@ const HomePage = () => {
     setSongData,
     playlist, 
     setPlaylist,
-    setAuto
+    setAuto,
+    isExpanded, 
+    setIsExpanded,
+    isReduced, 
+    setIsReduced
     } 
     = useContext(AppContext)
 
@@ -127,35 +132,42 @@ const MyPersonalPlaylist = () => {
       setSongIndexValue(index)
       setSongArray(song)
       setAuto(true)
-
   }
-
-  const convertToString = (number) => {
-    return number.toString();
-  }
-
 
 
   const handleDeletePlaylists = (index) => {
     const updatedPlaylists = [...playlistInfo];
     updatedPlaylists.splice(index,1)
-    localStorage.removeItem(convertToString(index))
     localStorage.setItem('playlistInfo',JSON.stringify(updatedPlaylists))
     setPlaylistInfo(updatedPlaylists)
     toast.error("Playlist deleted", { autoClose: 2000 });
   }
 
+  const handleExpanded = () => {
+    setIsExpanded(true)
+    setIsReduced(false)
+  }
+
+  const handleReduced = () => {
+    setIsExpanded(false)
+    setIsReduced(true)
+  }
   
 
   return (
    <HomeSect>
     <HomeWrapper style = {{opacity : playlist ? 0.3 : 1}}>
-      <SideBar>
+      {isExpanded && (<SideBar>
         <SideBarWrapper>
           <SideBarTop>
             <SpotifyHeadingWrapper>
-              <SpotifyImg src = {SpotifyLogo}/>
-              <SpotifyName>Spotify</SpotifyName>
+              <LogoWrapper>
+                <SpotifyImg src = {SpotifyLogo}/>
+                <SpotifyName>Spotify</SpotifyName>
+              </LogoWrapper>
+              <ExpandWrapper onClick = {handleReduced}>
+                <BsArrowLeft />
+              </ExpandWrapper>
             </SpotifyHeadingWrapper>
             <OptionWrapper onClick = {handleHome} style = {{backgroundColor : home ? "white" : "transparent"}}>
               <IconWrapper style = {{color: home ? "black" : "white"}}>
@@ -224,30 +236,57 @@ const MyPersonalPlaylist = () => {
           </SideBarBottom>
           
         </SideBarWrapper>
-      </SideBar>
-     {home && ( <Hero>
-        <HeroTop>
-          <HeroTopLeft>
-            <HeroIcons>
-              <AiOutlineLeft />
-            </HeroIcons>
-            <HeroIcons>
-              <AiOutlineRight />
-            </HeroIcons>
-          </HeroTopLeft>
-          <HeroTopRight>
-            <HeroIcons>
-              <BiSolidUser />
-            </HeroIcons>
-          </HeroTopRight>
-        </HeroTop>
-        <HeroBottom>
-          <HeroBottomTop>
-            <HeroBottomTopHeading>
-              Trending 
-            </HeroBottomTopHeading>
-          </HeroBottomTop>
-          <HeroMusicSec>    
+      </SideBar>)}
+      {isReduced && (<ReducedBarWrapper>
+        <SideBarTop style = {{gap: "30px"}}>
+        <ExpandWrapper onClick = {handleExpanded}>
+          <BsArrowRight />
+        </ExpandWrapper>
+        <OptionWrapper onClick = {handleHome} style = {{backgroundColor : home ? "white" : "transparent" , justifyContent: "center",paddingLeft: "0px" }}>
+          <IconWrapper style = {{color: home ? "black" : "white", fontSize: "35px"}}>
+            <HiHome />
+          </IconWrapper>
+        </OptionWrapper>
+        <OptionWrapper onClick = {handleSearch} style = {{backgroundColor : search ? "white" : "transparent" ,justifyContent: "center",paddingLeft: "0px"}}>
+          <IconWrapper style = {{color: search ? "black" : "white", fontSize: "35px"}}>
+            <HiOutlineSearch />
+          </IconWrapper>
+        </OptionWrapper>
+        
+       
+            <OptionWrapper onClick = {handleFavorite} style = {{backgroundColor : favorite ? "white" : "transparent",justifyContent: "center",paddingLeft: "0px"}}>
+            <IconWrapper style = {{color: favorite ? "black" : "white", fontSize: "35px"}}>
+              <MdFavorite />
+              </IconWrapper>
+            </OptionWrapper>
+            <OptionWrapper>
+              <AddPlaylists>
+              <DeletePlaylist style={{color : "white", fontSize: "35px", paddingLeft: "5px"}} onClick = {(e) => {e.stopPropagation();handleAddPlaylists()}}>
+                <AiOutlinePlus/>
+                </DeletePlaylist>
+              </AddPlaylists>
+            </OptionWrapper>
+            <ShowPlaylistsWrapper onClick = {MyPersonalPlaylist}>
+              <ShowPlaylists>
+                <ShowPlaylistLeft style = {{justifyContent: "center"}}>
+                  <PlaylistsImage style = {{width: "50px" , height: "50px"}} src = {MyPlaylistImg}/>
+                </ShowPlaylistLeft>
+              </ShowPlaylists>
+            </ShowPlaylistsWrapper>
+            <ShowPlaylistsWrapper style = {{maxHeight: "90px"}}>
+              {playlistInfo?.map((playlist,index) => (
+              <ShowPlaylists key = {index} onClick={() => handleSelectedPlaylist(index)}>
+                <ShowPlaylistLeft>
+                  <PlaylistsImage style = {{width: "50px" , height: "50px"}} src = {playlist?.image}/>
+                </ShowPlaylistLeft>
+              </ShowPlaylists>
+              ))}
+            </ShowPlaylistsWrapper>
+            </SideBarTop>
+      </ReducedBarWrapper>)}
+     {home && ( <Hero style = {{maxWidth: isReduced ? "1250px" : "1040px"}}>
+        <HeroBottom style = {{maxWidth: isReduced ? "1250px" : "1000px"}}>
+          <HeroMusicSec style = {{maxWidth: isReduced ? "1250px" : "1000px"}}>    
             {song.map((track, index) => (
                   <SongWrapper key={index} onClick = {() => handleSongs(index)}>
                    <LikeWrapper onClick={(e) => {e.stopPropagation();toggleLiked(index);}}>

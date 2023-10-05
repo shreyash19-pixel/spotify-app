@@ -18,7 +18,7 @@ const AudioPlayer = () => {
   const [mute, setMute] = useState(false)
  
   const audioRef = useRef(null)
-  const {setSongIndexValue, setSongArray, songIndexValue,songArray,auto} = useContext(AppContext)
+  const {setSongIndexValue, setSongArray, songIndexValue,songArray,setAuto,auto,isReduced} = useContext(AppContext)
 
   const handlePlay = () => {
     setIsPlaying(true)
@@ -26,7 +26,7 @@ const AudioPlayer = () => {
   }
   const handlePlayPause = () => {
       setIsPlaying(!isPlaying)
-   
+      setAuto(true)
 
       if(isPlaying === true)
       {
@@ -97,20 +97,20 @@ useEffect(() => {
 
   return (
     <MusicPlayerWrapper>
-      <SongInfo>
+      <SongInfo style = {{maxWidth: isReduced ? "80px" : "300px"}}>
         <SongInfoImgWrap>
-          <SongInfoImg src = {songArray[songIndexValue]?.imageUrl || songArray?.imageUrl || "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Black.png/220px-Black.png"}/>
+          <SongInfoImg src = {songArray[songIndexValue]?.imageUrl || "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Black.png/220px-Black.png"}/>
         </SongInfoImgWrap>
-        <SongInfoArtistWrap>
+        {!isReduced && (<SongInfoArtistWrap>
           <SongInfoSongName>
-              {songArray[songIndexValue]?.name || songArray?.name}
+              {songArray[songIndexValue]?.name}
           </SongInfoSongName>
           <SongInfoArtistName>
-              {songArray[songIndexValue]?.artist || songArray?.artist}
+              {songArray[songIndexValue]?.artist}
           </SongInfoArtistName>
-        </SongInfoArtistWrap>
+        </SongInfoArtistWrap>)}
       </SongInfo>
-      <MusicPlayer>
+      <MusicPlayer style = {{maxWidth: isReduced ? "1260px" : "1040px"}}>
         <StartTimeWrapper> 
           <StartTime>{currentTime ? currentTime : "0:00"}</StartTime>
         </StartTimeWrapper>
@@ -118,6 +118,7 @@ useEffect(() => {
         <StartTime>{duration ? duration : "0:00"}</StartTime>
         </EndTimeWrapper>
         <ProgressBar type="range"
+        style = {{maxWidth: isReduced ? "1250px" : "1030px"}}
         min={0}
         max={end}
         value={start ? start : 0}

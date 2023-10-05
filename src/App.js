@@ -21,6 +21,8 @@ function App() {
   const [song, setSongData] = useState([]);
   const [playlist, setPlaylist] = useState(false)
   const [auto, setAuto] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(true)
+  const [isReduced, setIsReduced] = useState(false)
  
 
   const sharedData = {
@@ -43,7 +45,11 @@ function App() {
     playlist, 
     setPlaylist,
     auto, 
-    setAuto
+    setAuto,
+    isExpanded, 
+    setIsExpanded,
+    isReduced, 
+    setIsReduced
   };
   return (
       <Router>

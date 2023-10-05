@@ -73,6 +73,7 @@ export const MusicPlayer = styled.div`
     flex-direction: column;
     align-items: center;
     position: relative;
+    padding-left: 6px;
 `
 export const StartTimeWrapper = styled.div`
     position: absolute;

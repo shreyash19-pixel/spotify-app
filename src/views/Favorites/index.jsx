@@ -13,7 +13,7 @@ const Favorites = ({ likedSongs}) => {
 
     const [isLiked,setIsLiked] = useState(likedSongs)
 
-    const {setSongIndexValue,setSongArray,setAuto} = useContext(AppContext)
+    const {setSongIndexValue,setSongArray,setAuto,isReduced} = useContext(AppContext)
 
     const toggleLike = (index) => {
         if (isLiked[index]) {
@@ -33,24 +33,9 @@ const Favorites = ({ likedSongs}) => {
     }
     
   return (
-    <Hero>
-        <HeroTop>
-        <HeroTopLeft>
-            <HeroIcons>
-                <AiOutlineLeft />
-            </HeroIcons>
-            <HeroIcons>
-              <AiOutlineRight />
-            </HeroIcons>
-        </HeroTopLeft>
-        <HeroTopRight>
-        <HeroIcons>
-              <BiSolidUser />
-            </HeroIcons>
-        </HeroTopRight>
-        </HeroTop>
-        <HeroBottom>
-            <SearchedSongs>
+    <Hero style = {{maxWidth: isReduced ? "1250px" : "1040px"}}>
+        <HeroBottom style = {{maxWidth: isReduced ? "1250px" : "1040px"}}>
+            <SearchedSongs style = {{maxWidth: isReduced ? "1250px" : "1040px"}}>
             {isLiked.map((track, index) => (
                     <SongWrapper key={index} onClick = {() => handleSongs(index)}>
                         <LikeWrapper
