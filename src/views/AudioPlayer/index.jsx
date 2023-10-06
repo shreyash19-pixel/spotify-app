@@ -97,7 +97,7 @@ useEffect(() => {
 
   return (
     <MusicPlayerWrapper>
-      <SongInfo style = {{maxWidth: isReduced ? "80px" : "300px"}}>
+      <SongInfo isLarge = {isReduced}>
         <SongInfoImgWrap>
           <SongInfoImg src = {songArray[songIndexValue]?.imageUrl || "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Black.png/220px-Black.png"}/>
         </SongInfoImgWrap>
@@ -110,7 +110,7 @@ useEffect(() => {
           </SongInfoArtistName>
         </SongInfoArtistWrap>)}
       </SongInfo>
-      <MusicPlayer style = {{maxWidth: isReduced ? "1260px" : "1040px"}}>
+      <MusicPlayer isClosed = {isReduced}>
         <StartTimeWrapper> 
           <StartTime>{currentTime ? currentTime : "0:00"}</StartTime>
         </StartTimeWrapper>
@@ -118,7 +118,7 @@ useEffect(() => {
         <StartTime>{duration ? duration : "0:00"}</StartTime>
         </EndTimeWrapper>
         <ProgressBar type="range"
-        style = {{maxWidth: isReduced ? "1250px" : "1030px"}}
+        isClosed = {isReduced}
         min={0}
         max={end}
         value={start ? start : 0}

@@ -29,9 +29,9 @@ const MyPlaylist = () => {
       }
 
   return (
-    <Hero style = {{maxWidth: isReduced ? "1250px" : "1040px"}}>
-      <HeroBottom style = {{maxWidth: isReduced ? "1250px" : "1040px"}}>
-        <SearchedSongs style = {{maxWidth: isReduced ? "1250px" : "1040px"}}>
+    <Hero isClosed = {isReduced}>
+      <HeroBottom isClosed = {isReduced}>
+        <SearchedSongs isClosed = {isReduced}>
             {myPlaylist.map((songs, index) => (
                 <SongWrapper key = {index} onClick = {() => handlePlaySong(index)}>
                     <SongWrapperTop>

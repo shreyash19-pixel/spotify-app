@@ -33,9 +33,9 @@ const Favorites = ({ likedSongs}) => {
     }
     
   return (
-    <Hero style = {{maxWidth: isReduced ? "1250px" : "1040px"}}>
-        <HeroBottom style = {{maxWidth: isReduced ? "1250px" : "1040px"}}>
-            <SearchedSongs style = {{maxWidth: isReduced ? "1250px" : "1040px"}}>
+    <Hero isClosed = {isReduced}>
+        <HeroBottom isClosed = {isReduced}>
+            <SearchedSongs isClosed = {isReduced}>
             {isLiked.map((track, index) => (
                     <SongWrapper key={index} onClick = {() => handleSongs(index)}>
                         <LikeWrapper

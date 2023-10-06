@@ -65,15 +65,13 @@ const SelectedPlaylist = () => {
   }
 
   const handleShuffle = () => {
-    let increm = 1
     const updatedPlaylist = [...playlistInfo]
 
-    for(let i = 0; i <= updatedPlaylist[playlistNumber].songs.length % 2; i++)
+    for(let i = 0; i < updatedPlaylist[playlistNumber].songs.length / 2; i++)
     {
       const initialSong = updatedPlaylist[playlistNumber].songs[i]
-      updatedPlaylist[playlistNumber].songs[i] = updatedPlaylist[playlistNumber].songs[updatedPlaylist[playlistNumber].songs.length - increm]
-      updatedPlaylist[playlistNumber].songs[updatedPlaylist[playlistNumber].songs.length - increm] = initialSong
-      increm++
+      updatedPlaylist[playlistNumber].songs[i] = updatedPlaylist[playlistNumber].songs[updatedPlaylist[playlistNumber].songs.length - (i + 1)]
+      updatedPlaylist[playlistNumber].songs[updatedPlaylist[playlistNumber].songs.length - (i+1)] = initialSong
     }
 
     setPlaylistInfo(updatedPlaylist);
@@ -82,11 +80,11 @@ const SelectedPlaylist = () => {
   
 
   return (
-    <HeroWrapper style = {{maxWidth: isReduced ? "1250px" : "1040px"}}>
-     <HeroTop style = {{maxWidth: isReduced ? "1250px" : "1040px"}}>
-     <SearchAndAdd style = {{maxWidth: isReduced ? "1250px" : "1040px"}}>
+    <HeroWrapper isClosed = {isReduced}>
+     <HeroTop isClosed = {isReduced}>
+     <SearchAndAdd isClosed = {isReduced}>
         <SearchWrapper>
-          {isExpanded && (<SearchBarWrapper style = {{maxWidth : "986px"}}>
+          {isExpanded && (<SearchBarWrapper isClosed = {isReduced}>
             <InputWrapper>
               <IconWrapper style = {{color : "white"}}>
                 <HiOutlineSearch />
@@ -94,7 +92,7 @@ const SelectedPlaylist = () => {
               <SearchBar type = "text" placeholder = 'Add songs from here' onChange = {handleSearch} />
             </InputWrapper>
           </SearchBarWrapper>)}
-          {isReduced && (<SearchBarWrapper style = {{maxWidth : "1250px"}}>
+          {isReduced && (<SearchBarWrapper isClosed = {isReduced}>
             <InputWrapper>
               <IconWrapper style = {{color : "white"}}>
                 <HiOutlineSearch />
@@ -103,11 +101,11 @@ const SelectedPlaylist = () => {
             </InputWrapper>
           </SearchBarWrapper>)}
         </SearchWrapper>
-        {search && (<AddWrapper style = {{maxWidth: isReduced ? "1170px" : "946px"}} onBlur = {() => setSearch()}>
+        {search && (<AddWrapper isClosed = {isReduced} onBlur = {() => setSearch()}>
         {playlistInfo[playlistNumber].audio.filter((item) => {      
                     return search ? convertToLowerCase(item.name).includes(convertToLowerCase(search)) : ""
                   }).map((track,index) => (
-          <SongCard key = {index} style = {{maxWidth: isReduced ? "1250px" : "986px"}}>
+          <SongCard key = {index} isClosed = {isReduced}>
             <SongDetails>
               <SongImg src = {track.imageUrl}/>
               <ArtistWrapper>
@@ -125,8 +123,8 @@ const SelectedPlaylist = () => {
         </AddWrapper>)}
      </SearchAndAdd>
      </HeroTop>
-     <PlaylistsWrapper style = {{maxWidth: isReduced ? "1200px" : "986px"}}>
-     <PlaylistInfoWrapper style = {{maxWidth: isReduced ? "1250px" : "986px"}}>
+     <PlaylistsWrapper isClosed = {isReduced}>
+     <PlaylistInfoWrapper isClosed = {isReduced}>
         <PlaylistInfoLeft>
             <PlaylistImage src = {playlistInfo[playlistNumber]?.image}/>
         </PlaylistInfoLeft>
@@ -137,12 +135,12 @@ const SelectedPlaylist = () => {
         </PlayListNameDesc>
         </PlaylistInfoRight>
       </PlaylistInfoWrapper>
-      <ShuffleAddedWrapper style = {{maxWidth: isReduced ? "1250px" : "986px"}}>
-        <ShuffleWrapper style = {{maxWidth: isReduced ? "1250px" : "986px"}}>
+      <ShuffleAddedWrapper isClosed = {isReduced}>
+        <ShuffleWrapper isClosed = {isReduced}>
           <Shuffle>Playlist</Shuffle>
-          <AddedSongs style={{fontSize : "20px", cursor: "pointer"}} onClick={handleShuffle}><BsShuffle /> </AddedSongs>
+          <AddedSongs style = {{cursor:"pointer"}}isClosed onClick={handleShuffle}><BsShuffle /> </AddedSongs>
         </ShuffleWrapper>
-      <AdddedSongsWrapper style = {{maxWidth: isReduced ? "1250px" : "986px"}}>  
+      <AdddedSongsWrapper isClosed = {isReduced}>  
         {playlistInfo[playlistNumber]?.songs?.map((song, index) => (
           <SongCard key = {index} onClick = {() => handlePlaySongs(index)} style = {{maxWidth: isReduced ? "1250px" : "986px"}}>
             <SongDetails>

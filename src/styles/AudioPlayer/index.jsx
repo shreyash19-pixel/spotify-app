@@ -8,18 +8,32 @@ export const MusicPlayerWrapper = styled.div`
   position: absolute;
   bottom: 0px;
   display: flex;
+
+  @media (min-width: 1367px) and (max-width:1440px)
+    {
+        max-width: 1440px;
+    }
 `
 export const SongInfo = styled.div`
     width:100%;
-    max-width:300px;
+    max-width: ${(props) => (props.isLarge ? "80px" : "300px")};
     min-height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap:15px;
+
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+        max-width: ${(props) => (props.isLarge ? "105px" : "330px")};
+    }
+
+
 `
 export const SongInfoImgWrap = styled.div`
-  
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
 
 const Rotate = keyframes`
@@ -36,6 +50,12 @@ export const SongInfoImg = styled.img`
     height: 55px;
      border-radius: 50%;
      animation: ${Rotate} 4s linear infinite;
+
+     @media (min-width: 1367px) and (max-width:1440px)
+    {
+        width: 60px;
+        height: 60px;
+    }
 `
 
 
@@ -53,6 +73,11 @@ export const SongInfoSongName = styled.h1`
   overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+        font-size: 27px;
+    }
 `
 
 export const SongInfoArtistName = styled.h3`
@@ -62,11 +87,16 @@ export const SongInfoArtistName = styled.h3`
   overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+        font-size: 20px;
+    }
 `
 
 export const MusicPlayer = styled.div`
     width: 100%;
-    max-width: 1040px;
+    max-width: ${(props) => (props.isClosed ? "1260px" : "1040px")};
     min-height: 80px;
     display: flex;
     justify-content: center;
@@ -74,6 +104,11 @@ export const MusicPlayer = styled.div`
     align-items: center;
     position: relative;
     padding-left: 6px;
+
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+        max-width: ${(props) => (props.isClosed ? "1330px" : "1100px")};
+    }
 `
 export const StartTimeWrapper = styled.div`
     position: absolute;
@@ -82,6 +117,11 @@ export const StartTimeWrapper = styled.div`
 `
 export const StartTime = styled.h3`
     color : white;
+
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+        font-size: 23px;
+    }
 `
 export const EndTimeWrapper = styled.div`
     position: absolute;
@@ -97,6 +137,12 @@ export const ControlsWrapper = styled.div`
     justify-content: center;
     min-height: 75px;
     gap:25px;
+
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+       max-width: 350px;
+    }
+    
 `
 export const NextWrapper = styled.div`
     background-color: white;
@@ -108,6 +154,13 @@ export const NextWrapper = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
+
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+    }
 `
 export const PlayWrapper = styled.div`
     background-color: white;
@@ -119,6 +172,13 @@ export const PlayWrapper = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
+
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+        width: 55px;
+        height: 55px;
+        font-size: 28px;
+    }
 `
 
 export const SongAudio = styled.audio`
@@ -126,7 +186,7 @@ export const SongAudio = styled.audio`
 export const ProgressBar = styled.input`    
   -webkit-appearance: none;
   width:100%;
-  max-width: 1020px;
+  max-width: ${(props) => (props.isClosed ? "1250px" : "1030px")};
   height: 6px;
   background-color: green;
   border-radius: 4px;
@@ -140,5 +200,14 @@ export const ProgressBar = styled.input`
     border-radius: 50%;
     border: 8px solid green;
   }
+
+  @media (min-width: 1367px) and (max-width:1440px)
+    {
+        max-width: ${(props) => (props.isClosed ? "1300px" : "1078px")};
+        position: relative;
+        left: ${(props) => (props.isClosed ? "5px" : "7px")};
+    }
+
+
   
 `

@@ -45,10 +45,10 @@ const Search = () => {
 
       
   return (
-    <Hero style = {{maxWidth: isReduced ? "1250px" : "1040px"}}> 
-        <HeroTop style = {{maxWidth: isReduced ? "1250px" : "1040px"}}>
+    <Hero isClosed = {isReduced}> 
+        <HeroTop isClosed = {isReduced}>
         <HeroTopLeft>
-            <SearchBarWrapper>
+            <SearchBarWrapper >
                 <InputWrapper>
                     <IconWrapper style = {{color : "white"}}>
                     <HiOutlineSearch />
@@ -58,8 +58,8 @@ const Search = () => {
             </SearchBarWrapper>
           </HeroTopLeft>
         </HeroTop>
-        <HeroBottom style = {{maxWidth: isReduced ? "1250px" : "1040px", paddingTop: "10px"}}>
-            <SearchedSongs style = {{maxWidth: isReduced ? "1250px" : "1040px"}}>
+        <HeroBottom isClosed = {isReduced} topPadding>
+            <SearchedSongs isClosed = {isReduced}>
                 {song.filter((item) => {
                     return convertToLowerCase(item.name).includes(convertToLowerCase(search)) 
                     

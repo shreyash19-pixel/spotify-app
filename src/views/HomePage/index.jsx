@@ -1,5 +1,5 @@
 import React, { useState , useEffect, useRef, useContext} from 'react'
-import {ShowPlaylistLeft,LikeWrapper,SongName,HeroBottomTop,HomeSect, HomeWrapper, SideBar,Hero, SideBarWrapper, SideBarTop, SpotifyImg, SpotifyName,  SideBarBottom, OptionWrapper, Home,  IconWrapper, HeroTop, HeroBottom, HeroTopLeft, HeroTopRight, HeroIcons, HeroBottomTopHeading, HeroMusicSec, SongWrapper, SongWrapperTop, SongImg, SongWrapperBottom, ArtistName, SideBarBottomTitleWrap, SideBarBottomTitle, ShowPlaylists, SpotifyHeadingWrapper, ShowPlaylistsWrapper, PlaylistsImage, PlaylistsName, DeletePlaylist,AddPlaylists, LogoWrapper, ExpandWrapper, ReducedBarWrapper} from '../../styles/HomePage'
+import {NewPlaylist,ShowPlaylistLeft,LikeWrapper,SongName,HeroBottomTop,HomeSect, HomeWrapper, SideBar,Hero, SideBarWrapper, SideBarTop, SpotifyImg, SpotifyName,  SideBarBottom, OptionWrapper, Home,  IconWrapper, HeroTop, HeroBottom, HeroTopLeft, HeroTopRight, HeroIcons, HeroBottomTopHeading, HeroMusicSec, SongWrapper, SongWrapperTop, SongImg, SongWrapperBottom, ArtistName, SideBarBottomTitleWrap, SideBarBottomTitle, ShowPlaylists, SpotifyHeadingWrapper, ShowPlaylistsWrapper, PlaylistsImage, PlaylistsName, DeletePlaylist,AddPlaylists, LogoWrapper, ExpandWrapper, ReducedBarWrapper} from '../../styles/HomePage'
 import SpotifyLogo from '../../assets/spotify-logo.png'
 import { HiHome,HiOutlineSearch } from 'react-icons/hi';
 import {BiSolidPlaylist,BiSolidUser} from 'react-icons/bi'
@@ -176,7 +176,7 @@ const MyPersonalPlaylist = () => {
               <Home style = {{color: home ? "black" : "white"}}>Home</Home>
             </OptionWrapper>
             <OptionWrapper onClick = {handleSearch} style = {{backgroundColor : search ? "white" : "transparent"}}>
-            <IconWrapper style = {{color: search ? "black" : "white"}}>
+            <IconWrapper style = {{color: search ? "black" : "white"}} >
               <HiOutlineSearch />
               </IconWrapper>
               <Home style = {{color: search ? "black" : "white"}}>Search</Home>
@@ -203,9 +203,9 @@ const MyPersonalPlaylist = () => {
               <Home style = {{color: "white"}}>
                 Playlists
               </Home>
-              <DeletePlaylist style={{color : "white"}} onClick = {(e) => {e.stopPropagation();handleAddPlaylists()}}>
+              <NewPlaylist style={{color : "white"}} onClick = {(e) => {e.stopPropagation();handleAddPlaylists()}}>
                 <AiOutlinePlus/>
-                </DeletePlaylist>
+                </NewPlaylist>
               </AddPlaylists>
             </OptionWrapper>
             <ShowPlaylistsWrapper onClick = {MyPersonalPlaylist}>
@@ -243,50 +243,50 @@ const MyPersonalPlaylist = () => {
           <BsArrowRight />
         </ExpandWrapper>
         <OptionWrapper onClick = {handleHome} style = {{backgroundColor : home ? "white" : "transparent" , justifyContent: "center",paddingLeft: "0px" }}>
-          <IconWrapper style = {{color: home ? "black" : "white", fontSize: "35px"}}>
+          <IconWrapper style = {{color: home ? "black" : "white"}} isClosed = {isReduced}>
             <HiHome />
           </IconWrapper>
         </OptionWrapper>
         <OptionWrapper onClick = {handleSearch} style = {{backgroundColor : search ? "white" : "transparent" ,justifyContent: "center",paddingLeft: "0px"}}>
-          <IconWrapper style = {{color: search ? "black" : "white", fontSize: "35px"}}>
+          <IconWrapper style = {{color: search ? "black" : "white"}} isClosed = {isReduced}>
             <HiOutlineSearch />
           </IconWrapper>
         </OptionWrapper>
         
        
             <OptionWrapper onClick = {handleFavorite} style = {{backgroundColor : favorite ? "white" : "transparent",justifyContent: "center",paddingLeft: "0px"}}>
-            <IconWrapper style = {{color: favorite ? "black" : "white", fontSize: "35px"}}>
+            <IconWrapper style = {{color: favorite ? "black" : "white"}} isClosed = {isReduced}>
               <MdFavorite />
               </IconWrapper>
             </OptionWrapper>
             <OptionWrapper>
               <AddPlaylists>
-              <DeletePlaylist style={{color : "white", fontSize: "35px", paddingLeft: "5px"}} onClick = {(e) => {e.stopPropagation();handleAddPlaylists()}}>
+              <NewPlaylist style={{color : "white"}} isClosed = {isReduced} onClick = {(e) => {e.stopPropagation();handleAddPlaylists()}}>
                 <AiOutlinePlus/>
-                </DeletePlaylist>
+                </NewPlaylist>
               </AddPlaylists>
             </OptionWrapper>
             <ShowPlaylistsWrapper onClick = {MyPersonalPlaylist}>
               <ShowPlaylists>
-                <ShowPlaylistLeft style = {{justifyContent: "center"}}>
-                  <PlaylistsImage style = {{width: "50px" , height: "50px"}} src = {MyPlaylistImg}/>
+                <ShowPlaylistLeft isClosed = {isReduced} style = {{justifyContent: "center"}}>
+                  <PlaylistsImage isClosed = {isReduced} src = {MyPlaylistImg}/>
                 </ShowPlaylistLeft>
               </ShowPlaylists>
             </ShowPlaylistsWrapper>
             <ShowPlaylistsWrapper style = {{maxHeight: "90px"}}>
               {playlistInfo?.map((playlist,index) => (
               <ShowPlaylists key = {index} onClick={() => handleSelectedPlaylist(index)}>
-                <ShowPlaylistLeft>
-                  <PlaylistsImage style = {{width: "50px" , height: "50px"}} src = {playlist?.image}/>
+                <ShowPlaylistLeft isClosed = {isReduced}>
+                  <PlaylistsImage isClosed = {isReduced} src = {playlist?.image}/>
                 </ShowPlaylistLeft>
               </ShowPlaylists>
               ))}
             </ShowPlaylistsWrapper>
             </SideBarTop>
       </ReducedBarWrapper>)}
-     {home && ( <Hero style = {{maxWidth: isReduced ? "1250px" : "1040px"}}>
-        <HeroBottom style = {{maxWidth: isReduced ? "1250px" : "1000px"}}>
-          <HeroMusicSec style = {{maxWidth: isReduced ? "1250px" : "1000px"}}>    
+     {home && ( <Hero isClosed = {isReduced}>
+        <HeroBottom isClosed = {isReduced}>
+          <HeroMusicSec isClosed = {isReduced}>    
             {song.map((track, index) => (
                   <SongWrapper key={index} onClick = {() => handleSongs(index)}>
                    <LikeWrapper onClick={(e) => {e.stopPropagation();toggleLiked(index);}}>

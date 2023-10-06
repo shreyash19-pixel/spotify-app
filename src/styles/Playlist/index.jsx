@@ -9,6 +9,12 @@ export const AddPlaylist = styled.div`
     justify-content: center;
      font-weight: 500;
      cursor:pointer;
+
+     @media (min-width: 1367px) and (max-width:1440px)
+    {
+       font-size: 27px;
+    }
+
 `
 
 export const PlaylistWrapper = styled.div`
@@ -21,6 +27,12 @@ export const PlaylistWrapper = styled.div`
     position : absolute;
     top:100px;
     left:200px;
+
+     @media (min-width: 1367px) and (max-width:1440px)
+    {
+        max-width: 1030px;
+        min-height: 450px;
+    }
 `
 
 export const ModalWrapper = styled.div`
@@ -33,6 +45,12 @@ export const ModalWrapper = styled.div`
     align-items: center;
     justify-content: center;
     opacity: 1;
+
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+        max-width: 630px;
+        min-height: 430px;
+    }
 `
 
 
@@ -43,6 +61,12 @@ export const Modal = styled.div`
     display: flex;
     flex-direction: column;
     gap:40px;
+
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+        max-width: 560px;
+        min-height: 360px;
+    }
 `
 export const ModalTopWrapper = styled.div`
     display:flex;
@@ -57,6 +81,11 @@ export const ModalTopLeft = styled.div`
 export const ModalHeading = styled.h2`
     color : white;
     font-size : 28px;
+
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+        font-size: 30px;
+    }
 `
 export const ModalMiddleWrapper = styled.div`
     display: flex;
@@ -78,6 +107,12 @@ export const ModalMiddleTopLeft = styled.div`
     display : flex;
     justify-content: center;
     align-items: center;
+
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+        max-width: 230px;
+        min-height: 230px;
+    }
     
 `
 
@@ -89,6 +124,12 @@ export const ModalMiddleTopRight = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+        max-width: 340px;
+        min-height: 230px;
+    }
 `
 
 export const ModalMiddleBottom = styled.div`
@@ -105,6 +146,12 @@ export const PlaylistName = styled.input`
     padding-left: 15px;
     outline : none;
     color : white;
+
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+        max-width: 340px;
+        min-height: 50px;
+    }
 `
 
 export const PlaylistDesc = styled.textarea`
@@ -118,6 +165,12 @@ export const PlaylistDesc = styled.textarea`
     min-height: 140px;
     padding-left: 15px;
     padding-top: 15px;
+
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+        max-width: 340px;
+        min-height: 160px;
+    }
 `
 export const CreateButton = styled.div`
     width: 100%;
@@ -130,11 +183,23 @@ export const CreateButton = styled.div`
     border-radius: 30px;
     cursor:pointer;
     font-weight: 500;
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+        max-width: 95px;
+        min-height: 50px;
+        font-size: 17px;
+    }
 `
 
 export const ImagePreview = styled.img`
     width:200px;
     height:200px;
+
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+        width: 230px;
+        height: 230px;
+    }
 `
 
 export const HiddenInput = styled.input`
@@ -150,4 +215,10 @@ justify-content: center;
 cursor: pointer;
 font-size : 100px;
 color : white;
+
+@media (min-width: 1367px) and (max-width:1440px)
+    {
+        width: 230px;
+        height: 230px;
+    }
 `
