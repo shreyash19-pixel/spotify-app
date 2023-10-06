@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { Hero, HeroTop,HeroTopLeft,HeroBottom,HeroIcons,HeroTopRight, IconWrapper,  SongWrapper, SongWrapperTop, SongImg, SongName, SongWrapperBottom, ArtistName } from '../../styles/HomePage'
+import { Hero, HeroTop,HeroTopLeft,HeroBottom,HeroIcons,HeroTopRight, IconWrapper,  SongWrapper, SongWrapperTop, SongImg, SongName, SongWrapperBottom, ArtistName, HeroMusicSec } from '../../styles/HomePage'
 import {AiOutlineLeft,AiOutlineRight} from 'react-icons/ai'
 import {BiSolidUser} from 'react-icons/bi'
 import { InputWrapper, SearchBar, SearchBarWrapper, SearchedSongs } from '../../styles/Search'
@@ -46,7 +46,7 @@ const Search = () => {
       
   return (
     <Hero isClosed = {isReduced}> 
-        <HeroTop isClosed = {isReduced}>
+        <HeroTop isClosed = {isReduced} topPadding sidePadding>
         <HeroTopLeft>
             <SearchBarWrapper >
                 <InputWrapper>
@@ -59,12 +59,12 @@ const Search = () => {
           </HeroTopLeft>
         </HeroTop>
         <HeroBottom isClosed = {isReduced} topPadding>
-            <SearchedSongs isClosed = {isReduced}>
+            <HeroMusicSec isClosed = {isReduced}>
                 {song.filter((item) => {
                     return convertToLowerCase(item.name).includes(convertToLowerCase(search)) 
                     
                 }).map((track,index) => (
-                <SongWrapper key = {index} onClick = {() => handleSongs(track)}>
+                <SongWrapper isClosed = {isReduced} key = {index} onClick = {() => handleSongs(track)}>
                     <SongWrapperTop>
                         <SongImg src = {track.imageUrl}/>
                         <SongName>{track.name}</SongName>
@@ -76,7 +76,7 @@ const Search = () => {
                     </SongWrapperBottom>
                 </SongWrapper>
                 ))}
-            </SearchedSongs>
+            </HeroMusicSec>
         </HeroBottom>
     </Hero>
   )

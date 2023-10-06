@@ -37,7 +37,7 @@ const Favorites = ({ likedSongs}) => {
         <HeroBottom isClosed = {isReduced}>
             <SearchedSongs isClosed = {isReduced}>
             {isLiked.map((track, index) => (
-                    <SongWrapper key={index} onClick = {() => handleSongs(index)}>
+                    <SongWrapper isClosed = {isReduced} key={index} onClick = {() => handleSongs(index)}>
                         <LikeWrapper
                             onClick={(e) => {e.stopPropagation();toggleLike(index);}}
                             disabled={isLiked[index]}

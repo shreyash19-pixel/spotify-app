@@ -138,11 +138,11 @@ const SelectedPlaylist = () => {
       <ShuffleAddedWrapper isClosed = {isReduced}>
         <ShuffleWrapper isClosed = {isReduced}>
           <Shuffle>Playlist</Shuffle>
-          <AddedSongs style = {{cursor:"pointer"}}isClosed onClick={handleShuffle}><BsShuffle /> </AddedSongs>
+          <AddedSongs style = {{cursor:"pointer"}} isClosed onClick={handleShuffle}><BsShuffle /> </AddedSongs>
         </ShuffleWrapper>
       <AdddedSongsWrapper isClosed = {isReduced}>  
         {playlistInfo[playlistNumber]?.songs?.map((song, index) => (
-          <SongCard key = {index} onClick = {() => handlePlaySongs(index)} style = {{maxWidth: isReduced ? "1250px" : "986px"}}>
+          <SongCard key = {index} onClick = {() => handlePlaySongs(index)} isClosed = {isReduced}>
             <SongDetails>
               <SongImg src = {song.imageUrl}/>
             

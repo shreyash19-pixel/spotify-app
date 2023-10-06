@@ -15,6 +15,13 @@ export const AddPlaylist = styled.div`
        font-size: 27px;
     }
 
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+       font-size: 38px;
+    }
+
+   
+
 `
 
 export const PlaylistWrapper = styled.div`
@@ -33,6 +40,68 @@ export const PlaylistWrapper = styled.div`
         max-width: 1030px;
         min-height: 450px;
     }
+
+    @media (min-width: 1880px) and (max-width:1920px)
+    {
+        max-width: 1070px;
+        min-height: 600px;
+        left:450px;
+    }
+
+    @media (min-width: 1840px) and (max-width:1879px)
+    {
+        left:480px;
+        top: 145px;
+    }
+
+    @media (min-width: 1800px) and (max-width:1839px)
+    {
+        left:490px;
+        top: 150px;
+        
+    }
+
+    @media (min-width: 1750px) and (max-width:1799px)
+    {
+        left:500px;
+        top: 175px;
+        
+    }
+
+    @media (min-width: 1710px) and (max-width:1749px)
+    {
+        left:485px;
+        top: 175px;
+        
+    }
+
+    @media (min-width: 1620px) and (max-width:1709px)
+    {
+        left:445px;
+        top: 175px;
+        
+    }
+
+    @media (min-width: 1580px) and (max-width:1619px)
+    {
+        left:395px;
+        top: 215px;   
+    }
+
+    @media (min-width: 1500px) and (max-width:1579px)
+    {
+        left:365px;
+        top: 175px;
+        
+    }
+
+    @media (min-width: 1441px) and (max-width:1499px)
+    {
+        left:355px;
+        top: 175px;
+        
+    }
+
 `
 
 export const ModalWrapper = styled.div`
@@ -51,6 +120,12 @@ export const ModalWrapper = styled.div`
         max-width: 630px;
         min-height: 430px;
     }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: 800px;
+        min-height: 510px;
+    }
 `
 
 
@@ -67,6 +142,13 @@ export const Modal = styled.div`
         max-width: 560px;
         min-height: 360px;
     }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: 680px;
+        min-height: 390px;
+    }
+    
 `
 export const ModalTopWrapper = styled.div`
     display:flex;
@@ -85,6 +167,11 @@ export const ModalHeading = styled.h2`
     @media (min-width: 1367px) and (max-width:1440px)
     {
         font-size: 30px;
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        font-size: 40px;
     }
 `
 export const ModalMiddleWrapper = styled.div`
@@ -113,6 +200,12 @@ export const ModalMiddleTopLeft = styled.div`
         max-width: 230px;
         min-height: 230px;
     }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: 270px;
+        min-height: 270px;
+    }
     
 `
 
@@ -129,6 +222,12 @@ export const ModalMiddleTopRight = styled.div`
     {
         max-width: 340px;
         min-height: 230px;
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: 380px;
+        min-height: 260px;
     }
 `
 
@@ -151,6 +250,14 @@ export const PlaylistName = styled.input`
     {
         max-width: 340px;
         min-height: 50px;
+        font-size: 16px;
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: 380px;
+        min-height: 55px;
+        font-size: 19px;
     }
 `
 
@@ -170,6 +277,14 @@ export const PlaylistDesc = styled.textarea`
     {
         max-width: 340px;
         min-height: 160px;
+        font-size: 16px;
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: 390px;
+        min-height: 200px;
+        font-size: 19px;
     }
 `
 export const CreateButton = styled.div`
@@ -189,6 +304,13 @@ export const CreateButton = styled.div`
         min-height: 50px;
         font-size: 17px;
     }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: 100px;
+        min-height: 55px;
+        font-size: 20px;
+    }
 `
 
 export const ImagePreview = styled.img`
@@ -199,6 +321,12 @@ export const ImagePreview = styled.img`
     {
         width: 230px;
         height: 230px;
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+       width:270px;
+       height:270px;
     }
 `
 
@@ -220,5 +348,11 @@ color : white;
     {
         width: 230px;
         height: 230px;
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+       width:270px;
+       height:270px;
     }
 `

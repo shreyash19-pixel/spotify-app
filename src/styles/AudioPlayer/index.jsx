@@ -13,6 +13,12 @@ export const MusicPlayerWrapper = styled.div`
     {
         max-width: 1440px;
     }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: 1920px;
+
+    }
 `
 export const SongInfo = styled.div`
     width:100%;
@@ -26,6 +32,12 @@ export const SongInfo = styled.div`
     @media (min-width: 1367px) and (max-width:1440px)
     {
         max-width: ${(props) => (props.isLarge ? "105px" : "330px")};
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: ${(props) => (props.isLarge ? "130px" : "400px")};
+        gap: 27px;
     }
 
 
@@ -56,6 +68,12 @@ export const SongInfoImg = styled.img`
         width: 60px;
         height: 60px;
     }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        width: 65px;
+        height: 65px;
+    }
 `
 
 
@@ -65,6 +83,18 @@ export const SongInfoArtistWrap = styled.div`
     flex-direction: column;
     width: 100%;
     max-width: 200px;
+
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+       max-width: 225px;
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+       max-width: 270px;
+    }
+
+
 `
 export const SongInfoSongName = styled.h1`
   color : white;
@@ -73,11 +103,6 @@ export const SongInfoSongName = styled.h1`
   overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-
-    @media (min-width: 1367px) and (max-width:1440px)
-    {
-        font-size: 27px;
-    }
 `
 
 export const SongInfoArtistName = styled.h3`
@@ -91,6 +116,11 @@ export const SongInfoArtistName = styled.h3`
     @media (min-width: 1367px) and (max-width:1440px)
     {
         font-size: 20px;
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        font-size: 23px;
     }
 `
 
@@ -109,6 +139,11 @@ export const MusicPlayer = styled.div`
     {
         max-width: ${(props) => (props.isClosed ? "1330px" : "1100px")};
     }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: ${(props) => (props.isClosed ? "1770px" : "1505px")};
+    }
 `
 export const StartTimeWrapper = styled.div`
     position: absolute;
@@ -121,6 +156,11 @@ export const StartTime = styled.h3`
     @media (min-width: 1367px) and (max-width:1440px)
     {
         font-size: 23px;
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        font-size: 25px;
     }
 `
 export const EndTimeWrapper = styled.div`
@@ -142,6 +182,11 @@ export const ControlsWrapper = styled.div`
     {
        max-width: 350px;
     }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+       max-width: 400px;
+    }
     
 `
 export const NextWrapper = styled.div`
@@ -161,6 +206,13 @@ export const NextWrapper = styled.div`
         height: 50px;
         font-size: 28px;
     }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        width: 55px;
+        height: 55px;
+        font-size: 32px;
+    }
 `
 export const PlayWrapper = styled.div`
     background-color: white;
@@ -178,6 +230,13 @@ export const PlayWrapper = styled.div`
         width: 55px;
         height: 55px;
         font-size: 28px;
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        width: 55px;
+        height: 55px;
+        font-size: 33px;
     }
 `
 
@@ -206,6 +265,13 @@ export const ProgressBar = styled.input`
         max-width: ${(props) => (props.isClosed ? "1300px" : "1078px")};
         position: relative;
         left: ${(props) => (props.isClosed ? "5px" : "7px")};
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: ${(props) => (props.isClosed ? "1760px" : "1495px")};
+        position: relative;
+        left: ${(props) => (props.isClosed ? "11px" : "7px")};
     }
 
 

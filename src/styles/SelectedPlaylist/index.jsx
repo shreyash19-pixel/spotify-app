@@ -10,10 +10,16 @@ export const HeroWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     gap:15px;
+    padding-inline: 30px;
 
      @media (min-width: 1367px) and (max-width:1440px)
     {
         max-width: ${(props) => (props.isClosed ? "1320px" : "1090px")};
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: ${(props) => (props.isClosed ? "1770px" : "1495px")};
     }
     
 `
@@ -29,6 +35,13 @@ export const PlaylistsWrapper = styled.div`
     {
         max-width: ${(props) => (props.isClosed ? "1250px" : "1020px")};
     }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: ${(props) => (props.isClosed ? "1690px" : "1410px")};
+    }
+
+    
 `
 
 export const PlaylistInfoWrapper = styled.div`
@@ -41,6 +54,11 @@ export const PlaylistInfoWrapper = styled.div`
      @media (min-width: 1367px) and (max-width:1440px)
     {
         max-width: ${(props) => (props.isClosed ? "1250px" : "1020px")};
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: ${(props) => (props.isClosed ? "1690px" : "1410px")};
     }
 `
 export const PlaylistInfoLeft = styled.div`
@@ -60,6 +78,12 @@ export const PlaylistImage = styled.img`
         width: 270px;
         height: 220px;
     }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        width: 310px;
+        height: 260px;
+    }
 `
 
 export const PlayListNameDesc = styled.div`
@@ -71,6 +95,11 @@ export const PlayListNameDesc = styled.div`
     {
         min-height: 220px;
     }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        min-height: 250px;
+    }
 `
 
 export const PlayListName = styled.h1`
@@ -81,6 +110,11 @@ export const PlayListName = styled.h1`
     {
         font-size: 90px;
     }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        font-size: 100px;
+    }
 `
 export const PlaylistDesc = styled.h4`
     color : #dbdada;
@@ -88,6 +122,11 @@ export const PlaylistDesc = styled.h4`
     @media (min-width: 1367px) and (max-width:1440px)
     {
         font-size: 22px;
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        font-size: 25px;
     }
 `
 
@@ -102,6 +141,11 @@ export const SearchAndAdd = styled.div`
     @media (min-width: 1367px) and (max-width:1440px)
     {
         max-width: ${(props) => (props.isClosed ? "1320px" : "1090px")};
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: ${(props) => (props.isClosed ? "1770px" : "1495px")};
     }
 `
 
@@ -129,6 +173,12 @@ export const AddWrapper = styled.div`
         max-width: ${(props) => (props.isClosed ? "1230px" : "1003px")};
         max-height: 450px;
     }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: ${(props) => (props.isClosed ? "1680px" : "1395px")};
+        max-height: 515px;
+    }
 `
 export const SearchBarWrapper = styled.div`
     width: 100%;
@@ -152,6 +202,11 @@ export const SearchBarWrapper = styled.div`
     {
         max-width: ${(props) => (props.isClosed ? "1290px" : "1090px")};
     }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: ${(props) => (props.isClosed ? "1770px" : "1495px")};
+    }
 `
 
 export const InputWrapper = styled.div`
@@ -168,6 +223,7 @@ export const SearchBar = styled.input`
     width: 100%;
     max-width: 950px;
     color : white;
+
 `
 
 export const SongCard = styled.div`
@@ -177,6 +233,10 @@ export const SongCard = styled.div`
     justify-content: space-between;
     cursor: pointer;
 
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: ${(props) => (props.isClosed ? "1770px" : "1495px")};
+    }
 
 `
 export const SongDetails = styled.div`
@@ -192,7 +252,13 @@ export const SongImg = styled.img`
     @media (min-width: 1367px) and (max-width:1440px)
     {
         width:45px;
-    height: 45px;
+        height: 45px;
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        width: 50px;
+        height: 50px;
     }
 `
 
@@ -209,6 +275,11 @@ export const SongName = styled.h2`
     {
        font-size: 20px;
     }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        font-size: 23px;
+    }
 `
 
 export const ArtistName = styled.h3`
@@ -218,6 +289,11 @@ export const ArtistName = styled.h3`
     @media (min-width: 1367px) and (max-width:1440px)
     {
        font-size: 14px;
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        font-size: 16px;
     }
 `
 
@@ -242,6 +318,13 @@ export const AddSongs = styled.div`
        max-width: 85px;
     }
 
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        font-size: 20px;
+        max-width: 100px;
+        padding: 8px;
+    }
+
 `
 export const AddedSongs = styled.div`
     color : white;
@@ -255,6 +338,12 @@ export const AddedSongs = styled.div`
     {
        font-size: ${(props) => (props.isClosed ? "23px" : "16px")};
     }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        font-size: ${(props) => (props.isClosed ? "28px" : "16px")};
+    }
+
 `
 export const ShuffleAddedWrapper = styled.div`
      width: 100%;
@@ -266,6 +355,11 @@ export const ShuffleAddedWrapper = styled.div`
     @media (min-width: 1367px) and (max-width:1440px)
     {
         max-width: ${(props) => (props.isClosed ? "1290px" : "1090px")};
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: ${(props) => (props.isClosed ? "1770px" : "1410px")};
     }
 
 `
@@ -282,6 +376,11 @@ export const ShuffleWrapper = styled.div`
     {
         max-width: ${(props) => (props.isClosed ? "1290px" : "1090px")};
     }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: ${(props) => (props.isClosed ? "1770px" : "1410px")};
+    }
 `
 export const Shuffle = styled.h3`
     color : white;
@@ -290,6 +389,11 @@ export const Shuffle = styled.h3`
      @media (min-width: 1367px) and (max-width:1440px)
     {
         font-size: 22px;
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        font-size: 25px;
     }
 
 `
@@ -308,5 +412,11 @@ export const AdddedSongsWrapper = styled.div`
     {
         max-width: ${(props) => (props.isClosed ? "1290px" : "1090px")};
         max-height: 290px;
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: ${(props) => (props.isClosed ? "1770px" : "1510px")};
+        max-height: 450px;
     }
 `

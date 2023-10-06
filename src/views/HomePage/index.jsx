@@ -184,7 +184,7 @@ const MyPersonalPlaylist = () => {
           </SideBarTop>
           <SideBarBottom>
             <SideBarBottomTitleWrap>
-              <IconWrapper style = {{color : "white",fontSize : "26px"}}>
+              <IconWrapper style = {{color : "white"}} isClosed = {isReduced}>
                 <VscLibrary />
               </IconWrapper>
               <SideBarBottomTitle>Library</SideBarBottomTitle>
@@ -268,7 +268,7 @@ const MyPersonalPlaylist = () => {
             </OptionWrapper>
             <ShowPlaylistsWrapper onClick = {MyPersonalPlaylist}>
               <ShowPlaylists>
-                <ShowPlaylistLeft isClosed = {isReduced} style = {{justifyContent: "center"}}>
+                <ShowPlaylistLeft isClosed = {isReduced}>
                   <PlaylistsImage isClosed = {isReduced} src = {MyPlaylistImg}/>
                 </ShowPlaylistLeft>
               </ShowPlaylists>
@@ -288,7 +288,7 @@ const MyPersonalPlaylist = () => {
         <HeroBottom isClosed = {isReduced}>
           <HeroMusicSec isClosed = {isReduced}>    
             {song.map((track, index) => (
-                  <SongWrapper key={index} onClick = {() => handleSongs(index)}>
+                  <SongWrapper isClosed = {isReduced} key={index} onClick = {() => handleSongs(index)}>
                    <LikeWrapper onClick={(e) => {e.stopPropagation();toggleLiked(index);}}>
                       {isLiked[index] ? <MdFavorite /> : <AiOutlineHeart />}
                     </LikeWrapper>

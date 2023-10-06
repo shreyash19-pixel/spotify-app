@@ -33,7 +33,7 @@ const MyPlaylist = () => {
       <HeroBottom isClosed = {isReduced}>
         <SearchedSongs isClosed = {isReduced}>
             {myPlaylist.map((songs, index) => (
-                <SongWrapper key = {index} onClick = {() => handlePlaySong(index)}>
+                <SongWrapper isClosed = {isReduced} key = {index} onClick = {() => handlePlaySong(index)}>
                     <SongWrapperTop>
                         <SongImg src = {songs.imageUrl}/>
                         <SongName>{songs.name}</SongName>

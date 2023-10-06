@@ -24,6 +24,14 @@ export const SearchBarWrapper = styled.div`
        justify-content: flex-start;
        padding-left: 15px;
     }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: 600px;
+        justify-content: flex-start;
+        padding-left: 15px;
+        min-height: 60px;
+    }
 `
 
 export const InputWrapper = styled.div`
@@ -31,6 +39,12 @@ export const InputWrapper = styled.div`
     max-width: 370px;
     display: flex;
     gap:10px;
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        font-size: 30px;
+    }
+    
 `
 
 export const SearchBar = styled.input`
@@ -40,6 +54,10 @@ export const SearchBar = styled.input`
     width: 100%;
     max-width: 330px;
     color : white;
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        font-size: 18px;
+    }
 `
 
 export const SearchedSongs = styled.div`
@@ -57,6 +75,13 @@ export const SearchedSongs = styled.div`
     {
         max-height: 630px;
         max-width: ${(props) => (props.isClosed ? "1290px" : "1100px")};
+        padding-left: ${(props) => (props.isClosed ? "15px" : "20px")};
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-width: ${(props) => (props.isClosed ? "1770px" : "1475px")};
+        max-height: 830px;
         padding-left: ${(props) => (props.isClosed ? "15px" : "20px")};
     }
 `
