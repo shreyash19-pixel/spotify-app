@@ -218,7 +218,7 @@ const MyPersonalPlaylist = () => {
                 </ShowPlaylistLeft>
               </ShowPlaylists>
             </ShowPlaylistsWrapper>
-            <ShowPlaylistsWrapper>
+            <ShowPlaylistsWrapper maxHeight>
               {playlistInfo?.map((playlist,index) => (
               <ShowPlaylists key = {index} onClick={() => handleSelectedPlaylist(index)}>
                 <ShowPlaylistLeft>
@@ -238,7 +238,7 @@ const MyPersonalPlaylist = () => {
         </SideBarWrapper>
       </SideBar>)}
       {isReduced && (<ReducedBarWrapper>
-        <SideBarTop style = {{gap: "30px"}}>
+        <SideBarTop distance>
         <ExpandWrapper onClick = {handleExpanded}>
           <BsArrowRight />
         </ExpandWrapper>
@@ -273,7 +273,7 @@ const MyPersonalPlaylist = () => {
                 </ShowPlaylistLeft>
               </ShowPlaylists>
             </ShowPlaylistsWrapper>
-            <ShowPlaylistsWrapper style = {{maxHeight: "90px"}}>
+            <ShowPlaylistsWrapper isClosed = {isReduced}>
               {playlistInfo?.map((playlist,index) => (
               <ShowPlaylists key = {index} onClick={() => handleSelectedPlaylist(index)}>
                 <ShowPlaylistLeft isClosed = {isReduced}>

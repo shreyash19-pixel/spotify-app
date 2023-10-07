@@ -117,6 +117,7 @@ useEffect(() => {
         <EndTimeWrapper>
         <StartTime>{duration ? duration : "0:00"}</StartTime>
         </EndTimeWrapper>
+        
         <ProgressBar type="range"
         isClosed = {isReduced}
         min={0}

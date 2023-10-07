@@ -17,7 +17,13 @@ export const MusicPlayerWrapper = styled.div`
     @media (min-width: 1441px) and (max-width:1920px)
     {
         max-width: 1920px;
+        min-height: 100px;
+    }
 
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        max-width: 2560px;
+        min-height: 120px;
     }
 `
 export const SongInfo = styled.div`
@@ -37,7 +43,13 @@ export const SongInfo = styled.div`
     @media (min-width: 1441px) and (max-width:1920px)
     {
         max-width: ${(props) => (props.isLarge ? "130px" : "400px")};
-        gap: 27px;
+        gap: 17px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        max-width: ${(props) => (props.isLarge ? "170px" : "520px")};
+        gap: 24px;
     }
 
 
@@ -71,8 +83,14 @@ export const SongInfoImg = styled.img`
 
     @media (min-width: 1441px) and (max-width:1920px)
     {
-        width: 65px;
-        height: 65px;
+        width: 75px;
+        height: 75px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        width: 85px;
+        height: 85px;
     }
 `
 
@@ -94,6 +112,13 @@ export const SongInfoArtistWrap = styled.div`
        max-width: 270px;
     }
 
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        max-width: 355px;
+    }
+
+    
+
 
 `
 export const SongInfoSongName = styled.h1`
@@ -103,6 +128,16 @@ export const SongInfoSongName = styled.h1`
   overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        font-size: 30px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        font-size: 35px;
+    }
 `
 
 export const SongInfoArtistName = styled.h3`
@@ -120,7 +155,12 @@ export const SongInfoArtistName = styled.h3`
 
     @media (min-width: 1441px) and (max-width:1920px)
     {
-        font-size: 23px;
+        font-size: 25px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        font-size: 30px;
     }
 `
 
@@ -144,6 +184,11 @@ export const MusicPlayer = styled.div`
     {
         max-width: ${(props) => (props.isClosed ? "1770px" : "1505px")};
     }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        max-width: ${(props) => (props.isClosed ? "2350px" : "2195px")};
+    }
 `
 export const StartTimeWrapper = styled.div`
     position: absolute;
@@ -161,6 +206,11 @@ export const StartTime = styled.h3`
     @media (min-width: 1441px) and (max-width:1920px)
     {
         font-size: 25px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+       font-size: 32px;
     }
 `
 export const EndTimeWrapper = styled.div`
@@ -185,7 +235,16 @@ export const ControlsWrapper = styled.div`
 
     @media (min-width: 1441px) and (max-width:1920px)
     {
-       max-width: 400px;
+       max-width: 480px;
+       min-height: 95px;
+       gap: 30px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+       max-width: 550px;
+       min-height: 115px;
+       gap: 40px;
     }
     
 `
@@ -209,9 +268,16 @@ export const NextWrapper = styled.div`
 
     @media (min-width: 1441px) and (max-width:1920px)
     {
-        width: 55px;
-        height: 55px;
-        font-size: 32px;
+        width: 65px;
+        height: 65px;
+        font-size: 39px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+       width: 75px;
+       height:75px;
+       font-size: 48px;
     }
 `
 export const PlayWrapper = styled.div`
@@ -234,14 +300,22 @@ export const PlayWrapper = styled.div`
 
     @media (min-width: 1441px) and (max-width:1920px)
     {
-        width: 55px;
-        height: 55px;
-        font-size: 33px;
+        width: 75px;
+        height: 75px;
+        font-size: 44px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+       width: 90px;
+       height:90px;
+       font-size: 53px;
     }
 `
 
 export const SongAudio = styled.audio`
 `
+
 export const ProgressBar = styled.input`    
   -webkit-appearance: none;
   width:100%;
@@ -272,6 +346,13 @@ export const ProgressBar = styled.input`
         max-width: ${(props) => (props.isClosed ? "1760px" : "1495px")};
         position: relative;
         left: ${(props) => (props.isClosed ? "11px" : "7px")};
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        max-width: ${(props) => (props.isClosed ? "2365px" : "2010px")};
+        position: relative;
+        left: ${(props) => (props.isClosed ? "11px" : "0px")};
     }
 
 

@@ -21,6 +21,12 @@ export const HomeSect = styled.div`
         max-width: 1920px;
         min-height: 965px;
     }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        max-width: 2560px;
+        min-height: 1330px;
+    }
 `
 
 export const HomeWrapper = styled.div`
@@ -39,6 +45,12 @@ export const HomeWrapper = styled.div`
     {
         max-width: 1900px;
         min-height: 965px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        max-width: 2540px;
+        min-height: 1330px;
     }
 `
 
@@ -59,6 +71,11 @@ export const SideBar = styled.div`
     {
         max-width: 400px;
     }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        max-width: 520px;
+    }
 `
 export const SideBarWrapper = styled.div`
     width: 100%;
@@ -75,6 +92,11 @@ export const SideBarWrapper = styled.div`
     @media (min-width: 1441px) and (max-width:1920px)
     {
         max-width: 400px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        max-width: 520px;
     }
 `
 export const SpotifyHeadingWrapper = styled.div`
@@ -105,7 +127,11 @@ export const ExpandWrapper = styled.div`
     @media (min-width: 1441px) and (max-width:1920px)
     {
         font-size: 50px;
-        
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        font-size: 60px;
     }
 `   
 
@@ -115,14 +141,17 @@ export const SideBarTop = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap:20px;
+    gap:${(props) => (props.distance ? "18px" : "20px")};
     background-color: #121212;
     min-height: 190px;
     border-radius: 10px;
 
-    @media (min-width: 1367px) and (max-width:1440px)
+    @media (min-width: 1921px) and (max-width: 2560px)
     {
-        min-height: 220px;
+        min-height: 340px;
+        gap: 33px;
+        justify-content: flex-start;
+        padding-top: 20px;
     }
 
     @media (min-width: 1441px) and (max-width:1920px)
@@ -132,6 +161,16 @@ export const SideBarTop = styled.div`
         padding-top: 25px;
         gap: 27px;
     }
+
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+        min-height: 220px;
+        gap:${(props) => (props.distance ? "22px" : "20px")};
+    }
+
+   
+
+   
 `
 
 
@@ -153,6 +192,10 @@ export const SideBarBottomTitle = styled.h2`
     @media (min-width: 1441px) and (max-width:1920px)
     {
        font-size: 35px;
+    }
+    @media (min-width: 1921px) and (max-width:2560px)
+    {
+        font-size: 43px;
     }
 
     
@@ -180,6 +223,12 @@ export const IconWrapper = styled.div`
     {
         font-size: ${(props) => (props.isClosed ? "55px" : "35px")};
     }
+
+    @media (min-width: 1921px) and (max-width:2560px)
+    {
+        font-size: ${(props) => (props.isClosed ? "70px" : "48px")};
+    }
+
     
 `
 export const AddPlaylists = styled.div`
@@ -197,6 +246,11 @@ export const AddPlaylists = styled.div`
     {
         max-width: 330px;
     }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        max-width: 430px;
+    }
 `
 
 export const Home = styled.h3`
@@ -211,6 +265,13 @@ export const Home = styled.h3`
     {
         font-size: 27px;
     }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        font-size: 35px;
+    }
+
+  
 `
 
 export const SideBarBottom = styled.div`
@@ -233,6 +294,14 @@ export const SideBarBottom = styled.div`
         min-height: 590px;
         gap: 27px;
     }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        min-height: 900px;
+        gap: 33px;
+    }
+
+    
 `
 
 export const SpotifyImg = styled.img`
@@ -246,6 +315,11 @@ export const SpotifyImg = styled.img`
     @media (min-width: 1441px) and (max-width:1920px)
     {
         width: 130px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+      width: 150px;
     }
 `
 
@@ -262,15 +336,39 @@ export const SpotifyName = styled.h1`
     {
         font-size: 45px;
     }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        font-size: 50px;
+    }
 `
 
 export const ShowPlaylistsWrapper = styled.div`
-     max-height: 148px;
+    max-height: ${(props) => (props.isClosed ? "160px" : "92px")};
     overflow-y: auto;
     display: flex;
     flex-direction : column;
-    gap:15px;
+    gap:${(props) => (props.isClosed ? "14px" : "17px")};
     padding-left:15px;
+
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+        max-height: ${(props) => (props.isClosed ? "230px" : "155px")};
+        gap:${(props) => (props.isClosed ? "20px" : "20px")};
+    }
+
+    @media (min-width: 1441px) and (max-width:1920px)
+    {
+        max-height: 240px;
+        gap:20px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        max-height: ${(props) => (props.isClosed ? "490px" : "460px")};
+        gap: 25px;
+    }
+
 `
 
 export const ShowPlaylists = styled.div`
@@ -287,11 +385,19 @@ export const ShowPlaylistLeft = styled.div`
     @media (min-width: 1367px) and (max-width:1440px)
     {
         padding-left: ${(props) => (props.isClosed ? "8px" : "0px")};
+        
     }
 
     @media (min-width: 1441px) and (max-width:1920px)
     {
         padding-left: ${(props) => (props.isClosed ? "12px" : "0px")};
+        gap: 22px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        padding-left: ${(props) => (props.isClosed ? "15px" : "0px")};
+        gap: 28px;
     }
 
 
@@ -317,6 +423,12 @@ export const NewPlaylist = styled.div`
         font-size: ${(props) => (props.isClosed ? "55px" : "30px")};
         padding-left: ${(props) => (props.isClosed ? "22px" : "0px")};
     }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        font-size: ${(props) => (props.isClosed ? "70px" : "40px")};
+        padding-left: ${(props) => (props.isClosed ? "32px" : "0px")};
+    }
 `
 
 export const DeletePlaylist = styled.div`
@@ -339,11 +451,16 @@ export const DeletePlaylist = styled.div`
     {
         font-size: 28px;
     }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        font-size: 37px;
+    }
 `
 
 export const PlaylistsImage = styled.img`
-    width: ${(props) => (props.isClosed ? "50px" : "30px")};
-    height:  ${(props) => (props.isClosed ? "50px" : "30px")};
+    width: ${(props) => (props.isClosed ? "40px" : "30px")};
+    height:  ${(props) => (props.isClosed ? "40px" : "30px")};
 
     @media (min-width: 1367px) and (max-width:1440px)
     {
@@ -356,6 +473,12 @@ export const PlaylistsImage = styled.img`
     {
         width:  ${(props) => (props.isClosed ? "75px" : "44px")};
         height:  ${(props) => (props.isClosed ? "75px" : "44px")};
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        width:  ${(props) => (props.isClosed ? "100px" : "55px")};
+        height:  ${(props) => (props.isClosed ? "100px" : "55px")};
     }
 `
 export const PlaylistsName = styled.h3`
@@ -372,6 +495,11 @@ export const PlaylistsName = styled.h3`
     @media (min-width: 1441px) and (max-width:1920px)
     {
         font-size: 28px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        font-size: 34px;
     }
 `
 export const ReducedBarWrapper = styled.div`
@@ -392,6 +520,12 @@ export const ReducedBarWrapper = styled.div`
     @media (min-width: 1441px) and (max-width:1920px)
     {
        max-width: 130px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        max-width: 170px;
+        gap: 23px;
     }
     
 `
@@ -417,6 +551,12 @@ export const Hero = styled.div`
     {
         max-width: ${(props) => (props.isClosed ? "1770px" : "1495px")};
     }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        max-width: ${(props) => (props.isClosed ? "2350px" : "2195px")};
+    }
+    
 `
 
 export const HeroTop = styled.div`
@@ -433,11 +573,19 @@ export const HeroTop = styled.div`
     @media (min-width: 1367px) and (max-width:1440px)
     {
         max-width: ${(props) => (props.isClosed ? "1320px" : "1090px")};
+        padding-inline: ${(props) => (props.sidePadding ? "40px" : "0px")};
     }
 
     @media (min-width: 1441px) and (max-width:1920px)
     {
         max-width: ${(props) => (props.isClosed ? "1770px" : "1475px")};
+        padding-inline: ${(props) => (props.sidePadding ? "50px" : "0px")};
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        max-width: ${(props) => (props.isClosed ? "2350px" : "2175px")};
+        padding-inline: ${(props) => (props.sidePadding ? "60px" : "0px")};
     }
    
 
@@ -481,7 +629,7 @@ export const HeroBottom = styled.div`
     flex-direction: column;
     gap:15px;
     position: relative;
-    padding-top: ${(props) => (props.topPadding ? "45px" : "40px")};
+    padding-top: ${(props) => (props.topPadding ? "30px" : "40px")};
 
 
     @media (min-width: 1367px) and (max-width:1440px)
@@ -492,6 +640,13 @@ export const HeroBottom = styled.div`
     @media (min-width: 1441px) and (max-width:1920px)
     {
         max-width: ${(props) => (props.isClosed ? "1770px" : "1440px")};
+        padding-top: ${(props) => (props.topPadding ? "40px" : "40px")};
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        max-width: ${(props) => (props.isClosed ? "2350px" : "2140px")};
+        padding-top: ${(props) => (props.topPadding ? "22px" : "40px")};
     }
 `
 
@@ -516,16 +671,22 @@ export const HeroMusicSec = styled.div`
     
     @media (min-width: 1367px) and (max-width:1440px)
     {
-        max-height: 630px;
+        max-height: 640px;
         max-width: ${(props) => (props.isClosed ? "1290px" : "1100px")};
-        padding-left: ${(props) => (props.isClosed ? "10px" : "0px")};
+        padding-left: ${(props) => (props.isClosed ? "10px" : "5px")};
     }
 
     @media (min-width: 1441px) and (max-width:1920px)
     {
         max-width: ${(props) => (props.isClosed ? "1770px" : "1475px")};
-        padding-left: ${(props) => (props.isClosed ? "10px" : "20px")};
-        max-height: 830px;
+        max-height: 825px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        max-width: ${(props) => (props.isClosed ? "2350px" : "2175px")};
+        max-height: 1195px;
+        gap: 25px;
     }
 
     
@@ -548,6 +709,66 @@ export const SongWrapper = styled.div`
         background-color: #313131;
     }
     
+    @media (min-width: 2465px) and (max-width: 2560px)
+    {
+        max-width: ${(props) => (props.isClosed ? "420px" : "450px")};
+        padding: 23px;
+    }
+
+    @media (min-width: 2400px) and (max-width: 2464px)
+    {
+        max-width: ${(props) => (props.isClosed ? "410px" : "435px")};
+        padding: 23px;
+    }
+
+    @media (min-width: 2335px) and (max-width: 2399px)
+    {
+        max-width: ${(props) => (props.isClosed ? "400px" : "420px")};
+        padding: 23px;
+    }
+
+    @media (min-width: 2290px) and (max-width: 2334px)
+    {
+        max-width: ${(props) => (props.isClosed ? "385px" : "405px")};
+        padding: 23px;
+    }
+
+    @media (min-width: 2240px) and (max-width: 2289px)
+    {
+        max-width: ${(props) => (props.isClosed ? "370px" : "390px")};
+        padding: 23px;
+    }
+
+    @media (min-width: 2200px) and (max-width: 2239px)
+    {
+        max-width: ${(props) => (props.isClosed ? "355px" : "375px")};
+        padding: 23px;
+    }
+
+    @media (min-width: 2160px) and (max-width: 2199px)
+    {
+        max-width: ${(props) => (props.isClosed ? "350px" : "360px")};
+        padding: 23px;
+    }
+
+    @media (min-width: 2040px) and (max-width: 2159px)
+    {
+        max-width: ${(props) => (props.isClosed ? "340px" : "345px")};
+        padding: 23px;
+    }
+
+    @media (min-width: 1980px) and (max-width: 2039px)
+    {
+        max-width: ${(props) => (props.isClosed ? "315px" : "330px")};
+        padding: 23px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 1979px)
+    {
+        max-width: ${(props) => (props.isClosed ? "300px" : "315px")};
+        padding: 23px;
+    }
+
     @media (min-width: 1367px) and (max-width:1440px)
     {
         max-width: 235px;
@@ -562,61 +783,51 @@ export const SongWrapper = styled.div`
     @media (min-width: 1800px) and (max-width:1840px)
     {
         max-width: ${(props) => (props.isClosed ? "310px" : "320px")};
-        padding: 16px;
     }
 
     @media (min-width: 1760px) and (max-width:1799px)
     {
         max-width: ${(props) => (props.isClosed ? "300px" : "310px")};
-        padding: 15px;
     }
 
     @media (min-width: 1722px) and (max-width:1759px)
     {
         max-width: ${(props) => (props.isClosed ? "295px" : "300px")};
-        padding: 14px;
     }
 
     @media (min-width: 1682px) and (max-width:1721px)
     {
         max-width: ${(props) => (props.isClosed ? "285px" : "290px")};
-        padding: 13px;
     }
 
     @media (min-width: 1641px) and (max-width:1681px)
     {
         max-width: ${(props) => (props.isClosed ? "275px" : "280px")};
-        padding: 13px;
     }
 
     @media (min-width: 1600px) and (max-width:1640px)
     {
         max-width: ${(props) => (props.isClosed ? "265px" : "270px")};
-        padding: 13px;
     }
 
     @media (min-width: 1553px) and (max-width:1599px)
     {
         max-width: ${(props) => (props.isClosed ? "260px" : "260px")};
-        padding: 12px;
     }
 
     @media (min-width: 1515px) and (max-width:1553px)
     {
         max-width: ${(props) => (props.isClosed ? "250px" : "250px")};
-        padding: 12px;
     }
 
     @media (min-width: 1485px) and (max-width:1515px)
     {
         max-width: ${(props) => (props.isClosed ? "245px" : "240px")};
-        padding: 12px;
     }
 
     @media (min-width: 1442px) and (max-width:1485px)
     {
         max-width: ${(props) => (props.isClosed ? "240px" : "230px")};
-        padding: 12px;
     }
 
 
@@ -651,6 +862,11 @@ export const LikeWrapper = styled.div`
     {
         font-size: 44px;
     }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        font-size: 55px;
+    }
 `;
 
 export const SongWrapperTop = styled.div`
@@ -671,6 +887,11 @@ export const SongImg = styled.img`
     {
         max-width: 300px;
     }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        max-width: 430px;
+    }
 `
 export const SongName = styled.h1`
     color : white;
@@ -689,6 +910,11 @@ export const SongName = styled.h1`
     @media (min-width: 1441px) and (max-width:1920px)
     {
         font-size: 30px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        font-size: 38px;
     }
 
 `
@@ -719,5 +945,10 @@ export const ArtistName = styled.h3`
     @media (min-width: 1441px) and (max-width:1920px)
     {
         font-size: 25px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 2560px)
+    {
+        font-size: 29px;
     }
 `

@@ -12,8 +12,9 @@ body {
   ::-webkit-scrollbar-thumb {
     background-color: #2DB656;
     border-radius: 30px;
-    
+   
   }
+  overflow: hidden;
 }
 
 code {

@@ -20,6 +20,11 @@ export const AddPlaylist = styled.div`
        font-size: 38px;
     }
 
+    @media (min-width: 1921px) and (max-width:2560px)
+    {
+        font-size: 45px;
+    }
+
    
 
 `
@@ -34,6 +39,30 @@ export const PlaylistWrapper = styled.div`
     position : absolute;
     top:100px;
     left:200px;
+
+    @media (min-width: 2415px) and (max-width:2560px)
+    {
+        max-width: 1130px;
+        min-height: 720px;
+        top:300px;
+        left: 700px;
+    }
+
+    @media (min-width: 2220px) and (max-width: 2414px)
+    {
+        max-width: 1130px;
+        min-height: 720px;
+        top:300px;
+        left: 660px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 2219px)
+    {
+        max-width: 1130px;
+        min-height: 720px;
+        top:300px;
+        left: 600px;
+    }
 
      @media (min-width: 1367px) and (max-width:1440px)
     {
@@ -126,6 +155,12 @@ export const ModalWrapper = styled.div`
         max-width: 800px;
         min-height: 510px;
     }
+
+    @media (min-width: 1921px) and (max-width:2560px)
+    {
+        max-width: 1080px;
+        min-height: 610px;
+    }
 `
 
 
@@ -147,6 +182,12 @@ export const Modal = styled.div`
     {
         max-width: 680px;
         min-height: 390px;
+    }
+
+    @media (min-width: 1921px) and (max-width:2560px)
+    {
+        max-width: 970px;
+        min-height: 440px;
     }
     
 `
@@ -172,6 +213,11 @@ export const ModalHeading = styled.h2`
     @media (min-width: 1441px) and (max-width:1920px)
     {
         font-size: 40px;
+    }
+
+    @media (min-width: 1921px) and (max-width:2560px)
+    {
+        font-size: 45px;
     }
 `
 export const ModalMiddleWrapper = styled.div`
@@ -206,6 +252,12 @@ export const ModalMiddleTopLeft = styled.div`
         max-width: 270px;
         min-height: 270px;
     }
+
+    @media (min-width: 1921px) and (max-width:2560px)
+    {
+        max-width: 380px;
+        min-height: 310px;
+    }
     
 `
 
@@ -228,6 +280,12 @@ export const ModalMiddleTopRight = styled.div`
     {
         max-width: 380px;
         min-height: 260px;
+    }
+
+    @media (min-width: 1921px) and (max-width:2560px)
+    {
+        max-width: 570px;
+        min-height: 310px;
     }
 `
 
@@ -259,6 +317,13 @@ export const PlaylistName = styled.input`
         min-height: 55px;
         font-size: 19px;
     }
+
+    @media (min-width: 1921px) and (max-width:2560px)
+    {
+        max-width: 570px;
+        min-height: 70px;
+        font-size: 24px;
+    }
 `
 
 export const PlaylistDesc = styled.textarea`
@@ -286,6 +351,13 @@ export const PlaylistDesc = styled.textarea`
         min-height: 200px;
         font-size: 19px;
     }
+
+    @media (min-width: 1921px) and (max-width:2560px)
+    {
+        max-width: 570px;
+        min-height: 220px;
+        font-size: 24px;
+    }
 `
 export const CreateButton = styled.div`
     width: 100%;
@@ -311,6 +383,14 @@ export const CreateButton = styled.div`
         min-height: 55px;
         font-size: 20px;
     }
+
+    @media (min-width: 1921px) and (max-width:2560px)
+    {
+        max-width: 105px;
+        min-height: 65px;
+        font-size: 22px;
+        border-radius: 40px;
+    }
 `
 
 export const ImagePreview = styled.img`
@@ -327,6 +407,12 @@ export const ImagePreview = styled.img`
     {
        width:270px;
        height:270px;
+    }
+
+    @media (min-width: 1921px) and (max-width:2560px)
+    {
+        width:380px;
+        height:310px;
     }
 `
 
@@ -354,5 +440,10 @@ color : white;
     {
        width:270px;
        height:270px;
+    }
+    @media (min-width: 1921px) and (max-width:2560px)
+    {
+        width:380px;
+        height:310px;
     }
 `
