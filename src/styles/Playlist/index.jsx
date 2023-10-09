@@ -64,12 +64,6 @@ export const PlaylistWrapper = styled.div`
         left: 600px;
     }
 
-     @media (min-width: 1367px) and (max-width:1440px)
-    {
-        max-width: 1030px;
-        min-height: 450px;
-    }
-
     @media (min-width: 1880px) and (max-width:1920px)
     {
         max-width: 1070px;
@@ -131,6 +125,43 @@ export const PlaylistWrapper = styled.div`
         
     }
 
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+        max-width: 1030px;
+        min-height: 450px;
+    }
+
+    @media (min-width: 1151px) and (max-width: 1255px)
+    {
+        max-width: 990px;
+        min-height: 410px;
+        left: 170px;
+    }
+
+    @media (min-width: 1067px) and (max-width: 1150px)
+    {
+        max-width: 950px;
+        min-height: 400px;
+        left: 140px;
+    }
+
+    @media (min-width: 910px) and (max-width: 1066px)
+    {
+        max-width: 700px;
+        min-height: 400px;
+        left: 190px;
+    }
+
+    @media (min-width: 769px) and (max-width: 909px)
+    {
+        max-width: 500px;
+        min-height: 350px;
+        left: 190px;
+    }
+
+
+    
+
 `
 
 export const ModalWrapper = styled.div`
@@ -143,6 +174,25 @@ export const ModalWrapper = styled.div`
     align-items: center;
     justify-content: center;
     opacity: 1;
+
+    @media (min-width: 769px) and (max-width: 909px)
+    {
+        max-width: 500px;
+        min-height: 350px;
+        left: 190px;
+    }
+
+    @media (min-width: 910px) and (max-width: 1066px)
+    {
+        max-width: 560px;
+        min-height: 350px;
+
+    }
+    @media (min-width: 1067px) and (max-width: 1150px)
+    {
+        max-width: 570px;
+        min-height: 380px;
+    }
 
     @media (min-width: 1367px) and (max-width:1440px)
     {
@@ -161,6 +211,8 @@ export const ModalWrapper = styled.div`
         max-width: 1080px;
         min-height: 610px;
     }
+
+
 `
 
 
@@ -171,6 +223,35 @@ export const Modal = styled.div`
     display: flex;
     flex-direction: column;
     gap:40px;
+
+
+    @media (min-width: 769px) and (max-width: 909px)
+    {
+        max-width: 420px;
+        min-height: 240px;
+        gap: 15px;
+    }
+    
+    @media (min-width: 910px) and (max-width: 1066px)
+    {
+        max-width: 520px;
+        min-height: 250px;
+        gap: 20px;
+    }
+
+    @media (min-width: 1067px) and (max-width: 1150px)
+    {
+        max-width: 520px;
+        min-height: 280px;
+        gap: 25px;
+    }
+
+    @media (min-width: 1151px) and (max-width: 1255px)
+    {
+        max-width: 540px;
+        min-height: 290px;
+        gap: 30px;
+    }
 
     @media (min-width: 1367px) and (max-width:1440px)
     {
@@ -205,6 +286,27 @@ export const ModalHeading = styled.h2`
     color : white;
     font-size : 28px;
 
+
+    @media (min-width: 769px) and (max-width: 909px)
+    {
+        font-size: 19px;
+    }
+    
+    @media (min-width: 910px) and (max-width: 1066px)
+    {
+        font-size: 21px;
+    }
+
+    @media (min-width: 1067px) and (max-width: 1150px)
+    {
+       font-size: 22px;
+    }
+
+    @media (min-width: 1151px) and (max-width: 1255px)
+    {
+        font-size: 24px;
+    }
+
     @media (min-width: 1367px) and (max-width:1440px)
     {
         font-size: 30px;
@@ -229,6 +331,7 @@ export const ModalMiddleWrapper = styled.div`
 export const ModalMiddleTop = styled.div`
     display: flex;
     gap:20px;
+    justify-content: center;
 `
 
 export const ModalMiddleTopLeft = styled.div`
@@ -240,6 +343,30 @@ export const ModalMiddleTopLeft = styled.div`
     display : flex;
     justify-content: center;
     align-items: center;
+
+    @media (min-width: 769px) and (max-width: 909px)
+    {
+        max-width: 160px;
+        min-height: 140px;
+    }
+    
+    @media (min-width: 910px) and (max-width: 1066px)
+    {
+        max-width: 200px;
+        min-height: 140px;
+    }
+
+    @media (min-width: 1067px) and (max-width: 1150px)
+    {
+        max-width: 200px;
+        min-height: 140px;
+    }
+
+    @media (min-width: 1051px) and (max-width: 1255px)
+    {
+        max-width: 200px;
+        min-height: 140px;
+    }
 
     @media (min-width: 1367px) and (max-width:1440px)
     {
@@ -270,6 +397,25 @@ export const ModalMiddleTopRight = styled.div`
     flex-direction: column;
     gap: 20px;
 
+    
+    @media (min-width: 910px) and (max-width: 1066px)
+    {
+        max-width: 240px;
+        min-height: 140px;
+    }
+
+    @media (min-width: 1067px) and (max-width: 1150px)
+    {
+        max-width: 260px;
+        min-height: 150px;
+    }
+
+    @media (min-width: 1151px) and (max-width: 1255px)
+    {
+        max-width: 280px;
+        min-height: 170px;
+    }
+
     @media (min-width: 1367px) and (max-width:1440px)
     {
         max-width: 340px;
@@ -292,6 +438,24 @@ export const ModalMiddleTopRight = styled.div`
 export const ModalMiddleBottom = styled.div`
     display:flex;
     justify-content:flex-end;
+
+
+    
+    @media (min-width: 910px) and (max-width: 1066px)
+    {
+        max-width: 490px;
+    }
+
+    @media (min-width: 1067px) and (max-width: 1150px)
+    {
+        max-width: 490px;
+    }
+
+    @media (min-width: 1151px) and (max-width: 1255px)
+    {
+        max-width: 520px;
+    }
+
 `
 
 export const PlaylistName = styled.input`
@@ -303,6 +467,19 @@ export const PlaylistName = styled.input`
     padding-left: 15px;
     outline : none;
     color : white;
+
+    @media (min-width: 1067px) and (max-width: 1150px)
+    {
+        max-width: 310px;
+        min-height: 40px;
+    }
+
+    @media (min-width: 1151px) and (max-width: 1255px)
+    {
+        max-width: 320px;
+        min-height: 40px;
+        font-size: 14px;
+    }
 
     @media (min-width: 1367px) and (max-width:1440px)
     {
@@ -338,6 +515,19 @@ export const PlaylistDesc = styled.textarea`
     padding-left: 15px;
     padding-top: 15px;
 
+    @media (min-width: 1067px) and (max-width: 1150px)
+    {
+        max-width: 310px;
+        min-height: 140px;
+    }
+
+    @media (min-width: 1151px) and (max-width: 1255px)
+    {
+        max-width: 320px;
+        min-height: 140px;
+        font-size: 14px;
+    }
+
     @media (min-width: 1367px) and (max-width:1440px)
     {
         max-width: 340px;
@@ -370,6 +560,20 @@ export const CreateButton = styled.div`
     border-radius: 30px;
     cursor:pointer;
     font-weight: 500;
+
+    @media (min-width: 769px) and (max-width: 909px)
+    {
+        max-width: 80px;
+        min-height: 40px;
+        font-size: 15px;
+    }
+
+    @media (min-width: 1151px) and (max-width: 1255px)
+    {
+        max-width: 85px;
+        min-height: 45px;
+        font-size: 16px;
+    }
     @media (min-width: 1367px) and (max-width:1440px)
     {
         max-width: 95px;
@@ -396,6 +600,30 @@ export const CreateButton = styled.div`
 export const ImagePreview = styled.img`
     width:200px;
     height:200px;
+
+    @media (min-width: 769px) and (max-width: 909px)
+    {
+        width: 160px;
+        height: 200px;
+    }
+
+    @media (min-width: 910px) and (max-width: 1066px)
+    {
+        width: 200px;
+        height: 200px;
+    }
+
+    @media (min-width: 1067px) and (max-width: 1150px)
+    {
+        width: 200px;
+        height: 200px;
+    }
+
+    @media (min-width: 1151px) and (max-width: 1255px)
+    {
+        width: 200px;
+        height: 200px;
+    }
 
     @media (min-width: 1367px) and (max-width:1440px)
     {
@@ -429,6 +657,30 @@ justify-content: center;
 cursor: pointer;
 font-size : 100px;
 color : white;
+
+@media (min-width: 769px) and (max-width: 909px)
+    {
+        width: 160px;
+        height: 200px;
+    }
+  
+@media (min-width: 910px) and (max-width: 1066px)
+    {
+        width: 200px;
+        height: 200px;
+    }
+
+@media (min-width: 1067px) and (max-width: 1150px)
+    {
+        width: 200px;
+        height: 200px;
+    }
+
+@media (min-width: 1151px) and (max-width: 1255px)
+    {
+        width: 200px;
+        height: 200px;
+    }
 
 @media (min-width: 1367px) and (max-width:1440px)
     {

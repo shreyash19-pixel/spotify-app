@@ -9,6 +9,7 @@ export const HomeSect = styled.div`
     align-items: center;
    position: relative;
    padding-inline: 8px;
+   
 
    @media (min-width: 1367px) and (max-width:1440px)
     {
@@ -76,6 +77,23 @@ export const SideBar = styled.div`
     {
         max-width: 520px;
     }
+
+    
+    @media (min-width: 1141px) and (max-width: 1254px)
+    {
+        max-width: 270px;
+    }
+
+    @media (min-width: 1025px) and (max-width: 1140px)
+    {
+        max-width: 250px;
+    }
+
+    @media (min-width: 769px) and (max-width: 1050px)
+    {
+        max-width: 240px;
+    }
+
 `
 export const SideBarWrapper = styled.div`
     width: 100%;
@@ -98,6 +116,22 @@ export const SideBarWrapper = styled.div`
     {
         max-width: 520px;
     }
+
+    @media (min-width: 1141px) and (max-width: 1254px)
+    {
+        max-width: 270px;
+    }
+
+    @media (min-width: 1025px) and (max-width: 1140px)
+    {
+        max-width: 250px;
+    }
+
+    @media (min-width: 769px) and (max-width: 1050px)
+    {
+        max-width: 240px;
+    }
+
 `
 export const SpotifyHeadingWrapper = styled.div`
     display: flex;
@@ -132,6 +166,16 @@ export const ExpandWrapper = styled.div`
     @media (min-width: 1921px) and (max-width: 2560px)
     {
         font-size: 60px;
+    }
+
+    @media (min-width: 1025px) and (max-width: 1140px)
+    {
+        font-size: 28px;
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px)
+    {
+       font-size: 27px;
     }
 `   
 
@@ -251,6 +295,17 @@ export const AddPlaylists = styled.div`
     {
         max-width: 430px;
     }
+
+    @media (min-width: 1200px) and (max-width: 1254px)
+    {
+        max-width: 208px;
+    }
+
+    
+    @media (min-width: 769px) and (max-width: 1050px)
+    {
+        max-width: 180px;
+    }
 `
 
 export const Home = styled.h3`
@@ -321,6 +376,21 @@ export const SpotifyImg = styled.img`
     {
       width: 150px;
     }
+
+    @media (min-width: 1141px) and (max-width: 1254px)
+    {
+        width: 75px;
+    }
+
+    @media (min-width: 1025px) and (max-width: 1140px)
+    {
+       width: 70px;
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px)
+    {
+       width: 65px;
+    }
 `
 
 export const SpotifyName = styled.h1`
@@ -340,6 +410,21 @@ export const SpotifyName = styled.h1`
     @media (min-width: 1921px) and (max-width: 2560px)
     {
         font-size: 50px;
+    }
+
+    @media (min-width: 1141px) and (max-width: 1254px)
+    {
+        font-size: 30px;
+    }
+
+    @media (min-width: 1025px) and (max-width: 1140px)
+    {
+       font-size: 23px;
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px)
+    {
+       font-size: 21px;
     }
 `
 
@@ -742,31 +827,31 @@ export const SongWrapper = styled.div`
     @media (min-width: 2200px) and (max-width: 2239px)
     {
         max-width: ${(props) => (props.isClosed ? "355px" : "375px")};
-        padding: 23px;
+        padding: 22px;
     }
 
     @media (min-width: 2160px) and (max-width: 2199px)
     {
         max-width: ${(props) => (props.isClosed ? "350px" : "360px")};
-        padding: 23px;
+        padding: 20px;
     }
 
     @media (min-width: 2040px) and (max-width: 2159px)
     {
         max-width: ${(props) => (props.isClosed ? "340px" : "345px")};
-        padding: 23px;
+        padding: 20px;
     }
 
     @media (min-width: 1980px) and (max-width: 2039px)
     {
         max-width: ${(props) => (props.isClosed ? "315px" : "330px")};
-        padding: 23px;
+        padding: 20px;
     }
 
     @media (min-width: 1921px) and (max-width: 1979px)
     {
         max-width: ${(props) => (props.isClosed ? "300px" : "315px")};
-        padding: 23px;
+        padding: 20px;
     }
 
     @media (min-width: 1367px) and (max-width:1440px)
@@ -825,11 +910,101 @@ export const SongWrapper = styled.div`
         max-width: ${(props) => (props.isClosed ? "245px" : "240px")};
     }
 
-    @media (min-width: 1442px) and (max-width:1485px)
+    @media (min-width: 1441px) and (max-width:1485px)
     {
         max-width: ${(props) => (props.isClosed ? "240px" : "230px")};
     }
 
+    @media (min-width: 1400px) and (max-width:1440px)
+    {
+        max-width: ${(props) => (props.isClosed ? "225px" : "235px")};
+        padding: 13px;
+    }
+
+
+    @media (min-width: 1254px) and (max-width:1399px)
+    {
+        max-width: ${(props) => (props.isClosed ? "205px" : "215px")};
+        padding: 15px;
+    }
+
+    @media (min-width: 1200px) and (max-width:1253px)
+    {
+        max-width: ${(props) => (props.isClosed ? "200px" : "200px")};
+        padding: 14px;
+    }
+
+    @media (min-width: 1140px) and (max-width:1199px)
+    {
+        max-width: ${(props) => (props.isClosed ? "190px" : "185px")};
+        padding: 12px;
+    }
+
+    @media (min-width: 1115px) and (max-width:1139px)
+    {
+        max-width: ${(props) => (props.isClosed ? "180px" : "175px")};
+        padding: 11px;
+    }
+
+    @media (min-width: 1075px) and (max-width:1114px)
+    {
+        max-width: ${(props) => (props.isClosed ? "210px" : "170px")};
+        padding: 11px;
+    }
+
+    @media (min-width: 1025px) and (max-width:1074px)
+    {
+        max-width: ${(props) => (props.isClosed ? "210px" : "165px")};
+        padding: 11px;
+    }
+
+    @media (min-width: 985px) and (max-width:1024px)
+    {
+        max-width: ${(props) => (props.isClosed ? "195px" : "205px")};
+        padding: 11px;
+    }
+
+    @media (min-width: 958px) and (max-width:984px)
+    {
+        max-width: ${(props) => (props.isClosed ? "190px" : "207px")};
+        padding: 11px;
+    }
+
+    @media (min-width: 938px) and (max-width:957px)
+    {
+        max-width: ${(props) => (props.isClosed ? "185px" : "193px")};
+        padding: 11px;
+    }
+
+    @media (min-width: 900px) and (max-width:937px)
+    {
+        max-width: ${(props) => (props.isClosed ? "180px" : "188px")};
+        padding: 11px;
+    }
+
+    @media (min-width: 879px) and (max-width:899px)
+    {
+        max-width: ${(props) => (props.isClosed ? "175px" : "181px")};
+        padding: 11px;
+    }
+
+    @media (min-width: 848px) and (max-width:878px)
+    {
+        max-width: ${(props) => (props.isClosed ? "170px" : "171px")};
+        padding: 11px;
+    }
+
+    @media (min-width: 810px) and (max-width:847px)
+    {
+        max-width: ${(props) => (props.isClosed ? "160px" : "158px")};
+        padding: 11px;
+    }
+
+    @media (min-width: 769px) and (max-width:809px)
+    {
+        max-width: ${(props) => (props.isClosed ? "145px" : "145px")};
+        padding: 11px;
+    }
 
 `
 
@@ -901,22 +1076,130 @@ export const SongName = styled.h1`
     text-overflow: ellipsis;
     font-weight: 600;
 
-    
-    @media (min-width: 1367px) and (max-width:1440px)
-    {
-       font-size: 27px;
-    }
-
-    @media (min-width: 1441px) and (max-width:1920px)
-    {
-        font-size: 30px;
-    }
-
-    @media (min-width: 1921px) and (max-width: 2560px)
+    @media (min-width: 2201px) and (max-width: 2560px)
     {
         font-size: 38px;
     }
 
+    @media (min-width: 2100px) and (max-width: 2200px)
+    {
+       font-size: 33px;
+    }
+
+
+    @media (min-width: 2040px) and (max-width: 2099px)
+    {
+       font-size: 31px;
+    } 
+
+    @media (min-width: 1980px) and (max-width: 2039px)
+    {
+        font-size: 29px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 1979px)
+    {
+      font-size: 29px;
+    }
+
+    @media (min-width: 1800px) and (max-width:1920px)
+    {
+        font-size: 30px;
+    }
+
+    @media (min-width: 1722px) and (max-width:1759px)
+    {
+        font-size: 28px;
+    }
+
+    @media (min-width: 1682px) and (max-width:1721px)
+    {
+       font-size: 26px;
+    }
+
+    @media (min-width: 1641px) and (max-width:1681px)
+    {
+        font-size: 25px;
+    }
+
+     @media (min-width: 1600px) and (max-width:1640px)
+    {
+        font-size: 24px;
+    }
+
+    @media (min-width: 1553px) and (max-width:1599px)
+    {
+        font-size: 24px;
+    }
+
+    @media (min-width: 1515px) and (max-width:1553px)
+    {
+        font-size: 24px;
+    }
+
+    @media (min-width: 1485px) and (max-width:1515px)
+    {
+        font-size: 22px;
+    }
+
+    @media (min-width: 1441px) and (max-width:1485px)
+    {
+        font-size: 21px;
+    }
+
+    
+    @media (min-width: 1367px) and (max-width:1440px)
+    {
+       font-size: 21px;
+    }
+
+    @media (min-width: 1254px) and (max-width:1317px)
+    {
+        font-size: 19px;
+    }
+
+    @media (min-width: 1200px) and (max-width:1253px)
+    {
+        font-size: 18px;
+    }
+
+    @media (min-width: 1140px) and (max-width:1199px)
+    {
+        font-size: 17px;
+    }
+
+    @media (min-width: 985px) and (max-width:1139px)
+    {
+        font-size: 16px;
+    }
+
+
+    @media (min-width: 958px) and (max-width:984px)
+    {
+        font-size: 17px;
+    }
+
+    @media (min-width: 938px) and (max-width:957px)
+    {
+        font-size: 16px;
+    }
+
+    @media (min-width: 879px) and (max-width:937px)
+    {
+        font-size: 15px;
+    }
+
+
+    @media (min-width: 810px) and (max-width:878px)
+    {
+        font-size: 13px;
+    }
+
+    @media (min-width: 769px) and (max-width:809px)
+    {
+        font-size: 13px;
+    }
+   
 `
 
 
@@ -936,19 +1219,111 @@ export const ArtistName = styled.h3`
     white-space: nowrap;
     text-overflow: ellipsis;
 
-    
-    @media (min-width: 1367px) and (max-width:1440px)
+    @media (min-width: 2200px) and (max-width: 2334px)
     {
-        font-size: 21px;
+       font-size: 27px;
     }
 
-    @media (min-width: 1441px) and (max-width:1920px)
+    @media (min-width: 2160px) and (max-width: 2199px)
+    {
+        font-size: 26px;
+    }
+
+    @media (min-width: 2040px) and (max-width: 2159px)
+    {
+       font-size: 24px;
+    }
+
+    @media (min-width: 1980px) and (max-width: 2039px)
+    {
+        font-size: 23px;
+    }
+
+    @media (min-width: 1921px) and (max-width: 1979px)
+    {
+      font-size: 23px;
+    }
+
+    @media (min-width: 1800px) and (max-width:1920px)
     {
         font-size: 25px;
     }
 
-    @media (min-width: 1921px) and (max-width: 2560px)
+    @media (min-width: 1722px) and (max-width:1759px)
+    {
+        font-size: 24px;
+    }
+
+    @media (min-width: 1682px) and (max-width:1721px)
+    {
+      font-size: 22px;
+    }
+
+    @media (min-width: 1641px) and (max-width:1681px)
+    {
+        font-size: 21px;
+    }
+
+     @media (min-width: 1515px) and (max-width:1640px)
+    {
+        font-size: 20px;
+    }
+
+    @media (min-width: 1485px) and (max-width:1515px)
+    {
+        font-size: 18px;
+    }
+
+    @media (min-width: 1367px) and (max-width:1485px)
+    {
+        font-size: 17px;
+    }
+    
+
+    @media (min-width: 1254px) and (max-width:1317px)
+    {
+       font-size: 16px;
+    }
+
+    @media (min-width: 1200px) and (max-width:1253px)
+    {
+      font-size: 15px;
+    }
+
+    @media (min-width: 1140px) and (max-width:1199px)
+    {
+        font-size: 14px;
+    }
+
+    @media (min-width: 1115px) and (max-width:1139px)
+    {
+        font-size: 13px;
+    }
+
+    @media (min-width: 2335px) and (max-width: 2560px)
     {
         font-size: 29px;
     }
+
+    @media (min-width: 1025px) and (max-width:1114px)
+    {
+        font-size: 14px;
+    }
+
+    @media (min-width: 958px) and (max-width:1024px)
+    {
+        font-size: 13px;
+    }
+
+    @media (min-width: 879px) and (max-width:957px)
+    {
+        font-size: 12px;
+    }
+
+
+    @media (min-width: 769px) and (max-width:878px)
+    {
+        font-size: 11px;
+    }
+
 `

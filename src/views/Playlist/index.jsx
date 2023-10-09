@@ -14,6 +14,10 @@ const Playlist = () => {
 
     const createPlaylist = () => {
         setPlaylist(!playlist)
+        inputRef.current.value = ''
+          textAreaRef.current.value = ''
+          setImage(null)
+
     }
 
     const handleNewPlaylistName = (e) => {

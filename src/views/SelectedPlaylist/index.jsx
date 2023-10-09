@@ -3,7 +3,7 @@ import {HeroIcons, HeroTop, HeroTopLeft, HeroTopRight, IconWrapper} from '../../
 import AppContext from '../../AppContext'
 import {AiOutlineLeft,AiOutlineRight,AiOutlinePlus,AiOutlineHeart} from 'react-icons/ai'
 import {BiSolidUser} from 'react-icons/bi'
-import { InputWrapper, SearchBar, SearchBarWrapper, PlaylistsWrapper,AddSongs,AddWrapper, AdddedSongsWrapper, ArtistName, ArtistWrapper, HeroTopWrapper, HeroWrapper, PlayListName, PlayListNameDesc, PlaylistDesc, PlaylistImage, PlaylistInfo, PlaylistInfoLeft, PlaylistInfoRight, PlaylistInfoWrapper, SearchAndAdd, SearchWrapper, SongCard, SongDetails, SongImg, SongName, AddedSongs, ShuffleAddedWrapper, ShuffleWrapper, Shuffle } from '../../styles/SelectedPlaylist'
+import { InputWrapper, SearchBar, SearchBarWrapper, PlaylistsWrapper,AddSongs,AddWrapper, AdddedSongsWrapper, ArtistName, ArtistWrapper, HeroTopWrapper, HeroWrapper, PlayListName, PlayListNameDesc, PlaylistDesc, PlaylistImage, PlaylistInfo, PlaylistInfoLeft, PlaylistInfoRight, PlaylistInfoWrapper, SearchAndAdd, SearchWrapper, SongCard, SongDetails, SongImg, SongName, AddedSongs, ShuffleAddedWrapper, ShuffleWrapper, Shuffle, AddContainer } from '../../styles/SelectedPlaylist'
 import {HiOutlineSearch} from 'react-icons/hi'
 import { toast,ToastContainer } from "react-toastify";
 import {TiTickOutline} from 'react-icons/ti'
@@ -101,7 +101,9 @@ const SelectedPlaylist = () => {
             </InputWrapper>
           </SearchBarWrapper>)}
         </SearchWrapper>
-        {search && (<AddWrapper isClosed = {isReduced} onBlur = {() => setSearch()}>
+        {search && (
+        <AddContainer isClosed = {isReduced}>
+        <AddWrapper isClosed = {isReduced} onBlur = {() => setSearch()}>
         {playlistInfo[playlistNumber].audio.filter((item) => {      
                     return search ? convertToLowerCase(item.name).includes(convertToLowerCase(search)) : ""
                   }).map((track,index) => (
@@ -120,7 +122,8 @@ const SelectedPlaylist = () => {
              
           </SongCard>
           ))}
-        </AddWrapper>)}
+        </AddWrapper>
+        </AddContainer>)}
      </SearchAndAdd>
      </HeroTop>
      <PlaylistsWrapper isClosed = {isReduced}>
@@ -128,7 +131,7 @@ const SelectedPlaylist = () => {
         <PlaylistInfoLeft>
             <PlaylistImage src = {playlistInfo[playlistNumber]?.image}/>
         </PlaylistInfoLeft>
-        <PlaylistInfoRight>
+        <PlaylistInfoRight isClosed = {isReduced}>
         <PlayListNameDesc>
           <PlayListName>{playlistInfo[playlistNumber]?.name}</PlayListName>
           <PlaylistDesc>{playlistInfo[playlistNumber]?.description}</PlaylistDesc>

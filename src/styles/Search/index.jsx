@@ -86,25 +86,39 @@ export const SearchedSongs = styled.div`
     flex-wrap : wrap;
     padding-left: 9px;
 
+    @media (min-width: 769px) and (max-width:1024px)
+    {
+        max-height: 500px;
+        max-width: ${(props) => (props.isClosed ? "1290px" : "1100px")};
+        padding-left: ${(props) => (props.isClosed ? "12px" : "20px")};
+    }
+
+    @media (min-width: 1025px) and (max-width:1366px)
+    {
+        max-height: 500px;
+        max-width: ${(props) => (props.isClosed ? "1290px" : "1100px")};
+        padding-left: ${(props) => (props.isClosed ? "10px" : "12px")};
+    }
+
     @media (min-width: 1367px) and (max-width:1440px)
     {
         max-height: 630px;
         max-width: ${(props) => (props.isClosed ? "1290px" : "1100px")};
-        padding-left: ${(props) => (props.isClosed ? "15px" : "20px")};
+        padding-left: ${(props) => (props.isClosed ? "20px" : "20px")};
     }
 
     @media (min-width: 1441px) and (max-width:1920px)
     {
         max-width: ${(props) => (props.isClosed ? "1770px" : "1475px")};
         max-height: 830px;
-        padding-left: ${(props) => (props.isClosed ? "15px" : "20px")};
+        padding-left: ${(props) => (props.isClosed ? "20px" : "20px")};
     }
 
     @media (min-width: 1921px) and (max-width: 2560px)
     {
-        max-width: ${(props) => (props.isClosed ? "2350px" : "2175px")};
+        max-width: ${(props) => (props.isClosed ? "2350px" : "2135px")};
         max-height: 1300px;
-        padding-left: ${(props) => (props.isClosed ? "25px" : "70px")};
+        padding-left: ${(props) => (props.isClosed ? "35px" : "30px")};
         gap: 25px;
     }
 `

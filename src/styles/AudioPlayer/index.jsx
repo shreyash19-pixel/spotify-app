@@ -25,10 +25,15 @@ export const MusicPlayerWrapper = styled.div`
         max-width: 2560px;
         min-height: 120px;
     }
+    @media (min-width: 1141px) and (max-width: 1254px)
+    {
+        min-height: 80px;
+    }
+
 `
 export const SongInfo = styled.div`
     width:100%;
-    max-width: ${(props) => (props.isLarge ? "80px" : "300px")};
+    max-width: ${(props) => (props.isLarge ? "85px" : "305px")};
     min-height: 80px;
     display: flex;
     align-items: center;
@@ -50,6 +55,24 @@ export const SongInfo = styled.div`
     {
         max-width: ${(props) => (props.isLarge ? "170px" : "520px")};
         gap: 24px;
+    }
+
+    @media (min-width: 1141px) and (max-width: 1255px)
+    {
+        max-width: ${(props) => (props.isLarge ? "90px" : "275px")};
+    }
+
+
+    @media (min-width: 1025px) and (max-width: 1140px)
+    {
+        max-width: ${(props) => (props.isLarge ? "85px" : "260px")};
+    }
+
+    
+    @media (min-width: 769px) and (max-width: 1050px)
+    {
+
+        max-width: ${(props) => (props.isLarge ? "85px" : "245px")};
     }
 
 
@@ -75,6 +98,18 @@ export const SongInfoImg = styled.img`
      border-radius: 50%;
      animation: ${Rotate} 4s linear infinite;
 
+     @media (min-width: 769px) and (max-width:1024px)
+    {
+        width: 50px;
+        height: 50px;
+    }
+
+    @media (min-width: 1025px) and (max-width:1366px)
+    {
+        width: 55px;
+        height: 55px;
+    }
+
      @media (min-width: 1367px) and (max-width:1440px)
     {
         width: 60px;
@@ -92,6 +127,7 @@ export const SongInfoImg = styled.img`
         width: 85px;
         height: 85px;
     }
+
 `
 
 
@@ -117,6 +153,22 @@ export const SongInfoArtistWrap = styled.div`
         max-width: 355px;
     }
 
+    @media (min-width: 1141px) and (max-width: 1254px)
+    {
+        max-width: 170px;
+    }
+
+    @media (min-width: 1025px) and (max-width: 1140px)
+    {
+        max-width: 165px;
+    }
+
+    
+    @media (min-width: 769px) and (max-width: 1050px)
+    {
+        max-width: 155px;
+    }
+
     
 
 
@@ -129,6 +181,16 @@ export const SongInfoSongName = styled.h1`
     white-space: nowrap;
     text-overflow: ellipsis;
 
+    @media (min-width: 769px) and (max-width:1024px)
+    {
+        font-size: 21px;
+    }
+
+    @media (min-width: 1025px) and (max-width:1366px)
+    {
+        font-size: 23px;
+    }
+
     @media (min-width: 1441px) and (max-width:1920px)
     {
         font-size: 30px;
@@ -138,6 +200,7 @@ export const SongInfoSongName = styled.h1`
     {
         font-size: 35px;
     }
+
 `
 
 export const SongInfoArtistName = styled.h3`
@@ -147,6 +210,17 @@ export const SongInfoArtistName = styled.h3`
   overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+
+    @media (min-width: 769px) and (max-width:1024px)
+    {
+        font-size: 13px;
+    }
+
+    @media (min-width: 1025px) and (max-width:1366px)
+    {
+        font-size: 16px;
+    }
+
 
     @media (min-width: 1367px) and (max-width:1440px)
     {
@@ -162,6 +236,7 @@ export const SongInfoArtistName = styled.h3`
     {
         font-size: 30px;
     }
+
 `
 
 export const MusicPlayer = styled.div`
