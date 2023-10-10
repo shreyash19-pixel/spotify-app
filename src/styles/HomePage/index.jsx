@@ -9,6 +9,13 @@ export const HomeSect = styled.div`
     align-items: center;
    position: relative;
    padding-inline: 8px;
+
+   @media (max-width:768px)
+    {   
+        width: 100%;
+        max-width: 768px;
+        min-height: 532px;
+    }
    
 
    @media (min-width: 1367px) and (max-width:1440px)
@@ -36,6 +43,12 @@ export const HomeWrapper = styled.div`
     display: flex;
     gap:10px;
     padding-block: 10px;
+
+    @media (max-width:768px)
+    {   
+        display: none;
+    }
+    
     @media (min-width: 1367px) and (max-width:1440px)
     {
         max-width: 1420px;
@@ -54,6 +67,42 @@ export const HomeWrapper = styled.div`
         min-height: 1330px;
     }
 `
+
+export const HomeWrapperTablet = styled.div`
+    width: 100%;
+    max-width: 760px;
+    min-height :520px;
+    background-color: #121212;
+    display: none;
+    border-radius: 10px;
+
+    @media (max-width:768px)
+    {   
+        display: flex;
+        flex-direction: column;
+    }
+`
+
+export const TabletViewTop = styled.div`
+    width: 100%;
+    max-width: 760px;
+    min-height :60px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+
+export const TabletWidgets = styled.div`
+    width: 100%;
+    max-width: 768px;
+    min-height: 75px;
+    display: flex;
+    gap: 35px;
+    align-items: center;
+    justify-content: center;
+`
+
 
 export const SideBar = styled.div`
     width: 100%;
@@ -257,6 +306,12 @@ export const IconWrapper = styled.div`
     font-size: ${(props) => (props.isClosed ? "35px" : "27px")};
     display: flex;
 
+    @media (max-width:768px)
+    {   
+        font-size: 44px;
+        color: white;
+    }
+
     @media (min-width: 1367px) and (max-width:1440px)
     {
         min-height: 30px;
@@ -362,6 +417,11 @@ export const SideBarBottom = styled.div`
 export const SpotifyImg = styled.img`
     width: 80px;
 
+    @media (max-width:768px)
+    {   
+        width: 75px;
+    }
+
     @media (min-width: 1367px) and (max-width:1440px)
     {
         width: 95px;
@@ -396,6 +456,13 @@ export const SpotifyImg = styled.img`
 export const SpotifyName = styled.h1`
     color : White;
     font-size : 32px;
+
+    
+    @media (max-width:768px)
+    {   
+       font-size: 32px;
+    }
+
 
     @media (min-width: 1367px) and (max-width:1440px)
     {
@@ -655,6 +722,14 @@ export const HeroTop = styled.div`
     justify-content: space-between;
     padding-top: ${(props) => (props.topPadding ? "15px" : "0px")};
 
+    @media (max-width:768px)
+    {   
+        max-width: 768px;
+        min-height: 30px;
+        padding-top: 0px;
+        padding-left: 15px;
+    }
+    
     @media (min-width: 1367px) and (max-width:1440px)
     {
         max-width: ${(props) => (props.isClosed ? "1320px" : "1090px")};
@@ -716,6 +791,15 @@ export const HeroBottom = styled.div`
     position: relative;
     padding-top: ${(props) => (props.topPadding ? "30px" : "40px")};
 
+    
+    @media (max-width:768px)
+    {   
+        max-width: 750px;
+        min-height: 370px;
+        background-color: #121212;
+        padding-top: 20px;
+    }
+
 
     @media (min-width: 1367px) and (max-width:1440px)
     {
@@ -753,6 +837,12 @@ export const HeroMusicSec = styled.div`
     flex-wrap : wrap;
     justify-content: center;
 
+
+    @media (max-width:768px)
+    {   
+        max-width: 730px;
+        max-height: 380px;
+    }
     
     @media (min-width: 1367px) and (max-width:1440px)
     {
@@ -792,6 +882,11 @@ export const SongWrapper = styled.div`
 
     &:hover{
         background-color: #313131;
+    }
+
+    @media (max-width:768px)
+    {   
+        max-width: 210px;
     }
     
     @media (min-width: 2465px) and (max-width: 2560px)

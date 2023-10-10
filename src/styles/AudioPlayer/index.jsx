@@ -7,7 +7,12 @@ export const MusicPlayerWrapper = styled.div`
   background-color: black;
   position: absolute;
   bottom: 0px;
-  display: flex;
+  display: ${(props) => (props.mobile ? "none" : "flex")};
+
+  @media (max-width:768px)
+    {   
+        display: ${(props) => (props.mobile ? "flex" : "none")};
+    }
 
   @media (min-width: 1367px) and (max-width:1440px)
     {

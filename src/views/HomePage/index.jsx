@@ -1,10 +1,10 @@
 import React, { useState , useEffect, useRef, useContext} from 'react'
-import {NewPlaylist,ShowPlaylistLeft,LikeWrapper,SongName,HeroBottomTop,HomeSect, HomeWrapper, SideBar,Hero, SideBarWrapper, SideBarTop, SpotifyImg, SpotifyName,  SideBarBottom, OptionWrapper, Home,  IconWrapper, HeroTop, HeroBottom, HeroTopLeft, HeroTopRight, HeroIcons, HeroBottomTopHeading, HeroMusicSec, SongWrapper, SongWrapperTop, SongImg, SongWrapperBottom, ArtistName, SideBarBottomTitleWrap, SideBarBottomTitle, ShowPlaylists, SpotifyHeadingWrapper, ShowPlaylistsWrapper, PlaylistsImage, PlaylistsName, DeletePlaylist,AddPlaylists, LogoWrapper, ExpandWrapper, ReducedBarWrapper} from '../../styles/HomePage'
+import {NewPlaylist,ShowPlaylistLeft,LikeWrapper,SongName,HeroBottomTop,HomeSect, HomeWrapper, SideBar,Hero, SideBarWrapper, SideBarTop, SpotifyImg, SpotifyName,  SideBarBottom, OptionWrapper, Home,  IconWrapper, HeroTop, HeroBottom, HeroTopLeft, HeroTopRight, HeroIcons, HeroBottomTopHeading, HeroMusicSec, SongWrapper, SongWrapperTop, SongImg, SongWrapperBottom, ArtistName, SideBarBottomTitleWrap, SideBarBottomTitle, ShowPlaylists, SpotifyHeadingWrapper, ShowPlaylistsWrapper, PlaylistsImage, PlaylistsName, DeletePlaylist,AddPlaylists, LogoWrapper, ExpandWrapper, ReducedBarWrapper, HomeWrapperTablet, TabletViewTop, TabletWidgets} from '../../styles/HomePage'
 import SpotifyLogo from '../../assets/spotify-logo.png'
 import { HiHome,HiOutlineSearch } from 'react-icons/hi';
-import {BiSolidPlaylist,BiSolidUser} from 'react-icons/bi'
+import {BiSolidPlaylist,BiSolidUser,BiSearch,BiSearchAlt} from 'react-icons/bi'
 import {MdFavorite} from 'react-icons/md'
-import {AiOutlineLeft,AiOutlineRight,AiOutlineHeart, AiOutlinePlus} from 'react-icons/ai'
+import {AiOutlineLeft,AiOutlineRight,AiOutlineHeart, AiOutlinePlus,AiOutlineHome} from 'react-icons/ai'
 import Search from '../Search'
 import Favorites from '../Favorites';
 import { toast,ToastContainer } from "react-toastify";
@@ -18,12 +18,17 @@ import {RiDeleteBin6Line} from 'react-icons/ri'
 import MyPlaylistImg from '../../assets/nerverland.jpg'
 import MyPlaylist from '../MyPlaylist';
 import {BsArrowRight,BsArrowLeft} from 'react-icons/bs'
+import {GoHomeFill,GoHome} from 'react-icons/go'
+import { InputWrapper, SearchBar, SearchBarWrapper } from '../../styles/Search';
+import {SearchedSongs } from '../../styles/Search'
+
 
 const HomePage = () => {
 
 
   const [home, setHome] = useState(true)
   const [search, setSearch] = useState(false)
+  const [searched, setSearched] = useState('')
   const [favorite, setFavorite] = useState(false)
   
   const [isLiked, setIsLiked] = useState([])
@@ -153,6 +158,13 @@ const MyPersonalPlaylist = () => {
     setIsReduced(true)
   }
   
+  const handleSearched = (e) => {
+    setSearched(e.target.value)
+  }
+
+  const convertToLowerCase = (name) => {
+    return name.toLowerCase()
+  }
 
   return (
    <HomeSect>
@@ -315,9 +327,84 @@ const MyPersonalPlaylist = () => {
      {selectedPlaylist && (<SelectedPlaylist />)}
      {personalPlaylist && (<MyPlaylist />)}
     </HomeWrapper>
+    <HomeWrapperTablet>
+      <TabletViewTop>
+        <SpotifyImg src = {SpotifyLogo}/>
+        <SpotifyName>Spotify</SpotifyName>
+      </TabletViewTop>
+      <HeroBottom>
+       { home && (<HeroMusicSec>
+        {song.map((track, index) => (
+                  <SongWrapper isClosed = {isReduced} key={index} onClick = {() => handleSongs(index)}>
+                   <LikeWrapper onClick={(e) => {e.stopPropagation();toggleLiked(index);}}>
+                      {isLiked[index] ? <MdFavorite /> : <AiOutlineHeart />}
+                    </LikeWrapper>
+                    <SongWrapperTop>
+                      <SongImg src={track.imageUrl} />
+                      <SongName>{track.name}</SongName>    
+                    </SongWrapperTop>
+                    <SongWrapperBottom>
+                      <ArtistName>{track.artist}</ArtistName>
+                    </SongWrapperBottom>
+                  </SongWrapper>
+                ))}
+        </HeroMusicSec>)
+        }
+
+        {search && (
+          <>
+          <HeroTop>
+            <SearchBarWrapper>
+            <InputWrapper>
+              <IconWrapper style = {{fontSize: "24px"}}>
+                <BiSearch/>
+              </IconWrapper>
+              <SearchBar type = "text" placeholder='What do you want to listen?' onChange = {handleSearched}/>
+            </InputWrapper>
+            </SearchBarWrapper>
+          </HeroTop>
+          <SearchedSongs>
+          {song.filter((item) => {
+                    return convertToLowerCase(item.name).includes(convertToLowerCase(searched)) 
+                    
+                }).map((track,index) => (
+                <SongWrapper isClosed = {isReduced} key = {index} onClick = {() => handleSongs(track)}>
+                    <SongWrapperTop>
+                        <SongImg src = {track.imageUrl}/>
+                        <SongName>{track.name}</SongName>
+                    </SongWrapperTop>
+                    <SongWrapperBottom>
+                        <ArtistName>
+                        {track.artist}
+                        </ArtistName>
+                    </SongWrapperBottom>
+                </SongWrapper>
+                ))}
+          </SearchedSongs>
+          </>
+        )}
+      </HeroBottom>
+      <TabletWidgets>
+        <IconWrapper onClick = {handleHome}>
+          { home ? <GoHomeFill /> : <GoHome />
+           }
+        </IconWrapper>
+        <IconWrapper onClick = {handleSearch}>
+        { search ? <BiSearchAlt/> : <BiSearch />
+           }
+        </IconWrapper>
+        <IconWrapper>
+          <MdFavorite />
+        </IconWrapper>
+        <IconWrapper>
+          <VscLibrary />
+        </IconWrapper>
+      </TabletWidgets>
+    </HomeWrapperTablet>
     {playlist && (<Playlist />)}
     <ToastContainer position="bottom-center" />
     <AudioPlayer/>
+    <AudioPlayer mobile/>
    </HomeSect>
   )
 }

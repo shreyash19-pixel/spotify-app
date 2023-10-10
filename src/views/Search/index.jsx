@@ -59,7 +59,7 @@ const Search = () => {
           </HeroTopLeft>
         </HeroTop>
         <HeroBottom isClosed = {isReduced} topPadding>
-            <HeroMusicSec isClosed = {isReduced}>
+            <SearchedSongs isClosed = {isReduced}>
                 {song.filter((item) => {
                     return convertToLowerCase(item.name).includes(convertToLowerCase(search)) 
                     
@@ -76,7 +76,7 @@ const Search = () => {
                     </SongWrapperBottom>
                 </SongWrapper>
                 ))}
-            </HeroMusicSec>
+            </SearchedSongs>
         </HeroBottom>
     </Hero>
   )

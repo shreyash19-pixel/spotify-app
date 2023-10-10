@@ -18,6 +18,14 @@ export const SearchBarWrapper = styled.div`
         background-color: #3d3d3d;
     }
 
+    @media (max-width:768px)
+    {
+       max-width: 350px;
+       padding-left: 10px;
+       min-height: 40px;
+    
+    }
+
     @media (min-width: 1367px) and (max-width:1440px)
     {
        max-width: 550px;
@@ -64,6 +72,14 @@ export const SearchBar = styled.input`
     width: 100%;
     max-width: 330px;
     color : white;
+
+
+    @media (max-width:768px)
+    {
+      font-size: 12px;
+    
+    }
+    
     @media (min-width: 1441px) and (max-width:1920px)
     {
         font-size: 19px;
@@ -85,6 +101,13 @@ export const SearchedSongs = styled.div`
     gap: 15px;
     flex-wrap : wrap;
     padding-left: 9px;
+
+    @media (max-width:768px)
+    {
+      padding-left: 35px;
+        max-width: 730px;
+        max-height: 325px;
+    }
 
     @media (min-width: 769px) and (max-width:1024px)
     {
