@@ -1,5 +1,5 @@
 import React, {useState, useEffect,useContext} from 'react'
-import {SongName,ArtistName, Hero, HeroBottom, HeroIcons, HeroTop, HeroTopLeft, HeroTopRight, SongImg, SongWrapper, SongWrapperBottom, SongWrapperTop} from '../../styles/HomePage'
+import {SongName,ArtistName, Hero,HeroMusicSec , HeroBottom, HeroIcons, HeroTop, HeroTopLeft, HeroTopRight, SongImg, SongWrapper, SongWrapperBottom, SongWrapperTop} from '../../styles/HomePage'
 import { SearchedSongs } from '../../styles/Search'
 import {AiOutlineLeft,AiOutlineRight} from 'react-icons/ai'
 import {BiSolidUser} from 'react-icons/bi'
@@ -31,7 +31,7 @@ const MyPlaylist = () => {
   return (
     <Hero isClosed = {isReduced}>
       <HeroBottom isClosed = {isReduced}>
-        <SearchedSongs isClosed = {isReduced}>
+        <HeroMusicSec  isClosed = {isReduced}>
             {myPlaylist.map((songs, index) => (
                 <SongWrapper isClosed = {isReduced} key = {index} onClick = {() => handlePlaySong(index)}>
                     <SongWrapperTop>
@@ -45,7 +45,7 @@ const MyPlaylist = () => {
                     </SongWrapperBottom>
                 </SongWrapper>
             ))}
-        </SearchedSongs>
+        </HeroMusicSec >
       </HeroBottom>
     </Hero>
   )

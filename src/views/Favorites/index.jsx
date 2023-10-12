@@ -1,5 +1,5 @@
 import React, { useState,useContext} from 'react'
-import {Hero,HeroTop,HeroIcons, HeroTopLeft, HeroTopRight, HeroBottom, SongWrapper, SongWrapperTop, SongImg, SongName, SongWrapperBottom, ArtistName, LikeWrapper} from '../../styles/HomePage'
+import {HeroMusicSec ,Hero,HeroTop,HeroIcons, HeroTopLeft, HeroTopRight, HeroBottom, SongWrapper, SongWrapperTop, SongImg, SongName, SongWrapperBottom, ArtistName, LikeWrapper} from '../../styles/HomePage'
 import {AiOutlineLeft,AiOutlineRight} from 'react-icons/ai'
 import {BiSolidUser} from 'react-icons/bi'
 import { SearchedSongs } from '../../styles/Search'
@@ -35,7 +35,7 @@ const Favorites = ({ likedSongs}) => {
   return (
     <Hero isClosed = {isReduced}>
         <HeroBottom isClosed = {isReduced}>
-            <SearchedSongs isClosed = {isReduced}>
+            <HeroMusicSec isClosed = {isReduced}>
             {isLiked.map((track, index) => (
                     <SongWrapper isClosed = {isReduced} key={index} onClick = {() => handleSongs(index)}>
                         <LikeWrapper
@@ -55,7 +55,7 @@ const Favorites = ({ likedSongs}) => {
                     </SongWrapperBottom>
                 </SongWrapper>
                 ))}
-            </SearchedSongs>
+            </HeroMusicSec>
         </HeroBottom>
        
     </Hero>

@@ -3,12 +3,13 @@ import {HeroIcons, HeroTop, HeroTopLeft, HeroTopRight, IconWrapper} from '../../
 import AppContext from '../../AppContext'
 import {AiOutlineLeft,AiOutlineRight,AiOutlinePlus,AiOutlineHeart} from 'react-icons/ai'
 import {BiSolidUser} from 'react-icons/bi'
-import { InputWrapper, SearchBar, SearchBarWrapper, PlaylistsWrapper,AddSongs,AddWrapper, AdddedSongsWrapper, ArtistName, ArtistWrapper, HeroTopWrapper, HeroWrapper, PlayListName, PlayListNameDesc, PlaylistDesc, PlaylistImage, PlaylistInfo, PlaylistInfoLeft, PlaylistInfoRight, PlaylistInfoWrapper, SearchAndAdd, SearchWrapper, SongCard, SongDetails, SongImg, SongName, AddedSongs, ShuffleAddedWrapper, ShuffleWrapper, Shuffle, AddContainer } from '../../styles/SelectedPlaylist'
+import { AddedSongContainer,InputWrapper, SearchBar, SearchBarWrapper, PlaylistsWrapper,AddSongs,AddWrapper, AdddedSongsWrapper, ArtistName, ArtistWrapper, HeroTopWrapper, HeroWrapper, PlayListName, PlayListNameDesc, PlaylistDesc, PlaylistImage, PlaylistInfo, PlaylistInfoLeft, PlaylistInfoRight, PlaylistInfoWrapper, SearchAndAdd, SearchWrapper, SongCard, SongDetails, SongImg, SongName, AddedSongs, ShuffleAddedWrapper, ShuffleWrapper, Shuffle, AddContainer } from '../../styles/SelectedPlaylist'
 import {HiOutlineSearch} from 'react-icons/hi'
 import { toast,ToastContainer } from "react-toastify";
 import {TiTickOutline} from 'react-icons/ti'
 import {BsShuffle} from 'react-icons/bs'
 import {MdFavorite} from 'react-icons/md'
+import {RiDeleteBin6Line} from 'react-icons/ri'
 
 const SelectedPlaylist = () => {
 
@@ -55,7 +56,7 @@ const SelectedPlaylist = () => {
     updatedPlaylistInfo[playlistNumber].songs.splice(index,1)
     setPlaylistInfo(updatedPlaylistInfo)
     localStorage.setItem('playlistInfo',JSON.stringify(updatedPlaylistInfo))
-    toast.error("Song deleted", { autoClose: 2000 });
+    toast.success("Song deleted", { autoClose: 2000 });
   }
 
   const handlePlaySongs = (index) =>{
@@ -116,7 +117,6 @@ const SelectedPlaylist = () => {
               </ArtistWrapper>
             </SongDetails>  
              <AddSongs onClick = {(e) => {e.stopPropagation(); handleAddedSongs(track)}}>
-               ADD
                <AiOutlinePlus/>
                </AddSongs>
              
@@ -143,11 +143,12 @@ const SelectedPlaylist = () => {
           <Shuffle>Playlist</Shuffle>
           <AddedSongs style = {{cursor:"pointer"}} isClosed onClick={handleShuffle}><BsShuffle /> </AddedSongs>
         </ShuffleWrapper>
+        <AddedSongContainer>
       <AdddedSongsWrapper isClosed = {isReduced}>  
         {playlistInfo[playlistNumber]?.songs?.map((song, index) => (
           <SongCard key = {index} onClick = {() => handlePlaySongs(index)} isClosed = {isReduced}>
             <SongDetails>
-              <SongImg src = {song.imageUrl}/>
+              <SongImg src = {song.imageUrl}/> 
             
             <ArtistWrapper>
               <SongName>{song.name}</SongName>
@@ -155,12 +156,13 @@ const SelectedPlaylist = () => {
             </ArtistWrapper>
             </SongDetails>
             <AddSongs onClick={(e) => {e.stopPropagation(); handleRemoveSongs(index,song)}}>
-              REMOVE
+            <RiDeleteBin6Line/>
             </AddSongs>
           </SongCard>
           ))}
          
       </AdddedSongsWrapper>
+      </AddedSongContainer>
       </ShuffleAddedWrapper>
      </PlaylistsWrapper>
     </HeroWrapper>

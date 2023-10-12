@@ -1,5 +1,5 @@
 import React, { useState , useEffect, useRef, useContext} from 'react'
-import {NewPlaylist,ShowPlaylistLeft,LikeWrapper,SongName,HeroBottomTop,HomeSect, HomeWrapper, SideBar,Hero, SideBarWrapper, SideBarTop, SpotifyImg, SpotifyName,  SideBarBottom, OptionWrapper, Home,  IconWrapper, HeroTop, HeroBottom, HeroTopLeft, HeroTopRight, HeroIcons, HeroBottomTopHeading, HeroMusicSec, SongWrapper, SongWrapperTop, SongImg, SongWrapperBottom, ArtistName, SideBarBottomTitleWrap, SideBarBottomTitle, ShowPlaylists, SpotifyHeadingWrapper, ShowPlaylistsWrapper, PlaylistsImage, PlaylistsName, DeletePlaylist,AddPlaylists, LogoWrapper, ExpandWrapper, ReducedBarWrapper, HomeWrapperTablet, TabletViewTop, TabletWidgets} from '../../styles/HomePage'
+import {NewPlaylist,ShowPlaylistLeft,LikeWrapper,SongName,HeroBottomTop,HomeSect, HomeWrapper, SideBar,Hero, SideBarWrapper, SideBarTop, SpotifyImg, SpotifyName,  SideBarBottom, OptionWrapper, Home,  IconWrapper, HeroTop, HeroBottom, HeroTopLeft, HeroTopRight, HeroIcons, HeroBottomTopHeading, HeroMusicSec, SongWrapper, SongWrapperTop, SongImg, SongWrapperBottom, ArtistName, SideBarBottomTitleWrap, SideBarBottomTitle, ShowPlaylists, SpotifyHeadingWrapper, ShowPlaylistsWrapper, PlaylistsImage, PlaylistsName, DeletePlaylist,AddPlaylists, LogoWrapper, ExpandWrapper, ReducedBarWrapper, HomeWrapperTablet, TabletViewTop, TabletWidgets, ReducedBar, SideBarBottomWrap, ShowPlaylistContainer, MyPlaylistWrapper, SideBarBottomUp} from '../../styles/HomePage'
 import SpotifyLogo from '../../assets/spotify-logo.png'
 import { HiHome,HiOutlineSearch } from 'react-icons/hi';
 import {BiSolidPlaylist,BiSolidUser,BiSearch,BiSearchAlt} from 'react-icons/bi'
@@ -24,8 +24,6 @@ import {SearchedSongs } from '../../styles/Search'
 
 
 const HomePage = () => {
-
-
   const [home, setHome] = useState(true)
   const [search, setSearch] = useState(false)
   const [searched, setSearched] = useState('')
@@ -127,7 +125,7 @@ const MyPersonalPlaylist = () => {
       if (newLiked[index]) {
         toast.success("Added To Favourites", { autoClose: 2000 });
       } else {
-        toast.error("Removed from Favourites", { autoClose: 2000 });
+        toast.success("Removed from Favourites", { autoClose: 2000 });
       }
       return newLiked;
     });
@@ -195,6 +193,7 @@ const MyPersonalPlaylist = () => {
             </OptionWrapper>
           </SideBarTop>
           <SideBarBottom>
+            <SideBarBottomUp>
             <SideBarBottomTitleWrap>
               <IconWrapper style = {{color : "white"}} isClosed = {isReduced}>
                 <VscLibrary />
@@ -207,11 +206,11 @@ const MyPersonalPlaylist = () => {
               </IconWrapper>
               <Home style = {{color: favorite ? "black" : "white"}}>Favorites</Home>
             </OptionWrapper>
-            <OptionWrapper>
+            <OptionWrapper >
            <IconWrapper style={{color : "white"}}>
               <BiSolidPlaylist />
               </IconWrapper>
-              <AddPlaylists>
+              <AddPlaylists isClosed = {isReduced}>
               <Home style = {{color: "white"}}>
                 Playlists
               </Home>
@@ -220,7 +219,7 @@ const MyPersonalPlaylist = () => {
                 </NewPlaylist>
               </AddPlaylists>
             </OptionWrapper>
-            <ShowPlaylistsWrapper onClick = {MyPersonalPlaylist}>
+            <MyPlaylistWrapper onClick = {MyPersonalPlaylist}>
               <ShowPlaylists>
                 <ShowPlaylistLeft>
                   <PlaylistsImage src = {MyPlaylistImg}/>
@@ -229,8 +228,10 @@ const MyPersonalPlaylist = () => {
                   </PlaylistsName>
                 </ShowPlaylistLeft>
               </ShowPlaylists>
-            </ShowPlaylistsWrapper>
-            <ShowPlaylistsWrapper maxHeight>
+            </MyPlaylistWrapper>
+            </SideBarBottomUp>
+            <ShowPlaylistContainer>
+            <ShowPlaylistsWrapper style = {{height : "100%" , overflowY: "scroll",position:"absolute"}}>
               {playlistInfo?.map((playlist,index) => (
               <ShowPlaylists key = {index} onClick={() => handleSelectedPlaylist(index)}>
                 <ShowPlaylistLeft>
@@ -245,12 +246,14 @@ const MyPersonalPlaylist = () => {
               </ShowPlaylists>
               ))}
             </ShowPlaylistsWrapper>
+            </ShowPlaylistContainer>
           </SideBarBottom>
           
         </SideBarWrapper>
       </SideBar>)}
       {isReduced && (<ReducedBarWrapper>
-        <SideBarTop distance>
+        <ReducedBar>
+          <SideBarBottomUp>
         <ExpandWrapper onClick = {handleExpanded}>
           <BsArrowRight />
         </ExpandWrapper>
@@ -271,30 +274,33 @@ const MyPersonalPlaylist = () => {
               <MdFavorite />
               </IconWrapper>
             </OptionWrapper>
-            <OptionWrapper>
+            <OptionWrapper isClosed>
               <AddPlaylists>
               <NewPlaylist style={{color : "white"}} isClosed = {isReduced} onClick = {(e) => {e.stopPropagation();handleAddPlaylists()}}>
                 <AiOutlinePlus/>
                 </NewPlaylist>
               </AddPlaylists>
             </OptionWrapper>
-            <ShowPlaylistsWrapper onClick = {MyPersonalPlaylist}>
-              <ShowPlaylists>
+            <MyPlaylistWrapper isClosed onClick = {MyPersonalPlaylist}>
+              <ShowPlaylists isClosed>
                 <ShowPlaylistLeft isClosed = {isReduced}>
                   <PlaylistsImage isClosed = {isReduced} src = {MyPlaylistImg}/>
                 </ShowPlaylistLeft>
               </ShowPlaylists>
-            </ShowPlaylistsWrapper>
+            </MyPlaylistWrapper>
+            </SideBarBottomUp>
+            <ShowPlaylistContainer>
             <ShowPlaylistsWrapper isClosed = {isReduced}>
               {playlistInfo?.map((playlist,index) => (
-              <ShowPlaylists key = {index} onClick={() => handleSelectedPlaylist(index)}>
+              <ShowPlaylists isClosed key = {index} onClick={() => handleSelectedPlaylist(index)}>
                 <ShowPlaylistLeft isClosed = {isReduced}>
                   <PlaylistsImage isClosed = {isReduced} src = {playlist?.image}/>
                 </ShowPlaylistLeft>
               </ShowPlaylists>
               ))}
             </ShowPlaylistsWrapper>
-            </SideBarTop>
+            </ShowPlaylistContainer>
+            </ReducedBar>
       </ReducedBarWrapper>)}
      {home && ( <Hero isClosed = {isReduced}>
         <HeroBottom isClosed = {isReduced}>
@@ -404,7 +410,6 @@ const MyPersonalPlaylist = () => {
     {playlist && (<Playlist />)}
     <ToastContainer position="bottom-center" />
     <AudioPlayer/>
-    <AudioPlayer mobile/>
    </HomeSect>
   )
 }

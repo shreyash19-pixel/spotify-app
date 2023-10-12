@@ -81,7 +81,6 @@ const Playlist = () => {
     };
 
   return (
-    <PlaylistWrapper>
             <ModalWrapper>
                 <Modal>
                     <ModalTopWrapper>
@@ -117,7 +116,6 @@ const Playlist = () => {
                     </ModalMiddleWrapper>
                 </Modal>
             </ModalWrapper>
-        </PlaylistWrapper>
   )
 }
 
