@@ -1,5 +1,5 @@
 import React, {useState,useRef, useContext,useEffect} from 'react'
-import {SongInfoImg,StartTimeWrapper,MusicPlayer,ProgressBar,EndTimeWrapper, MusicPlayerWrapper, SongAudio, SongInfo, SongInfoArtistName, SongInfoArtistWrap, SongInfoImgWrap, SongInfoSongName, StartTime, ControlsWrapper, NextWrapper, PlayWrapper} from '../../styles/AudioPlayer'
+import {SongInfoImg,StartTimeWrapper,MusicPlayer,ProgressBar,EndTimeWrapper, MusicPlayerWrapper, SongAudio, SongInfo, SongInfoArtistName, SongInfoArtistWrap, SongInfoImgWrap, SongInfoSongName, StartTime, ControlsWrapper, NextWrapper, PlayWrapper, TabletPlayer, SongInfoLeft, SongInfoRight, ExpandedTabletPlayer} from '../../styles/AudioPlayer'
 import {BiSkipPrevious, BiSkipNext} from 'react-icons/bi'
 import {AiOutlinePause} from 'react-icons/ai'
 import {BsPlayFill} from 'react-icons/bs'
@@ -8,17 +8,26 @@ import { ImLoop } from "react-icons/im";
 import {GoUnmute,GoMute} from "react-icons/go"
 
 const AudioPlayer = () => {
-
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [currentTime, setCurrentTime] = useState();
-  const [isLooping, setisLooping] = useState(false);
-  const [start, setStart] = useState();
-  const [end, setEnd] = useState();
-  const [duration, setDuration] = useState();
-  const [mute, setMute] = useState(false)
+  
  
-  const audioRef = useRef(null)
-  const {setSongIndexValue, setSongArray, songIndexValue,songArray,setAuto,auto,isReduced} = useContext(AppContext)
+
+  const {isPlaying, 
+    setIsPlaying,
+    currentTime, 
+    setCurrentTime,
+    start, 
+    setStart,
+    end, 
+    setEnd,
+    duration, 
+    setDuration,
+    mute, 
+    setMute,
+    isLooping, 
+    setisLooping,setSongIndexValue, setSongArray, songIndexValue,songArray,setAuto,auto,isReduced, minPlayer, 
+    setMinPlayer,
+    maxPlayer, 
+    setMaxPlayer,audioRef} = useContext(AppContext)
 
   const handlePlay = () => {
     setIsPlaying(true)
@@ -90,6 +99,11 @@ const handleMute = () => {
   setMute(!mute)
 }
 
+const handleMaxPlayer = () => {
+  setMinPlayer(false)
+  setMaxPlayer(true)
+}
+
 useEffect(() => {
   localStorage.setItem("currentSongIndex", JSON.stringify(songIndexValue))
   localStorage.setItem("currentSongArray", JSON.stringify(songArray))
@@ -153,6 +167,47 @@ useEffect(() => {
           </NextWrapper>
         </ControlsWrapper>
       </MusicPlayer>
+
+       
+      {minPlayer && (<TabletPlayer onClick = {handleMaxPlayer}>
+      <ProgressBar type="range"
+        isClosed = {isReduced}
+        min={0}
+        max={end}
+        value={start ? start : 0}
+        step={1}
+        onChange={handleSeek} />
+        <SongInfoLeft>
+        <SongInfoImgWrap>
+          <SongInfoImg src = {songArray[songIndexValue]?.imageUrl || "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Black.png/220px-Black.png"}/>
+        </SongInfoImgWrap>
+        <SongInfoArtistWrap>
+          <SongInfoSongName>
+              {songArray[songIndexValue]?.name}
+          </SongInfoSongName>
+          <SongInfoArtistName>
+              {songArray[songIndexValue]?.artist}
+          </SongInfoArtistName>
+        </SongInfoArtistWrap>
+        </SongInfoLeft>
+        <SongInfoRight>
+        <ControlsWrapper onClick={(e) => {e.stopPropagation()}}>
+          <NextWrapper onClick = {handleLoop} style ={{boxShadow: isLooping ? "0 0 20px rgba(52, 152, 219, 0.9)" : "none"}}>
+            <ImLoop />
+          </NextWrapper>
+          <NextWrapper onClick = {handlePrev}>
+             <BiSkipPrevious />
+          </NextWrapper>
+          <PlayWrapper onClick={handlePlayPause}>
+           {isPlaying ? <AiOutlinePause /> : <BsPlayFill />} 
+          </PlayWrapper>
+          <NextWrapper onClick = {handlePlayNextSong}>
+             <BiSkipNext />
+          </NextWrapper>
+        </ControlsWrapper>
+        </SongInfoRight>
+      </TabletPlayer>)}
+
     </MusicPlayerWrapper>
   )
 }

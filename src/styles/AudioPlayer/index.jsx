@@ -6,11 +6,12 @@ export const MusicPlayerWrapper = styled.div`
   background-color: black;
   position: absolute;
   bottom: 0px;
-  display: ${(props) => (props.mobile ? "none" : "flex")};
+  display: flex;
 
   @media (max-width:768px)
     {   
-        display: ${(props) => (props.mobile ? "flex" : "none")};
+        min-height: 45px;
+        bottom: 50px;
     }
 `
 export const SongInfo = styled.div`
@@ -22,7 +23,110 @@ export const SongInfo = styled.div`
     justify-content: center;
     gap:15px;
 
+    @media (max-width:768px)
+    {   
+        display: none;
+    }
+
 `
+export const TabletPlayer = styled.div`
+    width: 100%;
+    display: none;
+    position: relative;
+    padding-inline: 10px;
+    @media (max-width: 768px)
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+`
+export const ExpandedTabletPlayer = styled.div`
+    width: 100%;
+    height: 100%;
+    padding-inline: 10px;
+    z-index: 5;
+    position: absolute;
+    top:0px;
+    left:0px;
+    display: none;
+    padding-top: 15px;
+
+    @media (max-width: 768px)
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #121212;
+    }
+`
+export const CloseBar = styled.div`
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: flex-end;
+`
+
+export const SongInformation = styled.div`
+    width:100%;
+    max-width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+`
+export const SongImgWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+export const SongImage = styled.img`
+    width: 250px;
+    height: 250px;
+`
+export const SongArtistWrapper = styled.div`
+    width: 100%;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+`
+
+export const AudioName = styled.h2`
+    color: white;
+    font-size: 18px;
+`
+
+export const AudioArtist = styled.h3`
+    color: #dbdada;
+    font-size: 14px;
+`
+
+export const AudioControlWrap = styled.div`
+    width: 100%;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+`
+export const ProgressBarWrap = styled.div`
+    width: 100%;
+    max-width: 250px;
+    position: relative;
+`
+
+export const SongInfoLeft = styled.div`
+    display: flex;
+    gap: 12px;
+`
+
+export const SongInfoRight = styled.div`
+    display: flex;
+    align-items: center;
+`
+
 export const SongInfoImgWrap = styled.div`
     display: flex;
     align-items: center;
@@ -43,6 +147,14 @@ export const SongInfoImg = styled.img`
     height: 55px;
      border-radius: 50%;
      animation: ${Rotate} 4s linear infinite;
+
+     @media (max-width: 768px)
+    {
+        animation: none;
+        border-radius: 3px;
+        width: 30px;
+        height:30px;
+    }
 `
 export const SongInfoArtistWrap = styled.div`
     display: flex;
@@ -59,6 +171,11 @@ export const SongInfoSongName = styled.h1`
   overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+
+    @media (max-width: 768px)
+    {
+       font-size: 14px;
+    }
 `
 
 export const SongInfoArtistName = styled.h3`
@@ -68,6 +185,11 @@ export const SongInfoArtistName = styled.h3`
   overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+
+    @media (max-width: 768px)
+    {
+       font-size: 11px;
+    }
 
 `
 
@@ -81,20 +203,25 @@ export const MusicPlayer = styled.div`
     position: relative;
     padding-left: 6px;
 
+    @media (max-width:768px)
+    {   
+        display: none;
+    }
+
 `
 export const StartTimeWrapper = styled.div`
     position: absolute;
-    left:15px;
-    top:15px;
+    left: ${(props) => (props.begin ? "0px" : "15px")};
+    top:${(props) => (props.begin ? "13px" : "15px")};
 `
 export const StartTime = styled.h3`
     color : white;
-    font-size: 20px;
+    font-size: ${(props) => (props.begin ? "12px" : "20px")}
 `
 export const EndTimeWrapper = styled.div`
     position: absolute;
-    right:15px;
-    top:15px;
+    right:${(props) => (props.begin ? "5px" : "15px")};
+    top:${(props) => (props.begin ? "13px" : "15px")};
 `
 
 export const ControlsWrapper = styled.div`
@@ -106,6 +233,11 @@ export const ControlsWrapper = styled.div`
     min-height: 75px;
     gap:25px;
 
+    
+    @media (max-width:768px)
+    {   
+        min-height: 35px;
+    }
     
 `
 export const NextWrapper = styled.div`
@@ -119,6 +251,16 @@ export const NextWrapper = styled.div`
     justify-content: center;
     cursor: pointer;
 
+    
+    @media (max-width:768px)
+    {   
+        width: 20px;
+        height: 20px;
+        font-size: 24px;
+        color: white;
+        background-color: transparent;
+    }
+
 `
 export const PlayWrapper = styled.div`
     background-color: white;
@@ -131,6 +273,14 @@ export const PlayWrapper = styled.div`
     justify-content: center;
     cursor: pointer;
 
+    @media (max-width:768px)
+    {   
+        width: 25px;
+        height: 25px;
+        font-size: 24px;
+        color: white;
+        background-color: transparent;
+    }
 `
 
 export const SongAudio = styled.audio`
@@ -151,6 +301,20 @@ export const ProgressBar = styled.input`
     height: 25px;
     border-radius: 50%;
     border: 8px solid green;
+
+    @media (max-width: 768px)
+  {
+        width:15px;
+        height:15px;
+        border: 5px solid green;
+  }
+  }
+
+  @media (max-width: 768px)
+  {
+    position: absolute;
+    left:0px;
+    height: 3px;
   }
   
 `

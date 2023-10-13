@@ -3,7 +3,7 @@ import {HeroIcons, HeroTop, HeroTopLeft, HeroTopRight, IconWrapper} from '../../
 import AppContext from '../../AppContext'
 import {AiOutlineLeft,AiOutlineRight,AiOutlinePlus,AiOutlineHeart} from 'react-icons/ai'
 import {BiSolidUser} from 'react-icons/bi'
-import { AddedSongContainer,InputWrapper, SearchBar, SearchBarWrapper, PlaylistsWrapper,AddSongs,AddWrapper, AdddedSongsWrapper, ArtistName, ArtistWrapper, HeroTopWrapper, HeroWrapper, PlayListName, PlayListNameDesc, PlaylistDesc, PlaylistImage, PlaylistInfo, PlaylistInfoLeft, PlaylistInfoRight, PlaylistInfoWrapper, SearchAndAdd, SearchWrapper, SongCard, SongDetails, SongImg, SongName, AddedSongs, ShuffleAddedWrapper, ShuffleWrapper, Shuffle, AddContainer } from '../../styles/SelectedPlaylist'
+import { AddedSongContainer,InputWrapper, SearchBar, SearchBarWrapper, PlaylistsWrapper,AddSongs,AddWrapper, AdddedSongsWrapper, ArtistName, ArtistWrapper, HeroTopWrapper, HeroWrapper, PlayListName, PlayListNameDesc, PlaylistDesc, PlaylistImage, PlaylistInfo, PlaylistInfoLeft, PlaylistInfoRight, PlaylistInfoWrapper, SearchAndAdd, SearchWrapper, SongCard, SongDetails, SongImg, SongName, AddedSongs, ShuffleAddedWrapper, ShuffleWrapper, Shuffle, AddContainer, PlaylistNameWrap } from '../../styles/SelectedPlaylist'
 import {HiOutlineSearch} from 'react-icons/hi'
 import { toast,ToastContainer } from "react-toastify";
 import {TiTickOutline} from 'react-icons/ti'
@@ -87,7 +87,7 @@ const SelectedPlaylist = () => {
         <SearchWrapper>
           {isExpanded && (<SearchBarWrapper isClosed = {isReduced}>
             <InputWrapper>
-              <IconWrapper style = {{color : "white"}}>
+              <IconWrapper reducePadding style = {{color : "white"}}>
                 <HiOutlineSearch />
               </IconWrapper>
               <SearchBar type = "text" placeholder = 'Add songs from here' onChange = {handleSearch} />

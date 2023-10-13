@@ -23,6 +23,13 @@ export const ModalWrapper = styled.div`
     justify-content: center;
     opacity: 1;
     position: absolute;
+
+    @media (max-width: 768px)
+    {
+        max-width: 300px;
+        min-height: 270px;
+        padding-top: 15px;
+    }
 `
 
 
@@ -33,6 +40,13 @@ export const Modal = styled.div`
     display: flex;
     flex-direction: column;
     gap:40px;
+
+    @media (max-width: 768px)
+    {
+        max-width: 250px;
+        min-height: 250px;
+        gap:30px;
+    }
 `
 export const ModalTopWrapper = styled.div`
     display:flex;
@@ -45,21 +59,38 @@ export const ModalTopLeft = styled.div`
 export const ModalHeading = styled.h2`
     color : white;
     font-size : 28px;
+
+    @media (max-width: 768px)
+    {
+        font-size: 18px;   
+    }
 `
 export const ModalMiddleWrapper = styled.div`
     display: flex;
     flex-direction: column;
     min-height: 90px;
     gap:10px;
+
+    @media (max-width: 768px)
+    {
+            
+    }
 `
 export const ModalMiddleTop = styled.div`
     display: flex;
     gap:20px;
     justify-content: center;
+
+    @media (max-width:768px)
+    {
+        flex-direction: column;
+        align-items: center;
+    }
 `
 
 export const ModalMiddleTopLeft = styled.div`
-    min-height: 200px;
+    height:100%;
+    max-height: 200px;
     width: 100%;
     max-width: 200px;
     background-color: #3E3E3E;
@@ -67,6 +98,12 @@ export const ModalMiddleTopLeft = styled.div`
     display : flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 768px)
+    {
+        max-width: 230px;
+        max-height: 150px;
+    }
 `
 
 
@@ -77,11 +114,26 @@ export const ModalMiddleTopRight = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    @media (max-width: 768px)
+    {
+        min-height: 130px;
+        gap:12px;
+        align-items: center;
+        justify-content: center;
+    }
 `
 
 export const ModalMiddleBottom = styled.div`
     display:flex;
     justify-content:flex-end;
+
+    @media (max-width: 768px)
+    {
+            align-items: center;
+            justify-content: center;
+            min-height: 70px;
+    }
 `
 
 export const PlaylistName = styled.input`
@@ -93,6 +145,12 @@ export const PlaylistName = styled.input`
     padding-left: 15px;
     outline : none;
     color : white;
+
+    @media (max-width: 768px)
+    {
+        max-width: 230px;
+        min-height: 30px;
+    }
 `
 
 export const PlaylistDesc = styled.textarea`
@@ -106,6 +164,13 @@ export const PlaylistDesc = styled.textarea`
     min-height: 140px;
     padding-left: 15px;
     padding-top: 15px;
+
+    @media (max-width: 768px)
+    {
+        max-width: 230px;
+        min-height: 125px;
+        font-size: 11px;
+    }
 `
 export const CreateButton = styled.div`
     width: 100%;
@@ -118,11 +183,25 @@ export const CreateButton = styled.div`
     border-radius: 30px;
     cursor:pointer;
     font-weight: 500; 
+
+    @media (max-width: 768px)
+    {
+        max-width: 70px;
+        min-height: 35px;
+        font-size: 14px;
+
+    }
 `
 
 export const ImagePreview = styled.img`
     width:200px;
     height:200px;
+
+    @media (max-width: 768px)
+    {
+        width: 230px;
+        height: 150px;
+    }
 `
 
 export const HiddenInput = styled.input`  
@@ -137,4 +216,10 @@ justify-content: center;
 cursor: pointer;
 font-size : 100px;
 color : white;
+
+@media (max-width: 768px)
+    {
+        width: 230px;
+        height: 150px;
+    }
 `

@@ -10,6 +10,11 @@ export const HomeSect = styled.div`
     flex-direction: column;
    position: relative;
    padding-inline: 8px;
+
+   @media (max-width:768px)
+    {   
+        padding-inline: 0px;
+    }
 `
 
 export const HomeWrapper = styled.div`
@@ -31,6 +36,7 @@ export const HomeWrapperTablet = styled.div`
     background-color: #121212;
     display: none;
     border-radius: 10px;
+    position: relative;
 
     @media (max-width:768px)
     {   
@@ -39,25 +45,46 @@ export const HomeWrapperTablet = styled.div`
     }
 `
 
-export const TabletViewTop = styled.div`
-    width: 100%;
-    max-width: 760px;
-    min-height :60px;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`
-
 export const TabletWidgets = styled.div`
     width: 100%;
     max-width: 768px;
-    min-height: 75px;
+    min-height: 55px;
     display: flex;
     gap: 35px;
     align-items: center;
     justify-content: center;
 `
+export const LibrarySect = styled.div`
+    width: 100%;
+    height :100%;
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 10px;
+    padding-top: 5px;
+    gap: 20px;
+    padding-bottom: 50px;
+`
+
+export const LibraryHeadingWrap = styled.div`
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: center;
+    border-bottom: 1px solid white;
+    width: 100%;
+    height:100%;
+    max-height: 50px;
+`
+export const LibraryHeading = styled.h2`
+    color: white;
+`
+export const LibraryPlaylists = styled.div`
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+`
+
 
 export const SideBar = styled.div`
     width: 100%;
@@ -160,10 +187,11 @@ export const OptionWrapper = styled.div`
 export const IconWrapper = styled.div`
     font-size: ${(props) => (props.isClosed ? "35px" : "27px")};
     display: flex;
+    cursor: pointer;
 
     @media (max-width:768px)
     {   
-        font-size: 44px;
+        font-size: ${(props) => (props.reducePadding ? "21px":"38px")};
         color: white;
     }
 
@@ -247,6 +275,12 @@ export const ShowPlaylistsWrapper = styled.div`
     flex-direction : column;
     gap:${(props) => (props.isClosed ? "18px" : "17px")};
     padding-left: ${(props) => (props.isClosed ? "0px" : "15px")};
+
+    @media (max-width: 768px)
+    {
+        padding-left: 0px;
+      
+    }
 `
 
 export const MyPlaylistWrapper = styled.div`
@@ -254,6 +288,11 @@ export const MyPlaylistWrapper = styled.div`
     display: flex;
     gap:${(props) => (props.isClosed ? "18px" : "17px")};
     padding-left: ${(props) => (props.isClosed ? "0px" : "15px")};
+
+    @media (max-width: 768px)
+    {
+        padding-left: 0px;
+    }
 `
 
 export const ShowPlaylists = styled.div`
@@ -266,6 +305,7 @@ export const ShowPlaylists = styled.div`
 export const ShowPlaylistLeft = styled.div`
     display : flex;
     gap:15px;
+    padding-left: ${(props) => (props.sidePadding ? "8px" : "0px")}
 `
 
 export const NewPlaylist = styled.div`
@@ -350,10 +390,8 @@ export const HeroTop = styled.div`
 
     @media (max-width:768px)
     {   
-        max-width: 768px;
-        min-height: 30px;
-        padding-top: 0px;
-        padding-left: 15px;
+        min-height: 52px;
+        padding-top: 10px;
     }
     
 
@@ -398,8 +436,10 @@ export const HeroBottom = styled.div`
     padding-top: ${(props) => (props.topPadding ? "30px" : "40px")};
     
     @media (max-width:768px)
-    {   
+    {  
         background-color: #121212;
+        padding-inline: 0px;
+        padding-top: ${(props) => (props.reducePadding ? "20px" : "40px")};
     }
 
     @media (min-width: 1441px) and (max-width:1920px)
@@ -434,7 +474,12 @@ export const HeroMusicSec = styled.div`
     justify-content: center;
     padding-bottom: 70px;
 
-    
+    @media (max-width:768px)
+    {   
+        padding-left: 14px;
+        padding-bottom: 50px;
+    }
+
     @media (min-width: 1367px) and (max-width:1440px)
     {
         padding-left: ${(props) => (props.isClosed ? "10px" : "5px")};

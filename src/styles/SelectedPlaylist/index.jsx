@@ -11,6 +11,11 @@ export const HeroWrapper = styled.div`
     align-items: center;
     gap:15px;
     padding-inline: 30px;
+
+    @media (max-width: 768px)
+    {
+       padding-inline: 15px;
+    }
 `
 
 export const PlaylistsWrapper = styled.div`
@@ -19,6 +24,11 @@ export const PlaylistsWrapper = styled.div`
     display: flex;
     flex-direction: column;
     padding-bottom: 70px;
+
+    @media (max-width: 768px)
+    {
+       padding-bottom: 50px;
+    }
 
     @media (min-width: 1441px) and (max-width:1920px)
     {
@@ -45,6 +55,7 @@ export const PlaylistInfoLeft = styled.div`
 `
 
 export const PlaylistInfoRight = styled.div`
+    width:100%;
     max-width: ${(props) => (props.isClosed ? "1000px" : "420px")};
    
     @media (min-width: 1441px) and (max-width:1920px)
@@ -63,6 +74,13 @@ export const PlaylistInfoRight = styled.div`
 export const PlaylistImage = styled.img`
     width: 250px;
     height: 200px;
+
+    @media (max-width: 768px)
+    {
+        width:150px;
+        height: 150px;
+
+    }
 
     @media (min-width: 769px) and (max-width:1024px)
     {
@@ -83,6 +101,7 @@ export const PlaylistImage = styled.img`
 `
 
 export const PlayListNameDesc = styled.div`
+    width:100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -90,14 +109,50 @@ export const PlayListNameDesc = styled.div`
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+
+    @media (max-width: 768px)
+    {
+        min-height: 150px;
+    }
+
+    @media (min-width: 769px) and (max-width:1024px)
+    {
+        align-items: flex-start;
+        min-height: 150px;
+    }
+    
 `
 
 export const PlayListName = styled.h1`
     color : white;
+    word-wrap: break-word;
     font-size: 85px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+
+    @media (max-width: 375px)
+    {
+        font-size: 23px;
+
+    }
+
+    @media (min-width: 376px) and (max-width: 460px)
+    {
+        font-size: 35px;
+
+    }
+
+    @media (min-width: 461px) and (max-width: 768px)
+    {
+        font-size: 45px;
+
+    }
+
+    @media (min-width: 769px) and (max-width:1024px)
+    {
+        font-size: 55px;
+    }
 
 `
 export const PlaylistDesc = styled.h4`
@@ -106,6 +161,12 @@ export const PlaylistDesc = styled.h4`
     white-space: nowrap;
     text-overflow: ellipsis;
     font-size: 21px;
+
+    @media (max-width: 768px)
+    {
+        font-size: 15px;
+
+    }
 
 `
 
@@ -139,6 +200,11 @@ export const AddContainer = styled.div`
     left: 0px;
     padding-inline: 30px;
     z-index: 3;
+
+    @media (max-width: 768px)
+    {
+        top: 40px;
+    }
 
     @media (min-width: 769px) and (max-width:1024px)
     {
@@ -178,6 +244,8 @@ export const AddWrapper = styled.div`
     background-color: black;
     padding-top: 10px;
     padding-left: 15px;
+
+  
 
     @media (min-width: 769px) and (max-width:1024px)
     {
@@ -220,6 +288,12 @@ export const SearchBarWrapper = styled.div`
 
     &:hover{
         background-color: #3d3d3d;
+    
+    }
+
+    @media (max-width: 768px)
+    {
+        min-height: 37px; 
     }
     @media (min-width: 1441px) and (max-width:1920px)
     {
@@ -248,6 +322,11 @@ export const SearchBar = styled.input`
     width: 100%;
     color : white;
 
+    @media (max-width: 768px)
+    {
+        font-size: 12px;
+    }
+
     @media (min-width: 1441px) and (max-width:1920px)
     {
         font-size: 18px;
@@ -274,6 +353,12 @@ export const SongDetails = styled.div`
 export const SongImg = styled.img`
     width:40px;
     height: 40px;
+
+    @media (max-width: 768px)
+    {
+        height: 35px; 
+        width: 35px;
+    }
 
     @media (min-width: 1367px) and (max-width:1440px)
     {
@@ -302,11 +387,21 @@ export const SongName = styled.h2`
     color : white;
     font-size: 18px;
 
+    @media (max-width: 768px)
+    {
+        font-size: 14px;
+    }
+
 `
 
 export const ArtistName = styled.h3`
     color : #dbdada;
     font-size: 12px;
+
+    @media (max-width: 768px)
+    {
+        font-size: 10px;
+    }
 `
 
 export const AddSongs = styled.div`
@@ -319,6 +414,11 @@ export const AddSongs = styled.div`
     justify-content: center;
     gap: 5px;
 
+    @media (max-width: 768px)
+    {
+        font-size: 20px;
+    }
+
 
 `
 export const AddedSongs = styled.div`
@@ -328,6 +428,11 @@ export const AddedSongs = styled.div`
     align-items: center;
     justify-content: center;
     gap: 5px;
+
+    @media (max-width: 768px)
+    {
+        font-size: ${(props) => (props.isClosed ? "17px" : "16px")};
+    }
 
      @media (min-width: 1367px) and (max-width:1440px)
     {
@@ -367,6 +472,11 @@ export const Shuffle = styled.h3`
     color : white;
     gap: 15px;
     font-size: 22px;
+
+    @media (max-width: 768px)
+    {
+        font-size: 17px;
+    }
 `
 export const AddedSongContainer = styled.div`
     width: 100%;

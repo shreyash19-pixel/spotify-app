@@ -50,7 +50,7 @@ const Search = () => {
         <HeroTopLeft>
             <SearchBarWrapper >
                 <InputWrapper>
-                    <IconWrapper style = {{color : "white"}}>
+                    <IconWrapper reducePadding style = {{color : "white"}}>
                     <HiOutlineSearch />
                     </IconWrapper>
                     <SearchBar type = "text" placeholder='What do you want to listen?' onChange = {handleSearch}/>
@@ -58,7 +58,7 @@ const Search = () => {
             </SearchBarWrapper>
           </HeroTopLeft>
         </HeroTop>
-        <HeroBottom isClosed = {isReduced} topPadding>
+        <HeroBottom isClosed = {isReduced} topPadding reducePadding>
             <HeroMusicSec isClosed = {isReduced}>
                 {song.filter((item) => {
                     return convertToLowerCase(item.name).includes(convertToLowerCase(search)) 
