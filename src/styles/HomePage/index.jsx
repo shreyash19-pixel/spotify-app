@@ -32,7 +32,7 @@ export const HomeWrapper = styled.div`
 
 export const HomeWrapperTablet = styled.div`
     width: 100%;
-    height :100vh;
+    height :100%;
     background: #121212;
     display: none;
     border-radius: 10px;
