@@ -192,9 +192,6 @@ useEffect(() => {
         </SongInfoLeft>
         <SongInfoRight>
         <ControlsWrapper onClick={(e) => {e.stopPropagation()}}>
-          <NextWrapper remove onClick = {handleLoop} style ={{boxShadow: isLooping ? "0 0 20px rgba(52, 152, 219, 0.9)" : "none"}}>
-            <ImLoop />
-          </NextWrapper>
           <NextWrapper onClick = {handlePrev}>
              <BiSkipPrevious />
           </NextWrapper>

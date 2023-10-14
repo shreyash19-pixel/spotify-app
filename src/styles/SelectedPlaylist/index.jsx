@@ -342,7 +342,6 @@ export const SongCard = styled.div`
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-
 `
 export const SongDetails = styled.div`
     display: flex;
@@ -488,7 +487,6 @@ export const AddedSongContainer = styled.div`
 export const AdddedSongsWrapper = styled.div`
     width: 100%;
     height: 100%;
-    overflow-y: scroll;
     display : flex;
     flex-direction : column;
     gap: 15px;

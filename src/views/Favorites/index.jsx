@@ -1,4 +1,4 @@
-import React, { useState,useContext} from 'react'
+import React, { useState,useContext, useEffect} from 'react'
 import {HeroMusicSec ,Hero,HeroTop,HeroIcons, HeroTopLeft, HeroTopRight, HeroBottom, SongWrapper, SongWrapperTop, SongImg, SongName, SongWrapperBottom, ArtistName, LikeWrapper} from '../../styles/HomePage'
 import {AiOutlineLeft,AiOutlineRight} from 'react-icons/ai'
 import {BiSolidUser} from 'react-icons/bi'
@@ -17,14 +17,13 @@ const Favorites = ({ likedSongs}) => {
 
     const toggleLike = (index) => {
         if (isLiked[index]) {
-            setIsLiked((prevLiked) => {
-                const newLiked = [...prevLiked];
-                newLiked[index] = false;
-                localStorage.setItem("likedSongs",JSON.stringify(newLiked))
-                return newLiked;
-            });
+                const updatedArray = [...isLiked]
+                updatedArray.splice(index,1)
+                localStorage.setItem('likedSongs',JSON.stringify(updatedArray))
+                setIsLiked(updatedArray)
+            };
         }
-    }
+    
 
     const handleSongs = (index) => {
         setSongIndexValue(index)

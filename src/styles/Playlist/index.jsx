@@ -28,7 +28,7 @@ export const ModalWrapper = styled.div`
     @media (max-width: 768px)
     {
         max-width: 768px;
-        background: linear-gradient(to bottom, #f76d57, #ffae03); 
+        background: linear-gradient(to bottom, #ff9966, #ff5e62, #ff355d);
         height: 100%;
         padding-top: 15px;
         border-radius: 0px;

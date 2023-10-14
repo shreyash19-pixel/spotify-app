@@ -10,7 +10,7 @@ export const MusicPlayerWrapper = styled.div`
 
   @media (max-width:768px)
     {   
-        min-height: 45px;
+        min-height: 52px;
         bottom: 50px;
         background: linear-gradient(to bottom, #1a1a2e, #16213e);
     }
@@ -58,7 +58,8 @@ export const ExpandedTabletPlayer = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
-        background: linear-gradient(to bottom, #f76d57, #ffae03);
+        background: linear-gradient(to bottom, #ff9966, #ff5e62, #ff355d);
+
     }
 `
 export const CloseBar = styled.div`
@@ -69,7 +70,7 @@ export const CloseBar = styled.div`
 
 export const SongInformation = styled.div`
     width:100%;
-    max-width: 400px;
+    max-width: 500px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -83,15 +84,25 @@ export const SongImgWrapper = styled.div`
     justify-content: center;
 `
 export const SongImage = styled.img`
-    width: 250px;
+    width: 350px;
     height: 250px;
+
+    @media (max-width: 425px)
+    {
+        width: 250px;
+    }
 `
 export const SongArtistWrapper = styled.div`
     width: 100%;
-    max-width: 250px;
+    max-width: 350px;
     display: flex;
     flex-direction: column;
     gap:5px;
+
+    @media (max-width: 425px)
+    {
+        max-width: 250px;
+    }
 `
 
 export const AudioName = styled.h2`
@@ -101,21 +112,31 @@ export const AudioName = styled.h2`
 
 export const AudioArtist = styled.h3`
     color: #fff7f7;
-    font-size: 14px;
+    font-size: 12px;
 `
 
 export const AudioControlWrap = styled.div`
     width: 100%;
-    max-width: 250px;
+    max-width: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 35px;
+
+    @media (max-width: 425px)
+    {
+        max-width: 250px;
+    }
 `
 export const ProgressBarWrap = styled.div`
     width: 100%;
-    max-width: 250px;
+    max-width: 350px;
     position: relative;
+
+    @media (max-width: 425px)
+    {
+        max-width: 250px;
+    }
 `
 
 export const SongInfoLeft = styled.div`
@@ -164,6 +185,16 @@ export const SongInfoArtistWrap = styled.div`
     width: 100%;
     max-width: 200px;
 
+    @media (max-width: 375px)
+    {
+       max-width: 140px;
+    }
+
+    @media (max-width: 320px)
+    {
+       max-width: 110px;
+    }
+
 `
 export const SongInfoSongName = styled.h1`
   color : white;
@@ -178,7 +209,7 @@ export const SongInfoSongName = styled.h1`
        font-size: 14px;
     }
 
-    @media (max-width: 330px)
+    @media (max-width: 375px)
     {
        font-size: 11px;
     }
@@ -197,7 +228,7 @@ export const SongInfoArtistName = styled.h3`
        font-size: 11px;
     }
 
-    @media (max-width: 330px)
+    @media (max-width: 375px)
     {
        font-size: 9px;
     }
@@ -248,6 +279,7 @@ export const ControlsWrapper = styled.div`
     @media (max-width:768px)
     {   
         min-height: 35px;
+        gap: 30px;
     }
     
 `
@@ -270,11 +302,6 @@ export const NextWrapper = styled.div`
         font-size: 24px;
         color: white;
         background-color: transparent;
-    }
-
-    @media (max-width: 376px)
-    {
-        display : ${(props) => (props.remove ? "none" : "flex")}
     }
 
 `

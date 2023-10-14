@@ -458,7 +458,7 @@ const handleMaxPlayer = () => {
      {personalPlaylist && (<MyPlaylist />)}
     </HomeWrapper>
     <HomeWrapperTablet>
-      {maxPlayer && (<ExpandedTabletPlayer>
+      {maxPlayer && (<ExpandedTabletPlayer >
         <CloseBar>
           <AddPlaylist onClick = {handleMinPlayer}>
             <RxCross1 />
@@ -489,7 +489,7 @@ const handleMaxPlayer = () => {
                 </EndTimeWrapper>
                 </ProgressBarWrap>
                 <ControlsWrapper>
-                <NextWrapper onClick = {handleLoop} style ={{fontSize : "20px" , boxShadow: isLooping ? "0 0 20px rgba(52, 152, 219, 0.9)" : "none"}}>
+                <NextWrapper onClick = {handleLoop} style ={{boxShadow: isLooping ? "0 0 20px rgba(52, 152, 219, 0.9)" : "none"}}>
                   <ImLoop />
                 </NextWrapper>
                 <NextWrapper onClick = {handlePrev}>
