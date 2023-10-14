@@ -17,7 +17,7 @@ import SelectedPlaylist from '../SelectedPlaylist';
 import {RiDeleteBin6Line} from 'react-icons/ri'
 import MyPlaylistImg from '../../assets/nerverland.jpg'
 import MyPlaylist from '../MyPlaylist';
-import {BsArrowRight,BsArrowLeft} from 'react-icons/bs'
+import {BsArrowRight,BsArrowLeft, BsFillArrowLeftSquareFill} from 'react-icons/bs'
 import {GoHomeFill,GoHome} from 'react-icons/go'
 import { InputWrapper, SearchBar, SearchBarWrapper } from '../../styles/Search';
 import {SearchedSongs } from '../../styles/Search'
@@ -105,6 +105,7 @@ const HomePage = () => {
 
   const handleAddPlaylists = () => {
     setPlaylist(true)
+    setMinPlayer(false)
 }
 
   const handleFavorite = () => {
@@ -135,6 +136,7 @@ const MyPersonalPlaylist = () => {
     setFavorite(false)
     setSelectedPlaylist(false)
     setPersonalPlaylist(true)
+    setLibrary(false)
 }
 
 const handleLibrary = () => {
@@ -143,6 +145,7 @@ const handleLibrary = () => {
   setFavorite(false)
   setSelectedPlaylist(false)
   setLibrary(true)
+  setPersonalPlaylist(false)
 }
 
   useEffect(() => {

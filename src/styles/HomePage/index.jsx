@@ -33,7 +33,7 @@ export const HomeWrapper = styled.div`
 export const HomeWrapperTablet = styled.div`
     width: 100%;
     height :100%;
-    background-color: #121212;
+    background: #121212;
     display: none;
     border-radius: 10px;
     position: relative;
@@ -57,7 +57,7 @@ export const TabletWidgets = styled.div`
 export const LibrarySect = styled.div`
     width: 100%;
     height :100%;
-    background-color: #121212;
+    background: linear-gradient(to bottom, #ff6e7f, #ffc5b6);
     display: flex;
     flex-direction: column;
     padding-inline: 10px;
@@ -315,6 +315,7 @@ export const NewPlaylist = styled.div`
     justify-content : center;
     color : #adadad;
     font-size: ${(props) => (props.isClosed ? "35px" : "25px")};
+    cursor: pointer;
 
     @media (min-width: 769px) and (max-width: 1024px)
     {
@@ -437,7 +438,7 @@ export const HeroBottom = styled.div`
     
     @media (max-width:768px)
     {  
-        background-color: #121212;
+        background-color: #121212; 
         padding-inline: 0px;
         padding-top: ${(props) => (props.reducePadding ? "20px" : "40px")};
     }
@@ -533,7 +534,6 @@ export const SongWrapperTop = styled.div`
 
 export const SongImg = styled.img`
     width:100%;
-    max-width:200px;
     border-radius: 10px;
 `
 export const SongName = styled.h1`
@@ -543,6 +543,11 @@ export const SongName = styled.h1`
     white-space: nowrap;
     text-overflow: ellipsis;
     font-weight: 600;
+
+    @media (max-width: 768px)
+    {
+        font-size: 20px;
+    }
 `
 
 export const SongSource = styled.source`
@@ -558,4 +563,9 @@ export const ArtistName = styled.h3`
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+
+    @media (max-width: 768px)
+    {
+        font-size: 15px;
+    }
 `

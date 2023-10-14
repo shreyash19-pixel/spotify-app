@@ -12,6 +12,7 @@ export const MusicPlayerWrapper = styled.div`
     {   
         min-height: 45px;
         bottom: 50px;
+        background: linear-gradient(to bottom, #1a1a2e, #16213e);
     }
 `
 export const SongInfo = styled.div`
@@ -38,6 +39,7 @@ export const TabletPlayer = styled.div`
     {
         display: flex;
         justify-content: space-between;
+        cursor: pointer;
     }
 `
 export const ExpandedTabletPlayer = styled.div`
@@ -56,12 +58,11 @@ export const ExpandedTabletPlayer = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: #121212;
+        background: linear-gradient(to bottom, #f76d57, #ffae03);
     }
 `
 export const CloseBar = styled.div`
     width: 100%;
-    max-width: 600px;
     display: flex;
     justify-content: flex-end;
 `
@@ -99,7 +100,7 @@ export const AudioName = styled.h2`
 `
 
 export const AudioArtist = styled.h3`
-    color: #dbdada;
+    color: #fff7f7;
     font-size: 14px;
 `
 
@@ -176,6 +177,11 @@ export const SongInfoSongName = styled.h1`
     {
        font-size: 14px;
     }
+
+    @media (max-width: 330px)
+    {
+       font-size: 11px;
+    }
 `
 
 export const SongInfoArtistName = styled.h3`
@@ -189,6 +195,11 @@ export const SongInfoArtistName = styled.h3`
     @media (max-width: 768px)
     {
        font-size: 11px;
+    }
+
+    @media (max-width: 330px)
+    {
+       font-size: 9px;
     }
 
 `
@@ -259,6 +270,11 @@ export const NextWrapper = styled.div`
         font-size: 24px;
         color: white;
         background-color: transparent;
+    }
+
+    @media (max-width: 376px)
+    {
+        display : ${(props) => (props.remove ? "none" : "flex")}
     }
 
 `

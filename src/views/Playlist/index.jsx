@@ -10,14 +10,14 @@ const Playlist = () => {
     const inputRef = useRef(null)
     const textAreaRef = useRef(null) 
 
-    const {song,playlist, setPlaylist,playlistName, setPlaylistName, playlistDesc, setPlaylistDesc, image, setImage,playlistInfo,setPlaylistInfo} = useContext(AppContext)
+    const {setMinPlayer, song,playlist, setPlaylist,playlistName, setPlaylistName, playlistDesc, setPlaylistDesc, image, setImage,playlistInfo,setPlaylistInfo} = useContext(AppContext)
 
     const createPlaylist = () => {
+        setMinPlayer(true)
         setPlaylist(!playlist)
         inputRef.current.value = ''
           textAreaRef.current.value = ''
           setImage(null)
-
     }
 
     const handleNewPlaylistName = (e) => {

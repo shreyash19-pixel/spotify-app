@@ -16,19 +16,23 @@ export const ModalWrapper = styled.div`
     width: 100%;
     max-width: 600px;
     min-height: 400px;
-    background-color: #282828; 
+    background: #121212;
     border-radius: 10px; 
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 1;
     position: absolute;
+    z-index: 56;
 
     @media (max-width: 768px)
     {
-        max-width: 300px;
-        min-height: 270px;
+        max-width: 768px;
+        background: linear-gradient(to bottom, #f76d57, #ffae03); 
+        height: 100%;
         padding-top: 15px;
+        border-radius: 0px;
+        padding-inline: 20px;
     }
 `
 
@@ -43,9 +47,9 @@ export const Modal = styled.div`
 
     @media (max-width: 768px)
     {
-        max-width: 250px;
-        min-height: 250px;
-        gap:30px;
+        max-width: 740px;
+        height: 100%;
+        gap:50px;
     }
 `
 export const ModalTopWrapper = styled.div`
@@ -62,7 +66,7 @@ export const ModalHeading = styled.h2`
 
     @media (max-width: 768px)
     {
-        font-size: 18px;   
+        font-size: 25px;   
     }
 `
 export const ModalMiddleWrapper = styled.div`
@@ -102,6 +106,7 @@ export const ModalMiddleTopLeft = styled.div`
     @media (max-width: 768px)
     {
         max-width: 230px;
+        background-color: white;
         max-height: 150px;
     }
 `
@@ -150,6 +155,8 @@ export const PlaylistName = styled.input`
     {
         max-width: 230px;
         min-height: 30px;
+        background-color: white;
+        color: black;
     }
 `
 
@@ -170,6 +177,8 @@ export const PlaylistDesc = styled.textarea`
         max-width: 230px;
         min-height: 125px;
         font-size: 11px;
+        background-color: white;
+        color: black;
     }
 `
 export const CreateButton = styled.div`
@@ -221,5 +230,6 @@ color : white;
     {
         width: 230px;
         height: 150px;
+        color: black
     }
 `
