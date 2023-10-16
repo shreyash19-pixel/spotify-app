@@ -1,5 +1,5 @@
-import React, {useState,useRef, useContext,useEffect} from 'react'
-import {SongInfoImg,StartTimeWrapper,MusicPlayer,ProgressBar,EndTimeWrapper, MusicPlayerWrapper, SongAudio, SongInfo, SongInfoArtistName, SongInfoArtistWrap, SongInfoImgWrap, SongInfoSongName, StartTime, ControlsWrapper, NextWrapper, PlayWrapper, TabletPlayer, SongInfoLeft, SongInfoRight, ExpandedTabletPlayer} from '../../styles/AudioPlayer'
+import React, {useContext,useEffect} from 'react'
+import {SongInfoImg,StartTimeWrapper,MusicPlayer,ProgressBar,EndTimeWrapper, MusicPlayerWrapper, SongAudio, SongInfo, SongInfoArtistName, SongInfoArtistWrap, SongInfoImgWrap, SongInfoSongName, StartTime, ControlsWrapper, NextWrapper, PlayWrapper, TabletPlayer, SongInfoLeft, SongInfoRight} from '../../styles/AudioPlayer'
 import {BiSkipPrevious, BiSkipNext} from 'react-icons/bi'
 import {AiOutlinePause} from 'react-icons/ai'
 import {BsPlayFill} from 'react-icons/bs'
@@ -8,8 +8,6 @@ import { ImLoop } from "react-icons/im";
 import {GoUnmute,GoMute} from "react-icons/go"
 
 const AudioPlayer = () => {
-  
- 
 
   const {isPlaying, 
     setIsPlaying,
@@ -26,7 +24,6 @@ const AudioPlayer = () => {
     isLooping, 
     setisLooping,setSongIndexValue, setSongArray, songIndexValue,songArray,setAuto,auto,isReduced, minPlayer, 
     setMinPlayer,
-    maxPlayer, 
     setMaxPlayer,audioRef} = useContext(AppContext)
 
   const handlePlay = () => {

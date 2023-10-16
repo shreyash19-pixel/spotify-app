@@ -1,12 +1,7 @@
 
 {
     "tracks": [
-     {
-        "name": "How Do I Say Goodbye",
-        "artist": "Dean Lewis",
-        "audioUrl": "/Songs/How-Do-I-Say-Goodbye.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273991f6658282ef028f93b11e0"
-      },
+     
       {
         "name": "Perfect",
         "artist": "Ed Sheeran",
@@ -20,12 +15,6 @@
         "imageUrl": "https://i.scdn.co/image/ab67616d0000b273f6b55ca93bd33211227b502b"
       },
       {
-        "name": "A Thousand Years",
-        "artist": "Christina Perri",
-        "audioUrl": "/Songs/A-Thousand-Years.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b2730c76be87f513c8361d06d6bd"      
-      },
-      {
         "name": "Somewhere Only We know",
         "artist": "rhianne",
         "audioUrl": "/Songs/Somewhere-Only-We-Know.mp3",
@@ -34,7 +23,7 @@
       {
         "name": "Until I Found You",
         "artist": "Stephen Sanchez",
-        "audioUrl": "/Songs/Until-I-Found.mp3",
+        "audioUrl": "/Songs/Until-I-Found-You.mp3",
         "imageUrl": "https://i.scdn.co/image/ab67616d0000b2739522042f86d0bb0d4e9e3783"      
       },
       {
@@ -60,12 +49,6 @@
         "artist": "Maroon 5",
         "audioUrl": "/Songs/Memories.mp3",
         "imageUrl": "https://i.scdn.co/image/ab67616d0000b27386a8ab515de4b7aef28cd631"      
-      },
-      {
-        "name": "GigaChad Theme",
-        "artist": "g3ox_em",
-        "audioUrl": "/Songs/GigaChad-Theme.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b27358f4ef1de531713f099ef7c6"      
       },
       {
         "name": "Chaand Baaliyan",
@@ -134,52 +117,16 @@
         "imageUrl": "https://i.scdn.co/image/ab67616d0000b2737e3e34dcefc6f62b01b7d3f0"      
       },
       {
-        "name": "Hold On",
-        "artist": "Chord Overstreet",
-        "audioUrl": "/Songs/Hold-On.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273c60473419a4ce96822541181"      
-      },
-      {
         "name": "Besabriyaan",
         "artist": "Armaan Malik",
         "audioUrl": "/Songs/Besabriyaan.mp3",
         "imageUrl": "https://i.scdn.co/image/ab67616d0000b27302dde7bfff94df00c8b76eb4"      
       },
       {
-        "name": "Aasman Ko Chukar",
-        "artist": "Daler Mehndi",
-        "audioUrl": "/Songs/Aasman-Ko-Chukar.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273f6cf72bd190be11e87c9f1e5"      
-      },
-      {
-        "name": "Blank Space",
-        "artist": "Taylor Swift",
-        "audioUrl": "/Songs/Blank-Space.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b27352b2a3824413eefe9e33817a"      
-      },
-      {
-        "name": "Welcome To New York",
-        "artist": "Taylor Swift",
-        "audioUrl": "/Songs/Welcome-to-New-York.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b27352b2a3824413eefe9e33817a"      
-      },
-      {
         "name": "Believer",
         "artist": "Imagine Dragons",
         "audioUrl": "/Songs/Believer.mp3",
         "imageUrl": "https://i.scdn.co/image/ab67616d0000b2735675e83f707f1d7271e5cf8a"      
-      },
-      {
-        "name": "Demons",
-        "artist": "Imagine Dragons",
-        "audioUrl": "/Songs/Demons.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273b2b2747c89d2157b0b29fb6a"      
-      },
-      {
-        "name": "Bad Liar",
-        "artist": "Imagine Dragons",
-        "audioUrl": "/Songs/Bad-Liar.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273da6f73a25f4c79d0e6b4a8bd"      
       },
       {
         "name": "Tum Hi Ho",
@@ -212,58 +159,10 @@
         "imageUrl": "https://i.scdn.co/image/ab67616d0000b27315145482a542a9adb282250b"      
       },
       {
-        "name": "Shivers",
-        "artist": "Ed Sheeran",
-        "audioUrl": "/Songs/shivers.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273ef24c3fdbf856340d55cfeb2"      
-      },
-      {
-        "name": "Cheating On You",
-        "artist": "Charlie Puth",
-        "audioUrl": "/Songs/Cheating-on-You.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b2738de02872d0f01145d616ca6f"      
-      },
-      {
-        "name": "cardigan",
-        "artist": "Taylor Swift",
-        "audioUrl": "/Songs/CARDIGAN.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b27395f754318336a07e85ec59bc"      
-      },
-      {
-        "name": "The Heart Wants What It Wants",
-        "artist": "Selena Gomez",
-        "audioUrl": "/Songs/The-Heart-Wants-Wha.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273f7dd2cadacebfe2d3c5d96be"      
-      },
-      {
-        "name": "If We Have Each Other",
-        "artist": "Alec Benjamin",
-        "audioUrl": "/Songs/If-We-Have-Each-Ot.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273459d675aa0b6f3b211357370"      
-      },
-      {
-        "name": "you were there for me",
-        "artist": "Henry Moodie",
-        "audioUrl": "/Songs/You-Were-There-For-Me.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b2730aac10d93a55e986a84a9ddf"      
-      },
-      {
         "name": "Kabira",
         "artist": "Pritam, Tochi Raina",
         "audioUrl": "/Songs/Kabira.mp3",
         "imageUrl": "https://i.scdn.co/image/ab67616d0000b273707ea5b8023ac77d31756ed4"      
-      },
-      {
-        "name": "METAMORPHOSIS",
-        "artist": "INTERWORLD",
-        "audioUrl": "/Songs/METAMORPHOSIS.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273b852a616ae3a49a1f6b0f16e"      
-      },
-      {
-        "name": "Murder In My Mind",
-        "artist": "Kordhell",
-        "audioUrl": "/Songs/MURDER-IN-MY-MIND.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b2731440ffaa43c53d65719e0150"      
       },
       {
         "name": "Night Changes",
@@ -290,161 +189,10 @@
         "imageUrl": "https://i.scdn.co/image/ab67616d0000b27349e0134c686547c28b7c999f"      
       },
       {
-        "name": "A Lot",
-        "artist": "Jcole, 21 Savage",
-        "audioUrl": "/Songs/A-lot.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273280689ecc5e4b2038bb5e4bd"
-      },
-      {
-        "name": "Dandelions",
-        "artist": "Ruth B",
-        "audioUrl": "/Songs/Dandelions.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273940709536c688461a6cb1379"
-      },
-      {
-        "name": "People You Know",
-        "artist": "Selena Gomez",
-        "audioUrl": "/Songs/People-You-Know.mp3",
-        "imageUrl": "https://c.saavncdn.com/696/Rare-English-2020-20200109231737-500x500.jpg"
-      },
-  
-      {
-        "name": "Just Wanna Rock",
-        "artist": "Lil Uzi Vert",
-        "audioUrl": "/Songs/Just-Wanna-Rock.mp3",
-        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/2/2c/Lil_Uzi_Vert_-_Just_Wanna_Rock.png"
-      },
-      {
-        "name": "DNA",
-        "artist": "Kendrick Lamar",
-        "audioUrl": "/Songs/DNA.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273f9a16d4b6cd94eca041f00b8"
-      },
-      {
-        "name": "Mera Saman Kahan hai",
-        "artist": "Chaar Diwari",
-        "audioUrl": "/Songs/MERA SAMAN KAHAN HAI.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d00001e02049f327b00a1d6fa60c6c15e"
-      },
-      {
         "name": "NanChaku",
         "artist": "Seedhe Maut, Mc Stan",
         "audioUrl": "/Songs/Nanchaku.mp3",
         "imageUrl": "https://i.scdn.co/image/ab67616d0000b273d3e9ef8996ee8e16c0af0103"
-      },
-      {
-        "name": "Pardesi",
-        "artist": "Tochi Raina",
-        "audioUrl": "/Songs/Pardesi.mp3",
-        "imageUrl": "https://c.saavncdn.com/011/Dev-D-2008-500x500.jpg"
-      },
-      {
-        "name": "Pinnak",
-        "artist": "Sambata",
-        "audioUrl": "/Songs/Pinnak.mp3",
-        "imageUrl": "https://c.saavncdn.com/082/Pinnak-Marathi-2022-20220412083537-500x500.jpg"
-      },
-      {
-        "name": "Something in the way",
-        "artist": "Niravana",
-        "audioUrl": "/Songs/Something In The Way.mp3",
-        "imageUrl": "https://images.genius.com/c7a0f0fae1f28e4cd3982e5779574f81.1000x1000x1.png"
-      },
-      {
-        "name": "One Love",
-        "artist": "Blue",
-        "audioUrl": "/Songs/One Love.mp3",
-        "imageUrl": "https://i1.sndcdn.com/artworks-hIzigGXGwFqI-0-t500x500.jpg"
-      },
-      {
-        "name": "Blinding Lights",
-        "artist": "The Weekend",
-        "audioUrl": "/Songs/Blinding Lights.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b2738863bc11d2aa12b54f5aeb36"
-      },
-      {
-        "name": "Gangsta paradise",
-        "artist": "Coolio",
-        "audioUrl": "/Songs/Gangstas Paradise.mp3",
-        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/e/e9/Coolio_-_Gangsta%27s_Paradise.jpg"
-      },
-      {
-        "name": "Sajdaa",
-        "artist": "Shankar-Ehsaan-Loy",
-        "audioUrl": "/Songs/Sajdaa.mp3",
-        "imageUrl": "https://c.saavncdn.com/527/My-Name-Is-Khan-Hindi-2010-20190617160533-500x500.jpg"
-      },
-      {
-        "name": "This is America",
-        "artist": "Childish Gambino",
-        "audioUrl": "/Songs/This Is America.mp3",
-        "imageUrl": "https://m.media-amazon.com/images/M/MV5BZDc5ZjQ4YWUtNzQ4MC00NThhLTlmNDEtOWMzN2Y0NGVjMjBhXkEyXkFqcGdeQXVyNjMxNzQ2NTQ@._V1_.jpg"
-      },
-      {
-        "name": "Bam Lahiri",
-        "artist": "Kailash kher",
-        "audioUrl": "/Songs/Babam Bam.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273cd3f6c3c2f2aa9b76fe635b1"
-      },
-      {
-        "name": "Lose Yourself",
-        "artist": "Eminem",
-        "audioUrl": "/Songs/Lose Yourself.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273968da85f248a7e7747767801"
-      },
-      {
-        "name": "Fisrt Class",
-        "artist": "Jack Harlow",
-        "audioUrl": "/Songs/First Class.mp3",
-        "imageUrl": "https://i1.sndcdn.com/artworks-1HmGvzlKtHhSEbJ9-OBPMbg-t500x500.jpg"
-      },
-      {
-        "name": "Die For You",
-        "artist": "Valorent",
-        "audioUrl": "/Songs/Die For You.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273a048415db06a5b6fa7ec4e1a"  
-      },
-      {
-        "name": "I Was Never There",
-        "artist": "Weekend",
-        "audioUrl": "/Songs/I Was Never There.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b2731f6a2a40bb692936879db730"
-      },
-      {
-        "name": "Ginseng Strip 2002",
-        "artist": "Yung Lean",
-        "audioUrl": "/Songs/Ginseng Strip 2002.mp3",
-        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/0a/Ginseng_Strip_2002.png"
-      },
-      {
-        "name": "Phir se Ud Chala",
-        "artist": "Mohit Chauhan",
-        "audioUrl": "/Songs/Phir-Se-Ud-Chala.mp3",
-        "imageUrl": "https://c.saavncdn.com/408/Rockstar-Hindi-2011-20221212023139-500x500.jpg"
-      },
-      {
-        "name": "Sojugada Soojumallige",
-        "artist": "Midhun Mukundan",
-        "audioUrl": "/Songs/Sojugada-Soojumallige.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273804f45acdffb919fadc218c7"      
-      },
-      {
-        "name": "Chitta",
-        "artist": "Prabh Deep",
-        "audioUrl": "/Songs/CHITTA.mp3",
-        "imageUrl": "https://images.genius.com/7918d74a0bf5fb31537c703320eadebf.1000x1000x1.jpg"
-      },
-      {
-        "name": "Its the Time To Disco",
-        "artist": "Shankar-Ehsaan-Loy",
-        "audioUrl": "/Songs/Its-the-Time-to-Disco.mp3",
-        "imageUrl": "https://c.saavncdn.com/587/Kal-Ho-Naa-Ho-Hindi-2003-20190516130956-500x500.jpg"
-      },
-      {
-        "name": "Ye Tara Woh Tara",
-        "artist": "Udit Narayan",
-        "audioUrl": "/Songs/Yeh-Tara-Woh-Tara.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273e63c0ab993ae23b9efa3fe27"
       },
       {
         "name": "Masakali",
@@ -457,8 +205,133 @@
         "artist": "Shankar-Ehsaan-Loy",
         "audioUrl": "/Songs/Man-Udhan-Varyache.mp3",
         "imageUrl": "https://i.scdn.co/image/ab67616d0000b2736a224e18fa52f733a776c86a"
+      },
+      {
+        "name": "Kal Ho Naa Ho",
+        "artist": "Sonu Nigam",
+        "audioUrl": "/Songs/Kal Ho Naa Ho.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273a2055e0b847ff66fb5206099"
+      },
+      {
+        "name": "Iktara",
+        "artist": "Amit Trivedi",
+        "audioUrl": "/Songs/Iktara.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b27302ef23e492fb485d08068845"
+      },
+      {
+        "name": "Pal",
+        "artist": "Shreya Ghoshal",
+        "audioUrl": "/Songs/Pal.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b27311f04db5315007b4004c4691"
+      },
+      {
+        "name": "Humdard",
+        "artist": "Arijit Singh",
+        "audioUrl": "/Songs/Humdard.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273a2ef89ae0f8d1848081c1449"
+      },
+      {
+        "name": "Chahun Main Ya Naa",
+        "artist": "Arijit Singh",
+        "audioUrl": "/Songs/Chahun Main Ya Naa.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273348468c203278d510f0cbc5a"
+      },
+      {
+        "name": "Tu Jo Mila",
+        "artist": "KK",
+        "audioUrl": "/Songs/Tu Jo Mila.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273e7f1ff44b74df429307f4164"
+      },
+      {
+        "name": "Wavin Flag",
+        "artist": "knaan",
+        "audioUrl": "/Songs/Wavin Flag.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273a3a8f20705f6f1d9adf84551"
+      },
+      {
+        "name": "Champion",
+        "artist": "Seedhe Maut",
+        "audioUrl": "/Songs/Champion.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb2ff3b81c16a59f19b0f6e2d2"
+      },
+      {
+        "name": "Naam Kaam Sheher",
+        "artist": "Seedhe Maut",
+        "audioUrl": "/Songs/Naam Kaam Sheher.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb2ff3b81c16a59f19b0f6e2d2"
+      },
+      {
+        "name": "Asal G",
+        "artist": "Seedhe Maut",
+        "audioUrl": "/Songs/Asal G.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb2ff3b81c16a59f19b0f6e2d2"
+      },
+      {
+        "name": "Focused Sedated",
+        "artist": "Seedhe Maut",
+        "audioUrl": "/Songs/Focused Sedated.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb2ff3b81c16a59f19b0f6e2d2"
+      },
+      {
+        "name": "Taakat",
+        "artist": "Seedhe Maut",
+        "audioUrl": "/Songs/Taakat.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb2ff3b81c16a59f19b0f6e2d2"
+      },
+      {
+        "name": "Heat Waves",
+        "artist": "Glass Animals",
+        "audioUrl": "/Songs/Heat Waves.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b2739e495fb707973f3390850eea"
+      },
+      {
+        "name": "Glimpse Of Us",
+        "artist": "Joji",
+        "audioUrl": "/Songs/Glimpse Of Us.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b27308596cc28b9f5b00bfe08ae7"
+      },
+      {
+        "name": "One Dance",
+        "artist": "Drake",
+        "audioUrl": "/Songs/One Dance.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b2739416ed64daf84936d89e671c"
+      },
+      {
+        "name": "Sweater Weather",
+        "artist": "The Neighbourhood",
+        "audioUrl": "/Songs/Sweater Weather.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273580807847387ba7a07607134"
+      },
+      {
+        "name": "Birthday Sex",
+        "artist": "Jeremih",
+        "audioUrl": "/Songs/Birthday Sex.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273818f02780ddb65e0315ea707"
+      },
+      {
+        "name": "Thunder",
+        "artist": "Imagine Dragons",
+        "audioUrl": "/Songs/Thunder.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b2735675e83f707f1d7271e5cf8a"
+      },
+      {
+        "name": "The Humma Song",
+        "artist": "A. R. Rahman",
+        "audioUrl": "/Songs/The Humma Song.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273007759a309e7364ffc5f664a"
+      },
+      {
+        "name": "What A Life",
+        "artist": "Scarlet Pleasure",
+        "audioUrl": "/Songs/What A Life.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273d50755b807aaed3dde6c9ee6"
+      },
+      {
+        "name": "Heathens",
+        "artist": "twenty one pilots",
+        "audioUrl": "/Songs/Heathens.mp3",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b2732ca3ba8f334ca5a5f0312efb"
       }
-      
     ],
 
     
@@ -481,12 +354,6 @@
         "artist": "Billie Eilish, Khalid",
         "audioUrl": "/Songs/Lovely.mp3",
         "imageUrl": "https://i.scdn.co/image/ab67616d0000b2738a3f0a3ca7929dea23cd274c"      
-      },
-      {
-        "name": "Dandelions",
-        "artist": "Ruth B",
-        "audioUrl": "/Songs/Dandelions.mp3",
-        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273940709536c688461a6cb1379"
       },
       {
         "name": "Chaand Baaliyan",

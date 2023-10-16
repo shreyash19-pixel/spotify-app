@@ -16,7 +16,7 @@ export const ModalWrapper = styled.div`
     width: 100%;
     max-width: 600px;
     min-height: 400px;
-    background: #121212;
+    background: #282828;
     border-radius: 10px; 
     display: flex;
     align-items: center;
@@ -210,6 +210,7 @@ export const ImagePreview = styled.img`
     {
         width: 230px;
         height: 150px;
+
     }
 `
 
@@ -230,6 +231,6 @@ color : white;
     {
         width: 230px;
         height: 150px;
-        color: black
+        color: #8B7575;
     }
 `

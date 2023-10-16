@@ -106,9 +106,9 @@ export const PlayListNameDesc = styled.div`
     flex-direction: column;
     justify-content: center;
     min-height: 200px;
-    overflow: hidden;
+    /* overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; */
 
     @media (max-width: 768px)
     {
@@ -155,11 +155,15 @@ export const PlayListName = styled.h1`
     }
 
 `
+export const PlaylistDescWrapper = styled.div`
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+`
+
 export const PlaylistDesc = styled.h4`
     color : #dbdada;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     font-size: 21px;
 
     @media (max-width: 768px)

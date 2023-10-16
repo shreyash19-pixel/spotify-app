@@ -1,19 +1,14 @@
-import React, { useState, useEffect, useContext } from 'react'
-import { Hero, HeroTop,HeroTopLeft,HeroBottom,HeroIcons,HeroTopRight, IconWrapper,  SongWrapper, SongWrapperTop, SongImg, SongName, SongWrapperBottom, ArtistName, HeroMusicSec } from '../../styles/HomePage'
-import {AiOutlineLeft,AiOutlineRight} from 'react-icons/ai'
-import {BiSolidUser} from 'react-icons/bi'
-import { InputWrapper, SearchBar, SearchBarWrapper, SearchedSongs } from '../../styles/Search'
+import React, { useState,useContext } from 'react'
+import { Hero, HeroTop,HeroTopLeft,HeroBottom, IconWrapper,  SongWrapper, SongWrapperTop, SongImg, SongName, SongWrapperBottom, ArtistName, HeroMusicSec } from '../../styles/HomePage'
+import { InputWrapper, SearchBar, SearchBarWrapper} from '../../styles/Search'
 import { HiOutlineSearch } from 'react-icons/hi';
 import AppContext from '../../AppContext'
 
 const Search = () => {
     const [search, setSearch] = useState('')
-  
-
     const {setSongArray,song,setSongIndexValue,setAuto,isReduced} = useContext(AppContext)
 
-
-      const handleSongs = (track) =>{
+    const handleSongs = (track) =>{
         
         let increm = 0
 
@@ -43,8 +38,7 @@ const Search = () => {
         return name.toLowerCase()
       }
 
-      
-  return (
+return (
     <Hero isClosed = {isReduced}> 
         <HeroTop isClosed = {isReduced} topPadding sidePadding>
         <HeroTopLeft>

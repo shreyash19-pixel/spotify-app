@@ -10,6 +10,7 @@ function App() {
   const storedPlaylistInfo = JSON.parse(localStorage.getItem("playlistInfo")) || []
   const storedCurrentSongIndex = JSON.parse(localStorage.getItem("currentSongIndex")) || 0
   const storedCurrentSongArray = JSON.parse(localStorage.getItem("currentSongArray")) || []
+  const likedSongs = JSON.parse(localStorage.getItem("likedSongs")) || []
 
   const [songIndexValue, setSongIndexValue] = useState(storedCurrentSongIndex);
   const[songArray, setSongArray] = useState(storedCurrentSongArray);
@@ -34,9 +35,12 @@ function App() {
   const [duration, setDuration] = useState();
   const [mute, setMute] = useState(false)
   const audioRef = useRef(null)
+  const [isLiked, setIsLiked] = useState(likedSongs)
+
  
 
   const sharedData = {
+    isLiked, setIsLiked,
     isPlaying, 
     setIsPlaying,
     currentTime, 

@@ -1,23 +1,17 @@
-import React, { useContext, useEffect, useState } from 'react'
-import {HeroIcons, HeroTop, HeroTopLeft, HeroTopRight, IconWrapper} from '../../styles/HomePage'
+import React, { useContext, useState } from 'react'
+import {HeroTop, IconWrapper} from '../../styles/HomePage'
 import AppContext from '../../AppContext'
-import {AiOutlineLeft,AiOutlineRight,AiOutlinePlus,AiOutlineHeart} from 'react-icons/ai'
-import {BiSolidUser} from 'react-icons/bi'
-import { AddedSongContainer,InputWrapper, SearchBar, SearchBarWrapper, PlaylistsWrapper,AddSongs,AddWrapper, AdddedSongsWrapper, ArtistName, ArtistWrapper, HeroTopWrapper, HeroWrapper, PlayListName, PlayListNameDesc, PlaylistDesc, PlaylistImage, PlaylistInfo, PlaylistInfoLeft, PlaylistInfoRight, PlaylistInfoWrapper, SearchAndAdd, SearchWrapper, SongCard, SongDetails, SongImg, SongName, AddedSongs, ShuffleAddedWrapper, ShuffleWrapper, Shuffle, AddContainer, PlaylistNameWrap } from '../../styles/SelectedPlaylist'
+import {AiOutlinePlus} from 'react-icons/ai'
+import { AddedSongContainer,InputWrapper, SearchBar, SearchBarWrapper, PlaylistsWrapper,AddSongs,AddWrapper, AdddedSongsWrapper, ArtistName, ArtistWrapper, HeroWrapper, PlayListName, PlayListNameDesc, PlaylistDesc, PlaylistImage, PlaylistInfoLeft, PlaylistInfoRight, PlaylistInfoWrapper, SearchAndAdd, SearchWrapper, SongCard, SongDetails, SongImg, SongName, AddedSongs, ShuffleAddedWrapper, ShuffleWrapper, Shuffle, AddContainer, PlaylistDescWrapper} from '../../styles/SelectedPlaylist'
 import {HiOutlineSearch} from 'react-icons/hi'
-import { toast,ToastContainer } from "react-toastify";
-import {TiTickOutline} from 'react-icons/ti'
+import { toast} from "react-toastify";
 import {BsShuffle} from 'react-icons/bs'
-import {MdFavorite} from 'react-icons/md'
 import {RiDeleteBin6Line} from 'react-icons/ri'
 
 const SelectedPlaylist = () => {
 
-
-  
   const [search, setSearch] = useState('')
   const {playlistNumber,playlistInfo,setPlaylistInfo,song, setSongArray, setSongIndexValue,setAuto,isReduced,isExpanded} = useContext(AppContext)
-
 
   const handleSearch = (e) => {
     setSearch(e.target.value)
@@ -26,7 +20,6 @@ const SelectedPlaylist = () => {
   const convertToLowerCase = (name) => {
     return name.toLowerCase()
   }
-
 
   const handleAddedSongs = (track) => {
     let increm = 0
@@ -78,7 +71,6 @@ const SelectedPlaylist = () => {
     setPlaylistInfo(updatedPlaylist);
     localStorage.setItem('playlistInfo', JSON.stringify(updatedPlaylist));
   }
-  
 
   return (
     <HeroWrapper isClosed = {isReduced}>
@@ -134,7 +126,9 @@ const SelectedPlaylist = () => {
         <PlaylistInfoRight isClosed = {isReduced}>
         <PlayListNameDesc>
           <PlayListName>{playlistInfo[playlistNumber]?.name}</PlayListName>
+          <PlaylistDescWrapper>
           <PlaylistDesc>{playlistInfo[playlistNumber]?.description}</PlaylistDesc>
+          </PlaylistDescWrapper>
         </PlayListNameDesc>
         </PlaylistInfoRight>
       </PlaylistInfoWrapper>

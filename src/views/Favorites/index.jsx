@@ -1,19 +1,11 @@
-import React, { useState,useContext, useEffect} from 'react'
-import {HeroMusicSec ,Hero,HeroTop,HeroIcons, HeroTopLeft, HeroTopRight, HeroBottom, SongWrapper, SongWrapperTop, SongImg, SongName, SongWrapperBottom, ArtistName, LikeWrapper} from '../../styles/HomePage'
-import {AiOutlineLeft,AiOutlineRight} from 'react-icons/ai'
-import {BiSolidUser} from 'react-icons/bi'
-import { SearchedSongs } from '../../styles/Search'
+import React, {useContext} from 'react'
+import {HeroMusicSec ,Hero, HeroBottom, SongWrapper, SongWrapperTop, SongImg, SongName, SongWrapperBottom, ArtistName, LikeWrapper} from '../../styles/HomePage'
 import {MdFavorite} from 'react-icons/md'
-import {AiOutlineHeart} from 'react-icons/ai'
-import AudioPlayer from '../AudioPlayer'
 import AppContext from '../../AppContext'
 
-const Favorites = ({ likedSongs}) => {
+const Favorites = () => {
 
-
-    const [isLiked,setIsLiked] = useState(likedSongs)
-
-    const {setSongIndexValue,setSongArray,setAuto,isReduced} = useContext(AppContext)
+    const {song,setSongIndexValue,setSongArray,setAuto,isReduced,isLiked, setIsLiked} = useContext(AppContext)
 
     const toggleLike = (index) => {
         if (isLiked[index]) {
@@ -30,31 +22,31 @@ const Favorites = ({ likedSongs}) => {
         setSongArray(isLiked)
         setAuto(true)
     }
-    
+
   return (
     <Hero isClosed = {isReduced}>
         <HeroBottom isClosed = {isReduced}>
             <HeroMusicSec isClosed = {isReduced}>
-            {isLiked.map((track, index) => (
+            {song.filter((_, index) => isLiked[index])
+            .map((track, index) => (
                     <SongWrapper isClosed = {isReduced} key={index} onClick = {() => handleSongs(index)}>
                         <LikeWrapper
                             onClick={(e) => {e.stopPropagation();toggleLike(index);}}
-                            disabled={isLiked[index]}
                         >
-                            {isLiked[index] ? <MdFavorite /> : <AiOutlineHeart />}
+                         <MdFavorite />
                     </LikeWrapper>
                     <SongWrapperTop>
-                        <SongImg src = {track.imageUrl} />
-                        <SongName>{track.name}</SongName>
+                        <SongImg src = {track?.imageUrl} />
+                        <SongName>{track?.name}</SongName>
                     </SongWrapperTop>
                     <SongWrapperBottom>
                         <ArtistName>
-                        {track.artist}
+                        {track?.artist}
                         </ArtistName>
                     </SongWrapperBottom>
                 </SongWrapper>
                 ))}
-            </HeroMusicSec>
+            </HeroMusicSec> 
         </HeroBottom>
        
     </Hero>

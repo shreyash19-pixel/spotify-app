@@ -1,10 +1,10 @@
-import React, { useState , useEffect, useRef, useContext} from 'react'
-import {NewPlaylist,ShowPlaylistLeft,LikeWrapper,SongName,HeroBottomTop,HomeSect, HomeWrapper, SideBar,Hero, SideBarWrapper, SideBarTop, SpotifyImg, SpotifyName,  SideBarBottom, OptionWrapper, Home,  IconWrapper, HeroTop, HeroBottom, HeroTopLeft, HeroTopRight, HeroIcons, HeroBottomTopHeading, HeroMusicSec, SongWrapper, SongWrapperTop, SongImg, SongWrapperBottom, ArtistName, SideBarBottomTitleWrap, SideBarBottomTitle, ShowPlaylists, SpotifyHeadingWrapper, ShowPlaylistsWrapper, PlaylistsImage, PlaylistsName, DeletePlaylist,AddPlaylists, LogoWrapper, ExpandWrapper, ReducedBarWrapper, HomeWrapperTablet, TabletViewTop, TabletWidgets, ReducedBar, SideBarBottomWrap, ShowPlaylistContainer, MyPlaylistWrapper, SideBarBottomUp, LibrarySect, LibraryHeadingWrap, LibraryHeading, LibraryPlaylists} from '../../styles/HomePage'
+import React, { useState , useEffect, useContext} from 'react'
+import {NewPlaylist,ShowPlaylistLeft,LikeWrapper,SongName,HomeSect, HomeWrapper, SideBar,Hero, SideBarWrapper, SideBarTop, SpotifyImg, SpotifyName,  SideBarBottom, OptionWrapper, Home,  IconWrapper, HeroBottom, HeroMusicSec, SongWrapper, SongWrapperTop, SongImg, SongWrapperBottom, ArtistName, SideBarBottomTitleWrap, SideBarBottomTitle, ShowPlaylists, SpotifyHeadingWrapper, ShowPlaylistsWrapper, PlaylistsImage, PlaylistsName, DeletePlaylist,AddPlaylists, LogoWrapper, ExpandWrapper, ReducedBarWrapper, HomeWrapperTablet, TabletWidgets, ReducedBar, ShowPlaylistContainer, MyPlaylistWrapper, SideBarBottomUp, LibrarySect, LibraryHeadingWrap, LibraryHeading} from '../../styles/HomePage'
 import SpotifyLogo from '../../assets/spotify-logo.png'
 import { HiHome,HiOutlineSearch } from 'react-icons/hi';
-import {BiSolidPlaylist,BiSolidUser,BiSearch,BiSearchAlt,BiLibrary} from 'react-icons/bi'
+import {BiSolidPlaylist,BiSearch,BiSearchAlt,BiLibrary} from 'react-icons/bi'
 import {MdFavorite} from 'react-icons/md'
-import {AiOutlineLeft,AiOutlineRight,AiOutlineHeart, AiOutlinePlus,AiOutlineHome} from 'react-icons/ai'
+import {AiOutlineHeart, AiOutlinePlus} from 'react-icons/ai'
 import Search from '../Search'
 import Favorites from '../Favorites';
 import { toast,ToastContainer } from "react-toastify";
@@ -17,10 +17,8 @@ import SelectedPlaylist from '../SelectedPlaylist';
 import {RiDeleteBin6Line} from 'react-icons/ri'
 import MyPlaylistImg from '../../assets/nerverland.jpg'
 import MyPlaylist from '../MyPlaylist';
-import {BsArrowRight,BsArrowLeft, BsFillArrowLeftSquareFill} from 'react-icons/bs'
+import {BsArrowRight,BsArrowLeft} from 'react-icons/bs'
 import {GoHomeFill,GoHome} from 'react-icons/go'
-import { InputWrapper, SearchBar, SearchBarWrapper } from '../../styles/Search';
-import {SearchedSongs } from '../../styles/Search'
 import {AudioArtist, AudioControlWrap, AudioName, CloseBar, ControlsWrapper, EndTimeWrapper, ExpandedTabletPlayer, NextWrapper, PlayWrapper, ProgressBar, ProgressBarWrap, SongArtistWrapper, SongImage, SongImgWrapper, SongInformation, StartTime, StartTimeWrapper} from '../../styles/AudioPlayer'
 import { AddPlaylist } from '../../styles/Playlist';
 import {RxCross1} from 'react-icons/rx'
@@ -33,17 +31,14 @@ import {BsPlayFill} from 'react-icons/bs';
 const HomePage = () => {
   const [home, setHome] = useState(true)
   const [search, setSearch] = useState(false)
-  const [searched, setSearched] = useState('')
   const [favorite, setFavorite] = useState(false)
   const [library, setLibrary] = useState(false)
-
-  const [isLiked, setIsLiked] = useState([])
   const [selectedPlaylist, setSelectedPlaylist] = useState(false)
   const [personalPlaylist, setPersonalPlaylist] = useState(false)
-  const [myPlaylist, setMyPlaylist] = useState([])
-
 
   const {
+    isLiked, 
+    setIsLiked,
     songArray,
     songIndexValue,
     setSongIndexValue,
@@ -60,7 +55,6 @@ const HomePage = () => {
     setIsExpanded,
     isReduced, 
     setIsReduced,
-    minPlayer, 
     setMinPlayer,
     maxPlayer, 
     setMaxPlayer,
@@ -160,10 +154,9 @@ const handleLibrary = () => {
 
     const likedSongs = JSON.parse(localStorage.getItem('likedSongs') || '[]');
     setIsLiked(likedSongs);
-
   }, []);
 
-  const toggleLiked = (index) => {
+  const toggleLiked = (index,track) => {
     setIsLiked((prevLiked) => {
       const newLiked = [...prevLiked];
       newLiked[index] = !newLiked[index];
@@ -202,13 +195,6 @@ const handleLibrary = () => {
     setIsReduced(true)
   }
   
-  const handleSearched = (e) => {
-    setSearched(e.target.value)
-  }
-
-  const convertToLowerCase = (name) => {
-    return name.toLowerCase()
-  }
 
   const handleMinPlayer = () => {
     setMinPlayer(true)
@@ -270,7 +256,6 @@ const handlePrev = () => {
   }
   
 }
-
 
 const handlePlayNextSong = () => {
   const playNext = (songIndexValue + 1) % songArray.length
@@ -431,7 +416,7 @@ const handleMaxPlayer = () => {
           <HeroMusicSec isClosed = {isReduced}>    
             {song.map((track, index) => (
                   <SongWrapper isClosed = {isReduced} key={index} onClick = {() => handleSongs(index)}>
-                   <LikeWrapper onClick={(e) => {e.stopPropagation();toggleLiked(index);}}>
+                   <LikeWrapper onClick={(e) => {e.stopPropagation();toggleLiked(index,track);}}>
                       {isLiked[index] ? <MdFavorite /> : <AiOutlineHeart />}
                     </LikeWrapper>
                     <SongWrapperTop>
@@ -451,7 +436,7 @@ const handleMaxPlayer = () => {
       <Search />
      )}
      {favorite && (
-     <Favorites likedSongs={song.filter((_, index) => isLiked[index])}/>
+     <Favorites/>
      )}
      
      {selectedPlaylist && (<SelectedPlaylist />)}
@@ -532,7 +517,7 @@ const handleMaxPlayer = () => {
          <Search />
         )}
         {favorite && (
-        <Favorites likedSongs={song.filter((_, index) => isLiked[index])}/>
+        <Favorites/>
         )}
 
         {
@@ -566,7 +551,7 @@ const handleMaxPlayer = () => {
                     {playlist?.name}
                   </PlaylistsName>
                 </ShowPlaylistLeft>
-                <DeletePlaylist onClick = {(e) => {e.stopPropagation();handleDeletePlaylists(index)}}>
+                <DeletePlaylist style = {{color: "white"}} onClick = {(e) => {e.stopPropagation();handleDeletePlaylists(index)}}>
                     <RiDeleteBin6Line/>
                 </DeletePlaylist>
               </ShowPlaylists>

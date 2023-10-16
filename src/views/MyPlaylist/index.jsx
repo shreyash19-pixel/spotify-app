@@ -8,7 +8,6 @@ import AppContext from '../../AppContext'
 const MyPlaylist = () => {
 
     const [myPlaylist, setMyPlaylist] = useState([])
-
     const {setSongArray, setSongIndexValue,setAuto,isReduced} = useContext(AppContext)
 
     useEffect(() => {

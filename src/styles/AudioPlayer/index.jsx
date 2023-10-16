@@ -76,7 +76,7 @@ export const SongInformation = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap:10px;
+    gap:15px;
 `
 export const SongImgWrapper = styled.div`
     display: flex;
@@ -121,7 +121,7 @@ export const AudioControlWrap = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 35px;
+    gap: 40px;
 
     @media (max-width: 425px)
     {
@@ -185,12 +185,12 @@ export const SongInfoArtistWrap = styled.div`
     width: 100%;
     max-width: 200px;
 
-    @media (max-width: 375px)
+    @media (max-width: 400px)
     {
-       max-width: 140px;
+       max-width: 150px;
     }
 
-    @media (max-width: 320px)
+    @media (max-width: 337px)
     {
        max-width: 110px;
     }
@@ -280,6 +280,11 @@ export const ControlsWrapper = styled.div`
     {   
         min-height: 35px;
         gap: 30px;
+    }
+
+    @media (max-width: 325px)
+    {
+       gap: 20px;
     }
     
 `

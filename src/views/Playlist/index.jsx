@@ -28,13 +28,9 @@ const Playlist = () => {
         setPlaylistDesc(e.target.value)
     }
 
-  
-
     useEffect(() => {
         localStorage.setItem("playlistInfo",JSON.stringify(playlistInfo))
     }, [playlistInfo]); 
-
-   
 
     const handlePlaylistInfo = () => {
         if (
