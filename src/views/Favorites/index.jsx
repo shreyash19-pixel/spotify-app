@@ -1,7 +1,8 @@
 import React, {useContext} from 'react'
-import {HeroMusicSec ,Hero, HeroBottom, SongWrapper, SongWrapperTop, SongImg, SongName, SongWrapperBottom, ArtistName, LikeWrapper} from '../../styles/HomePage'
+import {HeroMusicSec ,Hero, HeroBottom, SongWrapper, SongWrapperTop, SongImg, SongName, SongWrapperBottom, ArtistName, LikeWrapper, EmptyMessageWrapper, EmptyMessage, EmptyMessageIcon} from '../../styles/HomePage'
 import {MdFavorite} from 'react-icons/md'
 import AppContext from '../../AppContext'
+import {BiSad} from 'react-icons/bi'
 
 const Favorites = () => {
 
@@ -26,7 +27,8 @@ const Favorites = () => {
   return (
     <Hero isClosed = {isReduced}>
         <HeroBottom isClosed = {isReduced}>
-            <HeroMusicSec isClosed = {isReduced}>
+            {isLiked.includes(true) ? 
+            (<HeroMusicSec isClosed = {isReduced}>
             {song.filter((_, index) => isLiked[index])
             .map((track, index) => (
                     <SongWrapper isClosed = {isReduced} key={index} onClick = {() => handleSongs(index)}>
@@ -46,7 +48,14 @@ const Favorites = () => {
                     </SongWrapperBottom>
                 </SongWrapper>
                 ))}
-            </HeroMusicSec> 
+            </HeroMusicSec>) :
+            (
+                <EmptyMessageWrapper>
+                    <EmptyMessage>No Songs Added Yet</EmptyMessage>
+                    <EmptyMessageIcon><BiSad/></EmptyMessageIcon>
+                </EmptyMessageWrapper>
+            ) 
+            }
         </HeroBottom>
        
     </Hero>

@@ -476,6 +476,11 @@ export const HeroMusicSec = styled.div`
     justify-content: center;
     padding-bottom: 70px;
 
+    @media (max-width:381px)
+    {   
+        grid-template-columns: repeat(auto-fill, minmax(130px,1fr));
+    }
+
     @media (max-width:768px)
     {   
         padding-left: 14px;
@@ -529,6 +534,43 @@ export const LikeWrapper = styled.div`
 
 `;
 
+export const EmptyMessageWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 65px;
+  @media (max-width: 425px)
+    {
+        gap:7px;
+    }
+`
+
+export const EmptyMessage = styled.h1`
+    color: grey;
+    font-weight: 400;
+
+    @media (max-width: 425px)
+    {
+        font-size: 24px;
+    }
+`
+
+export const EmptyMessageIcon = styled.div`
+  color: grey;
+  font-size: 34px;
+   display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 425px)
+    {
+        font-size: 26px;
+    }
+`
+
 export const SongWrapperTop = styled.div`
 
 `
@@ -547,7 +589,7 @@ export const SongName = styled.h1`
 
     @media (max-width: 768px)
     {
-        font-size: 20px;
+        font-size: 17px;
     }
 `
 
@@ -567,6 +609,6 @@ export const ArtistName = styled.h3`
 
     @media (max-width: 768px)
     {
-        font-size: 15px;
+        font-size: 13px;
     }
 `

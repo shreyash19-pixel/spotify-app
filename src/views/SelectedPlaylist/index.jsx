@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import {HeroTop, IconWrapper} from '../../styles/HomePage'
+import {EmptyMessage, EmptyMessageIcon, EmptyMessageWrapper, HeroTop, IconWrapper} from '../../styles/HomePage'
 import AppContext from '../../AppContext'
 import {AiOutlinePlus} from 'react-icons/ai'
 import { AddedSongContainer,InputWrapper, SearchBar, SearchBarWrapper, PlaylistsWrapper,AddSongs,AddWrapper, AdddedSongsWrapper, ArtistName, ArtistWrapper, HeroWrapper, PlayListName, PlayListNameDesc, PlaylistDesc, PlaylistImage, PlaylistInfoLeft, PlaylistInfoRight, PlaylistInfoWrapper, SearchAndAdd, SearchWrapper, SongCard, SongDetails, SongImg, SongName, AddedSongs, ShuffleAddedWrapper, ShuffleWrapper, Shuffle, AddContainer, PlaylistDescWrapper} from '../../styles/SelectedPlaylist'
@@ -7,6 +7,7 @@ import {HiOutlineSearch} from 'react-icons/hi'
 import { toast} from "react-toastify";
 import {BsShuffle} from 'react-icons/bs'
 import {RiDeleteBin6Line} from 'react-icons/ri'
+import {BiSad} from 'react-icons/bi'
 
 const SelectedPlaylist = () => {
 
@@ -138,7 +139,8 @@ const SelectedPlaylist = () => {
           <AddedSongs style = {{cursor:"pointer"}} isClosed onClick={handleShuffle}><BsShuffle /> </AddedSongs>
         </ShuffleWrapper>
         <AddedSongContainer>
-      <AdddedSongsWrapper isClosed = {isReduced}>  
+        {playlistInfo[playlistNumber].songs.length > 0 ?
+      (<AdddedSongsWrapper isClosed = {isReduced}>  
         {playlistInfo[playlistNumber]?.songs?.map((song, index) => (
           <SongCard key = {index} onClick = {() => handlePlaySongs(index)} isClosed = {isReduced}>
             <SongDetails>
@@ -155,7 +157,14 @@ const SelectedPlaylist = () => {
           </SongCard>
           ))}
          
-      </AdddedSongsWrapper>
+      </AdddedSongsWrapper>):
+      (
+        <EmptyMessageWrapper>
+          <EmptyMessage>No Songs Added Yet</EmptyMessage>
+          <EmptyMessageIcon><BiSad/></EmptyMessageIcon>
+        </EmptyMessageWrapper>
+      )
+    }
       </AddedSongContainer>
       </ShuffleAddedWrapper>
      </PlaylistsWrapper>

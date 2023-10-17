@@ -24,13 +24,15 @@ const AudioPlayer = () => {
     isLooping, 
     setisLooping,setSongIndexValue, setSongArray, songIndexValue,songArray,setAuto,auto,isReduced, minPlayer, 
     setMinPlayer,
-    setMaxPlayer,audioRef} = useContext(AppContext)
+    setMaxPlayer,audioRef,song} = useContext(AppContext)
 
   const handlePlay = () => {
     setIsPlaying(true)
     
   }
   const handlePlayPause = () => {
+    if(songArray.length > 0)
+    {
       setIsPlaying(!isPlaying)
       setAuto(true)
 
@@ -42,6 +44,12 @@ const AudioPlayer = () => {
       {
         audioRef.current.play()
       }
+    }
+    else{
+      setSongArray(song)
+      setAuto(true)
+      setIsPlaying(!isPlaying)
+    }
   } 
 
   const handleTimeUpdate = () => {
