@@ -17,7 +17,7 @@ export const MusicPlayerWrapper = styled.div`
 `
 export const SongInfo = styled.div`
     width:100%;
-    max-width: ${(props) => (props.isLarge ? "102px" : "330px")};
+    max-width: ${(props) => (props.isLarge ? "112px" : "330px")};
     min-height: 80px;
     display: flex;
     align-items: center;
