@@ -3,10 +3,11 @@ import styled from 'styled-components'
 export const SignUpContainer = styled.div`
     width: 100%;
     height: 100vh;
+    height:100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-inline: 16px;
+    padding-inline: 25px;
     background: linear-gradient(135deg, #1DB954, #03A9F4);
 `
 
