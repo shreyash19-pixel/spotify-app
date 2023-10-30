@@ -1,12 +1,12 @@
 import React from 'react'
-import HomePage from '../../views/HomePage'
+import SignIn from '../../views/SignIn'
 
 
 const Home = () => {
   return (
 
       <div>
-      <HomePage />
+        <SignIn />
       </div>
   )
 }

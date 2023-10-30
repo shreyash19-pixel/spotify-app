@@ -1,6 +1,7 @@
 import React, { useState,useContext } from 'react'
-import { Hero, HeroTop,HeroTopLeft,HeroBottom, IconWrapper,  SongWrapper, SongWrapperTop, SongImg, SongName, SongWrapperBottom, ArtistName, HeroMusicSec } from '../../styles/HomePage'
+import { Hero, HeroTop,HeroTopLeft,HeroBottom,  SongWrapper, SongWrapperTop, SongImg, SongName, SongWrapperBottom, ArtistName, HeroMusicSec } from '../../styles/HomePage'
 import { InputWrapper, SearchBar, SearchBarWrapper} from '../../styles/Search'
+import {IconWrapper} from '../../styles/NavigationBar'
 import { HiOutlineSearch } from 'react-icons/hi';
 import AppContext from '../../AppContext'
 

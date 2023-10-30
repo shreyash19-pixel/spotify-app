@@ -1,11 +1,12 @@
 import React, {useContext,useEffect} from 'react'
-import {SongInfoImg,StartTimeWrapper,MusicPlayer,ProgressBar,EndTimeWrapper, MusicPlayerWrapper, SongAudio, SongInfo, SongInfoArtistName, SongInfoArtistWrap, SongInfoImgWrap, SongInfoSongName, StartTime, ControlsWrapper, NextWrapper, PlayWrapper, TabletPlayer, SongInfoLeft, SongInfoRight} from '../../styles/AudioPlayer'
+import {SongInfoImg,StartTimeWrapper,MusicPlayer,ProgressBar,EndTimeWrapper, MusicPlayerWrapper, SongAudio, SongInfo, SongInfoArtistName, SongInfoArtistWrap, SongInfoImgWrap, SongInfoSongName, StartTime, ControlsWrapper, NextWrapper, PlayWrapper, SongInfoLeft, SongInfoRight} from '../../styles/AudioPlayer'
 import {BiSkipPrevious, BiSkipNext} from 'react-icons/bi'
 import {AiOutlinePause} from 'react-icons/ai'
 import {BsPlayFill} from 'react-icons/bs'
 import AppContext from '../../AppContext'
 import { ImLoop } from "react-icons/im";
 import {GoUnmute,GoMute} from "react-icons/go"
+import {TabletPlayer } from '../../styles/MobileView'
 
 const AudioPlayer = () => {
 
@@ -24,7 +25,7 @@ const AudioPlayer = () => {
     isLooping, 
     setisLooping,setSongIndexValue, setSongArray, songIndexValue,songArray,setAuto,auto,isReduced, minPlayer, 
     setMinPlayer,
-    setMaxPlayer,audioRef,song} = useContext(AppContext)
+    setMaxPlayer,audioRef,song,reduce,setReduce} = useContext(AppContext)
 
   const handlePlay = () => {
     setIsPlaying(true)
@@ -116,12 +117,12 @@ useEffect(() => {
 
   return (
     <MusicPlayerWrapper>
-      <SongInfo isLarge = {isReduced}>
+      <SongInfo reduce = {reduce}>
         <SongInfoImgWrap>
           <SongInfoImg src = {songArray[songIndexValue]?.imageUrl || "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Black.png/220px-Black.png"}/>
         </SongInfoImgWrap>
-        {!isReduced && (<SongInfoArtistWrap>
-          <SongInfoSongName>
+        {!reduce && (<SongInfoArtistWrap>
+        <SongInfoSongName>
               {songArray[songIndexValue]?.name}
           </SongInfoSongName>
           <SongInfoArtistName>
@@ -129,7 +130,7 @@ useEffect(() => {
           </SongInfoArtistName>
         </SongInfoArtistWrap>)}
       </SongInfo>
-      <MusicPlayer isClosed = {isReduced}>
+      <MusicPlayer>
         <StartTimeWrapper> 
           <StartTime>{currentTime ? currentTime : "0:00"}</StartTime>
         </StartTimeWrapper>

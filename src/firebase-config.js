@@ -2,13 +2,12 @@ import { initializeApp } from "firebase/app";
 import {getAuth} from "firebase/auth"
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDNmszKeI3OWaetasHcd9KV5X1e_Gd4zWE",
-    authDomain: "music-app-f4d35.firebaseapp.com",
-    projectId: "music-app-f4d35",
-    storageBucket: "music-app-f4d35.appspot.com",
-    messagingSenderId: "494714094466",
-    appId: "1:494714094466:web:9ce525908427c1bc9b859b",
-    measurementId: "G-91143W267K"
+    apiKey: "AIzaSyB0sArDOxh64Qy7F3Znlfx7vuqdxpIv6GY",
+    authDomain: "practice-5c610.firebaseapp.com",
+    projectId: "practice-5c610",
+    storageBucket: "practice-5c610.appspot.com",
+    messagingSenderId: "474446518331",
+    appId: "1:474446518331:web:0aa42764a9c99d5d3c241e"
   };
 
 const app = initializeApp(firebaseConfig);

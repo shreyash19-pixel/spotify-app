@@ -4,6 +4,8 @@ import HomePage from "./views/HomePage";
 import Favorites from "./views/Favorites";
 import AppContext from './AppContext'
 import {useState,useEffect,useRef} from 'react'
+import SignIn from "./views/SignIn";
+import SignUp from "./views/SignUp";
 
 function App() {
 
@@ -11,7 +13,9 @@ function App() {
   const storedCurrentSongIndex = JSON.parse(localStorage.getItem("currentSongIndex")) || 0
   const storedCurrentSongArray = JSON.parse(localStorage.getItem("currentSongArray")) || []
   const likedSongs = JSON.parse(localStorage.getItem("likedSongs")) || []
+  const creds = JSON.parse(localStorage.getItem('creds')) || []
 
+  const [credentials, setCredentials] = useState(creds)
   const [songIndexValue, setSongIndexValue] = useState(storedCurrentSongIndex);
   const[songArray, setSongArray] = useState(storedCurrentSongArray);
   const [playlistName, setPlaylistName] = useState()
@@ -36,10 +40,13 @@ function App() {
   const [mute, setMute] = useState(false)
   const audioRef = useRef(null)
   const [isLiked, setIsLiked] = useState(likedSongs)
-
+  const [activeSec, setActiveSec] = useState('home')
+  const [reduce,setReduce] = useState(false)
  
 
-  const sharedData = {
+  const sharedData = {credentials, setCredentials,
+    reduce,setReduce,
+    activeSec, setActiveSec,
     isLiked, setIsLiked,
     isPlaying, 
     setIsPlaying,
@@ -91,6 +98,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path = "/HomePage" element = {<HomePage />} />
+          <Route path = "/SignIn" element = {<SignIn />} />
+          <Route path = "/SignUp" element = {<SignUp />} />
         </Routes>
         </AppContext.Provider>
       </Router>
