@@ -118,18 +118,23 @@ export const ErrorMessage = styled.p`
     color: red;
     font-size: 13px;
 
-    @media (max-width: 420px)
+    @media (max-width: 403px)
     {
         font-size: 10px;
+    }
+
+    @media (max-width: 344px)
+    {
+        font-size: 8px;
     }
 `
 
 export const Navigate= styled.p`
     color: grey;
 
-    @media (max-width: 344px)
+    @media (max-width: 385px)
     {
-        font-size: 13px;
+        font-size: 12px;
     }
 `
 export const NavSpan = styled.span`
