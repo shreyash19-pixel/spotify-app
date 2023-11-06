@@ -117,6 +117,11 @@ export const ErrorMessageWrap = styled.div`
 export const ErrorMessage = styled.p`
     color: red;
     font-size: 13px;
+
+    @media (max-width: 420px)
+    {
+        font-size: 10px;
+    }
 `
 
 export const Navigate= styled.p`
